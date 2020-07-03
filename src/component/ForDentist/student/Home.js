@@ -107,7 +107,7 @@ onSearch3=(val)=> {
 
     move1=()=>{
       let  user = firebase.auth().currentUser;
-      console.log(user)
+      console.log(user,"user")
        
        }
   render(){
