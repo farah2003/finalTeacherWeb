@@ -94,7 +94,7 @@ async componentWillMount(){
   
   }
   move1=()=>{
-   
+   console.log('hello')
       this.props.history.push("./HomeDent")
      }
   render(){
