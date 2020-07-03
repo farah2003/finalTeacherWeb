@@ -55,7 +55,7 @@ class Signin extends Component{
   }
   
   fire=()=>{
-    var firstN=this.state.name;
+  /*  var firstN=this.state.name;
     var lastN=this.state.FullName;
     var PhoneNum=this.state.PhoneNum;
     var email=this.state.email
@@ -96,9 +96,9 @@ class Signin extends Component{
     
       this.props.history.push( './ForDentist/allpage')
     )
-
+*/
    
-  
+this.props.history.push( './student/Home')
   }
  
 

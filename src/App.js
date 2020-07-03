@@ -18,6 +18,7 @@ import FPage from './component/ForDentist/page4'
 import FIFPage from './component/ForDentist/page5'
 import  SPage from './component/ForDentist/page6'
 import PCard from './component/ForDentist/allpage'
+import SHome from './component/student/Home'
 
 import DHome from './component/ForDentist/HomeDent'
 
@@ -56,7 +57,7 @@ test=()=>{
     <Route path='/ForDentist/page5' component={FIFPage}></Route>
     <Route path='/ForDentist/page6' component={SPage}></Route>
     <Route path='/ForDentist/allpage' component={PCard}></Route>
-
+    <Route path='/student/Home' component={SHome}></Route>
     <Route path='/ForDentist/HomeDent' component={DHome}></Route>
 
     </Switch>
