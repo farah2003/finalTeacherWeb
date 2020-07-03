@@ -26,7 +26,7 @@ import DHome from './component/ForDentist/HomeDent'
 class App extends Component{
 
 pri=()=>{
-  console.log('fg f')
+  console.log('farah')
 }
 test=()=>{
   console.log('test')
