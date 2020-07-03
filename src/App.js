@@ -28,6 +28,9 @@ class App extends Component{
 pri=()=>{
   console.log('fg f')
 }
+test=()=>{
+  console.log('test')
+}
   render(){
     return(
       
