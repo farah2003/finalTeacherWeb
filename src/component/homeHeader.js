@@ -5,8 +5,7 @@ import { Menu,Layout,Dropdown } from 'antd';
 
 import darkTheme from '@ant-design/dark-theme'
 
-import './style/header.css';
-const { SubMenu } = Menu;
+
 const { Header } = Layout;
 const menu = (
   <Menu  theme={"dark"} style={{ lineHeight: '115px'}}>

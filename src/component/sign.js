@@ -1,10 +1,10 @@
 import React, { Component } from 'react'; 
 
 import { Input, Button,Card,Icon } from 'antd';
-import './ForDentist/allpage'
+import './profile and update will use later/allpage'
 
 import * as firebase from 'firebase'
-import './style/sign.css'
+
 
 
 class Signin extends Component{
@@ -98,7 +98,7 @@ class Signin extends Component{
     )
 */
    
-this.props.history.push( './student/Home')
+this.props.history.push( './student/studentHome')
   }
  
 

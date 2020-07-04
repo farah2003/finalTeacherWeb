@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {Card , Button , Popconfirm, message} from 'antd';
-import DHome from './HomeDent'
+
 import * as firebase from 'firebase'
 
-class SPage extends Component{
-
+export default class PCard  extends  Component{
+ 
     state={
       list:[],
      ListForId:[],
@@ -32,9 +32,9 @@ class SPage extends Component{
    
       let newList =[]
   
-      db.collection("patients").where('classF','==',true).get().then((userSnapshot) => {
+      db.collection("patients").get().then((userSnapshot) => {
       console.log( userSnapshot.docs)
-          
+        
         userSnapshot.docs.map(doc =>{
        console.log(doc)
         let x= doc.data()
@@ -60,11 +60,11 @@ class SPage extends Component{
       const db = firebase.firestore();
   
      let  washingtonRef = db.collection("patients").doc(i)
-   //   let  user = firebase.auth().currentUser;
+     let  user = firebase.auth().currentUser;
    
     return washingtonRef.update({
       check: true,
-      //id:user
+      id:user.uid
     })
   
     .then(()=> {
@@ -91,7 +91,7 @@ class SPage extends Component{
       return(
       
         <div style={{backgroundColor:"#e6e6fa",height:'100%'}}>
-        <DHome{...this.props}></DHome>
+     
                   <div style={{backgroundColor:"#e6e6fa"}}>
       {
 
@@ -105,7 +105,7 @@ class SPage extends Component{
       
         
           <Card  title={<h4 style={{height:10,marginTop:3,fontWeight:'bold' ,marginRight:30,textAlign:"right"}}>{item.Name}</h4> }  style={{ width: 800,height:230 ,marginLeft:220,marginBottom:0, paddingTop:0}}>
-                   <div style={{textAlign:"left",display:"flex",height: 200}}>
+                   <div style={{textAlign:"right",display:"flex",height: 200}}>
                    <div style={{float:"right",height: 200,marginLeft:50}}> 
                     <h3 style={{fontSize:18}}> <label style={{fontSize:18,marginRight:7}}> Name</label>:{item.Name} </h3>
                     <h3 style={{fontSize:18}}> <label style={{fontSize:18,marginRight:7}}> Phone Number </label>:{item.Phone} </h3>
@@ -128,7 +128,7 @@ class SPage extends Component{
                  
                     <h3 style={{fontSize:18}}> <label style={{fontSize:18,marginRight:7}}> Age  :</label> {item.Age}</h3>
                     <h3 style={{fontSize:18}}> <label style={{fontSize:18,marginRight:7}}>Notes :</label>{item.Notes}</h3>
-                    <h3 style={{fontSize:18}}> <label style={{fontSize:18,marginRight:7}}> treatment: </label>Cleaning teeth</h3>
+                    <h3 style={{fontSize:18}}> <label style={{fontSize:18,marginRight:7}}> treatment: </label>Orthodontics</h3>
                    
                     
       
@@ -168,9 +168,7 @@ class SPage extends Component{
         )}   
 </div>
     </div>
-  
       )
     }
   }
-
-export default SPage;
+  
