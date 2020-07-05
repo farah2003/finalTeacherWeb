@@ -1,10 +1,11 @@
-import React, { Component, Im } from "react";
-import { Button, Card, Layout, Icon, Carousel } from "antd";
-import darkTheme from "@ant-design/dark-theme";
-import { NavLink } from "react-router-dom";
-import "./style/home.css";
-import "./fillin";
-import Nav from "./nav";
+
+import React, { Component, Im } from 'react';
+import { Button ,Card,Layout,Icon, Carousel} from 'antd';
+import darkTheme from '@ant-design/dark-theme'
+import { NavLink} from "react-router-dom";
+
+import './fillin'
+import Nav from './homeHeader'
 const { Footer } = Layout;
 class Home extends Component {
   move = () => {

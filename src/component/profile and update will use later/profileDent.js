@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Button,Card,Icon } from 'antd';
-import './HomeDent'
+
 
 import * as firebase from 'firebase'
 
-import './stylefordent/main.css'
 
-import './page2'
+
+
 
 
 
@@ -123,7 +123,7 @@ async componentWillMount(){
         <div style={{width:500,height:200,display:"flex",paddingTop:50}} >
 
 <div style={{height:300,float:"left"}}>
-<img src={require('../ForDentist/image.png' )} style={{ border:"6px solid #f2f2f2",width:"70%",height:"60%",borderRadius:"50%",marginLeft:90,marginTop:60,marginBottom:50,}} />
+<img src={require('../profile and update will use later/image.png' )} style={{ border:"6px solid #f2f2f2",width:"70%",height:"60%",borderRadius:"50%",marginLeft:90,marginTop:60,marginBottom:50,}} />
 </div>
 
 <div style={{float:"right",height:400,marginTop:150,marginLeft:30,width:400}}>
