@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import { Input , Checkbox,Button, Card } from 'antd';
-
+import {Icon } from 'antd';
 
 import darkTheme from '@ant-design/dark-theme'
 
@@ -203,8 +203,29 @@ db.collection("patients").add({
   
     return(
       
-      <div style={{backgroundColor:"#e6e6fa"}} >
-        <div style={{paddingBottom:20}}>
+      <div  >
+
+<div style={{height:60,width:"100%",marginTop:0,backgroundColor:"wh",marginBottom:2,borderBottom:"1px solid #f2f2f2"}}>
+        <div style={{paddingTop:18,float:"right",marginRight:70}}>
+        <Icon  type="home" 
+         onClick={this.move1}
+         style={{ fontSize: '28px',paddingTop:0,marginRight:36 }} />
+         
+         <Icon  type="message" 
+         onClick={this.move1}
+         style={{fontSize: '28px',paddingTop:0,marginRight:36 }} />
+         <Icon  type="user" 
+         onClick={this.move1}
+         style={{fontSize: '28px',paddingTop:0,marginRight:36 }} />
+{/*, color: '#1890ff' */}
+         <Icon  type="setting" style={{fontSize: '27px'}} />
+          </div>
+          <div>
+          <label className="Label" style={{marginLeft:120 ,paddingTop:60,fontFamily: 'Satisfy',fontSize:30}}>Dent Guide</label>
+          </div>
+        
+        </div>
+      {/* <div style={{paddingBottom:20}}>
       <Layout className="layout">
         <Header style={{ backgroundColor: darkTheme , width:'100%',height:60}}  > 
           
@@ -212,16 +233,18 @@ db.collection("patients").add({
         </Header>
      
         </Layout>
-      </div >
+    </div >*/}
+    <div style={{backgroundColor:"#e6e6fa"}}>
+    <div style={{marginBottom:40,backgroundColor:'#e6e6fa',height:70}}></div>
          
-          <div style={{ width:200}}>
+          <div style={{ width:200,backgroundColor:"#e6e6fa",}}>
 
-    <Card className="card"   title={<h2 style={{marginTop:0,fontWeight:'bold',textAlign:"left" ,marginRight:30,color:'#002266'}}> Form</h2> }  style={{textAlign:"left", width: 800,height:900 ,marginTop:40,marginLeft:230,marginBottom:10}}>
-      
+    <Card className="card"    style={{textAlign:"left", width: 800,height:900 ,marginLeft:'80%',marginBottom:10,borderRadius:5}}>
+      <div style={{marginLeft:70}}>
             
-             
+             <h1 style={{marginBottom:50}}>plese fill in</h1>
           
-              <div style={{marginRight:40}}>
+              <div style={{marginRight:60}}>
 
              
               <h3 className="h3"> Patient Name </h3>
@@ -276,10 +299,10 @@ db.collection("patients").add({
        
            </div>
        
-        
+           </div>
               </Card>
               </div>
-       
+              </div>
       </div>
       
        
