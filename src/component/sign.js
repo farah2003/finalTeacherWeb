@@ -115,11 +115,11 @@ this.props.history.push( './student/studentHome')
   render(){
     return(
       <div>
-     <h1 style={{fontFamily:"Satisfy" ,fontSize:70,marginTop:30,marginLeft:500,color:'#002266',fontWeight:'bold'}}>Dent Guide</h1>
+     <h1 style={{fontFamily:"Satisfy" ,fontSize:70,marginTop:30,marginLeft:540,color:'#002266',fontWeight:'bold'}}>TUTORS PS</h1>
 
      
 
-<Card className="card"   title={<h2 style={{color:'#002266',marginTop:20,fontWeight:'bold'}}>signing Up as Docoter</h2> }  style={{ width: 500,height:650 ,marginTop:30,marginLeft:370,marginBottom:50}}>
+<Card className="card"   title={<h2 style={{color:'#002266',marginTop:20,fontWeight:'bold'}}>Signing up as Tutor</h2> }  style={{ width: 500,height:650 ,marginTop:30,marginLeft:450,marginBottom:50}}>
         
 <div > 
 

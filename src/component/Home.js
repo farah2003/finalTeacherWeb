@@ -1,11 +1,10 @@
+import React, { Component, Im } from "react";
+import { Button, Card, Layout, Icon, Carousel } from "antd";
+import darkTheme from "@ant-design/dark-theme";
+import { NavLink } from "react-router-dom";
 
-import React, { Component, Im } from 'react';
-import { Button ,Card,Layout,Icon, Carousel} from 'antd';
-import darkTheme from '@ant-design/dark-theme'
-import { NavLink} from "react-router-dom";
-
-import './fillin'
-import Nav from './homeHeader'
+import "./fillin";
+import Nav from "./homeHeader";
 const { Footer } = Layout;
 class Home extends Component {
   move = () => {
@@ -21,7 +20,7 @@ class Home extends Component {
           <div>
             <div>
               <img
-                src={require("../component/dental.jpg")}
+                src={require("../component/tutoring.jpg")}
                 style={{ width: "100%", height: 500, marginTop: 0 }}
                 alt="img1"
               />
@@ -29,7 +28,7 @@ class Home extends Component {
           </div>
           <div>
             <img
-              src={require("../component/smile.jpg")}
+              src={require("../component/algebra.jpg")}
               style={{ width: "100%", height: 500, marginTop: 0 }}
               alt="img2"
             />
@@ -37,7 +36,7 @@ class Home extends Component {
 
           <div>
             <img
-              src={require("../component/smile.jpg")}
+              src={require("../component/peer-tutoring.jpg")}
               style={{ width: "100%", height: 500, marginTop: 0 }}
               alt="img3"
             />
