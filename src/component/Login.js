@@ -26,7 +26,7 @@ class Login extends Component{
 
   }
   login=()=>{
-    this.props.history.push( './student/studentHome')
+    this.props.history.push( './teacher/HomeTeacher')
    /* var email=this.state.email
     var password=this.state.password
 

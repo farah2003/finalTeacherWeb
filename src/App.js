@@ -15,7 +15,7 @@ import Profile from './component/profile and update will use later/profileDent'
 import PCard from './component/profile and update will use later/allpage'
 import SHome from './component/student/studentHome'
 
-
+import  HomeTeacher from './component/teacher/HomeTeacher'
 
 
 class App extends Component{
@@ -43,8 +43,8 @@ test=()=>{
     <Route path="/login"component={Login}></Route>
     <Route path="/fillin"component={Fillin}></Route>
 
-  
     <Route path='/student/studentHome' component={SHome}></Route>
+    <Route path='/teacher/HomeTeacher' component={ HomeTeacher}></Route>
     </Switch>
     </div>
     </BrowserRouter>
