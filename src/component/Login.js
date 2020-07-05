@@ -52,7 +52,7 @@ class Login extends Component{
     return(
       <div >
         <div style={{float:'left'}}>
-          <h1 style={{fontFamily:"Satisfy" ,fontSize:50,marginTop:40,marginLeft:230,color:'#002266'}}>Dent Guide</h1>
+          <h1 style={{fontFamily:"Satisfy" ,fontSize:50,marginTop:40,marginLeft:230,color:'#002266'}}>TUTORS PS</h1>
 
         <Card className="card"   title={<h2 style={{color:'#002266',marginTop:20,fontWeight:'bold'}}>log in</h2> }  style={{ width: 450,height:450 ,marginTop:40,marginLeft:100}}>
      
@@ -87,7 +87,7 @@ class Login extends Component{
           <div  style={{float: 'right' ,width:700,height:670,marginTop:0}} >
                      
  <img style={{backgroundColor:'red', width:'100%',height:'100%',opacity:'0,5' 
-  ,filter: 'alpha(opacity=50)'}}  src={require("../login.jpg")} onClick={this.pri} alt="img"/>
+  ,filter: 'alpha(opacity=50)'}}  src={require("./student1.jpg")} onClick={this.pri} alt="img"/>
             
            </div>
              
