@@ -253,7 +253,7 @@ class Fillin extends Component {
               }}
             >
               <div style={{ marginLeft: 70 }}>
-                <h1 style={{ marginBottom: 50 }}>plese fill in</h1>
+                <h1 style={{ marginBottom: 50 }}>Please fill in</h1>
 
                 <div style={{ marginRight: 60 }}>
                   <h3 className="h3"> Teacher name </h3>
