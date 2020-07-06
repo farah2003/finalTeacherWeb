@@ -48,6 +48,7 @@ console.log('item',x)
   }
   onChange1=(value)=> {
     console.log(`selected ${value}`);
+    console.log(`selected ${value}`);
     this.setState({
         location:value
     })
@@ -56,6 +57,7 @@ console.log('item',x)
   
 onSearch1=(val)=> {
     console.log('search:', val);
+      console.log('search:', val);
     
   }
   onChange2=(value)=> {
