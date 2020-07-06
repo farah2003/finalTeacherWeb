@@ -143,7 +143,7 @@ class SHome extends Component {
                 fontSize: 30,
               }}
             >
-              Dent Guide
+              Tutors PS
             </label>
           </div>
         </div>
@@ -212,10 +212,10 @@ class SHome extends Component {
               onChange={this.onChange3}
               onSearch={this.onSearch3}
             >
-              <Option value="Math">Math</Option>
-              <Option value="physics">physics</Option>
-              <Option value="piology">piology</Option>
-              <Option value="chemistry">chemistry</Option>
+              <Option value="Math">Mathematics</Option>
+              <Option value="physics">Physics</Option>
+              <Option value="piology">Biology</Option>
+              <Option value="chemistry">Chemistry</Option>
             </Select>
             <Button
               type="primary"
