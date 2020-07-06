@@ -1,7 +1,15 @@
+<<<<<<< HEAD
+ 
+import React, { Component} from 'react';
+import { Button ,Card,Layout,Icon, Carousel} from 'antd';
+import darkTheme from '@ant-design/dark-theme'
+import { NavLink} from "react-router-dom";
+=======
 import React, { Component, Im } from "react";
 import { Button, Card, Layout, Icon, Carousel } from "antd";
 import darkTheme from "@ant-design/dark-theme";
 import { NavLink } from "react-router-dom";
+>>>>>>> 1dd14d19e38d62753bd7c740c252bd0fc161eb73
 
 import "./fillin";
 import Nav from "./homeHeader";
