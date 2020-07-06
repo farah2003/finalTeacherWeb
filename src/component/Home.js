@@ -81,7 +81,7 @@ class Home extends Component {
               <Icon type="mail" style={{ fontSize: 25 }} />
               <label style={{ color: "white", fontSize: 18 }}>
                 {" "}
-                dentist4@gmail.com
+                tutorsps@gmail.com
               </label>
             </a>
           </div>
