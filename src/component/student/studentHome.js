@@ -49,6 +49,7 @@ console.log('item',x)
   onChange1=(value)=> {
     console.log(`selected ${value}`);
     console.log(`selected ${value}`);
+    console.log(`selected ${value}`);
     this.setState({
         location:value
     })
