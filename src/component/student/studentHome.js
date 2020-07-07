@@ -4,7 +4,7 @@ import { Select,Avatar } from 'antd';
 import * as firebase from 'firebase'
 
 
-import { SaveOutlined , MessageOutlined} from '@ant-design/icons';
+import { SaveOutlined , MessageOutlined, CodeSandboxCircleFilled} from '@ant-design/icons';
 
 
 
@@ -17,11 +17,28 @@ class SHome extends Component{
        sub:"",
        grade:"",
        location:'',
-       list:[]
+       list:[],
+       ListPost:[]
 
    }
 
-
+   getlist=()=>{
+    let  user = firebase.auth().currentUser;
+    const db = firebase.firestore();
+    db.collection("Student").doc(user.uid).get().then((userdoc) =>{
+  
+      
+   
+      
+      let listfromData= userdoc.data().savepost
+  
+      this.setState({
+        ListPost: listfromData
+      })
+      
+      console.log(listfromData)
+      
+    })}
   componentWillMount(){
   
   const db = firebase.firestore();
@@ -44,8 +61,57 @@ console.log('item',x)
     })
     
 })
+this.getlist()
   
   }
+
+
+  saveCard=(i)=>{
+    const{ListPost}=this.state
+  console.log('iiiiii',i)
+  ListPost.push(i)
+ 
+   
+    const db = firebase.firestore()
+    let  user = firebase.auth().currentUser;
+   
+  
+    console.log('useerrrrr',user.uid)
+   let  washingtonRef = db.collection("Student").doc(user.uid)
+ 
+ console.log('washingtonRef',washingtonRef)
+
+ this.setState({
+  ListPost
+})
+
+console.log('LLLLLL',this.state.ListPost)
+  return washingtonRef.update({
+   savepost :this.state.ListPost
+  })
+
+  }
+  unsave = (index)=>{
+    const db = firebase.firestore()
+    let  user = firebase.auth().currentUser;
+    let { ListPost} = this.state;
+   let x =  ListPost.filter((item,i)=>i!=index)
+
+    this.setState({
+      ListPost :x
+    })
+    let  washingtonRef = db.collection("Student").doc(user.uid)
+ 
+    console.log('washingtonRef',washingtonRef)
+  
+   
+   console.log('LLLLLL',this.state.ListPost)
+     return washingtonRef.update({
+      savepost :this.state.ListPost
+     })
+   
+
+}
   onChange1=(value)=> {
     console.log(`selected ${value}`);
     console.log(`selected ${value}`);
@@ -231,9 +297,13 @@ onSearch3=(val)=> {
     style={{ width:'63%',margin:'0 auto'}}
    
     actions={[
-      < MessageOutlined />,
-      <SaveOutlined  key="edit" />,
-
+      <Icon  type="message" 
+      onClick={()=>this.gotoChat(item)}
+      style={{fontSize: '28px',paddingTop:0,marginRight:36 }} />,
+      <Icon  type="save" 
+      onClick={()=>this.saveCard(item)}
+      style={{fontSize: '28px',paddingTop:0,marginRight:36 }} />
+   
     ]}
   >
     <Meta
@@ -247,12 +317,13 @@ onSearch3=(val)=> {
                 <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:40}}> subject </label >{item.sub} </h6>
                 <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:40}}> subject </label >{item.sub} </h6>
             
-
+        
                 </div> 
                 <div style={{float:"left",marginLeft:'30%'}}>
                 <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:40}}> subject </label >{item.sub} </h6>
                 <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:40}}> subject </label >{item.sub} </h6>
           <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:40}}> subject </label >{item.sub} </h6>
+                <button onClick={()=>this.unsave(index)}>unsave</button>
                 </div>
       </div>}
     />

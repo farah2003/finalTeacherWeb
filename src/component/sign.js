@@ -54,8 +54,8 @@ class Signin extends Component{
 
   }
   
-  fire=()=>{
-  /*  var firstN=this.state.name;
+    fire = async()=>{
+   var firstN=this.state.name;
     var lastN=this.state.FullName;
     var PhoneNum=this.state.PhoneNum;
     var email=this.state.email
@@ -74,31 +74,32 @@ class Signin extends Component{
     }).then(()=>{
       var user = firebase.auth().currentUser;
   
-      console.log('user',user)
+      console.log('user',user.uid)
       
 
-    db.collection("Users").doc(user.uid).set({
+    db.collection("Student").doc(user.uid).set({
         Name: firstN,
        UsersName: lastN,
         phone: PhoneNum,
         Email:email,
         Password:password,
+        savepost:[]
 
     })
         .then(function (docRef) {
-            console.log("Document written with ID: ", docRef.id);
+          console.log('hereeeeeeeeeeee')
+          
+            
         })
         .catch(function (error) {
             console.error("Error adding document: ", error);
-        });
+        }).then(()=>{
+          this.props.history.push( './student/studentHome')
+        })
     })
-    .then(
-    
-      this.props.history.push( './ForDentist/allpage')
-    )
-*/
+
    
-this.props.history.push( './student/studentHome')
+
   }
  
 
