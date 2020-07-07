@@ -11,7 +11,7 @@ import Login   from './component/Login';
 import Fillin from './component/fillin';
 
 import Profile from './component/profile and update will use later/profileDent'
-
+import ProfileStudent from './component/student/profileStudent'
 import PCard from './component/profile and update will use later/allpage'
 import SHome from './component/student/studentHome'
 
@@ -42,7 +42,7 @@ test=()=>{
     <Route path="/sign"component={Signin}></Route>
     <Route path="/login"component={Login}></Route>
     <Route path="/fillin"component={Fillin}></Route>
-
+    <Route path='/student/ProfileStudent' component={ProfileStudent}></Route>
     <Route path='/student/studentHome' component={SHome}></Route>
     <Route path='/teacher/HomeTeacher' component={ HomeTeacher}></Route>
     </Switch>

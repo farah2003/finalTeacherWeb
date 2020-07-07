@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { Input, Button,Card,Icon } from 'antd';
 import './profile and update will use later/allpage'
+import './student/studentHome'
 
 import * as firebase from 'firebase'
 
@@ -83,7 +84,7 @@ class Signin extends Component{
         phone: PhoneNum,
         Email:email,
         Password:password,
-        savepost:[]
+        savecard:[]
 
     })
         .then(function (docRef) {
@@ -93,9 +94,9 @@ class Signin extends Component{
         })
         .catch(function (error) {
             console.error("Error adding document: ", error);
-        }).then(()=>{
-          this.props.history.push( './student/studentHome')
         })
+    }).then(()=>{
+      this.props.history.push( './student/studentHome')
     })
 
    

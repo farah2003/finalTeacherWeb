@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Menu,Icon, Typography,Button,Card } from 'antd';
 import { Select,Avatar } from 'antd';
 import * as firebase from 'firebase'
-
+import './profileStudent'
 
 import { SaveOutlined , MessageOutlined, CodeSandboxCircleFilled} from '@ant-design/icons';
 
@@ -33,7 +33,8 @@ class SHome extends Component{
       let listfromData= userdoc.data().savepost
   
       this.setState({
-        ListPost: listfromData
+        ListPost: listfromData,
+        id:user.uid
       })
       
       console.log(listfromData)
@@ -87,7 +88,7 @@ this.getlist()
 
 console.log('LLLLLL',this.state.ListPost)
   return washingtonRef.update({
-   savepost :this.state.ListPost
+    savecard :this.state.ListPost
   })
 
   }
@@ -107,15 +108,14 @@ console.log('LLLLLL',this.state.ListPost)
    
    console.log('LLLLLL',this.state.ListPost)
      return washingtonRef.update({
-      savepost :this.state.ListPost
+      savecard :this.state.ListPost
      })
    
 
 }
   onChange1=(value)=> {
     console.log(`selected ${value}`);
-    console.log(`selected ${value}`);
-    console.log(`selected ${value}`);
+ 
     this.setState({
         location:value
     })
@@ -176,7 +176,11 @@ onSearch3=(val)=> {
     })
 
   }
-
+  goToProfile=()=>{
+    console.log('goooo')
+    this.props.history.push('./profileStudent')
+ 
+     }
     move1=()=>{
       let  user = firebase.auth().currentUser;
       console.log(user)
@@ -197,7 +201,7 @@ onSearch3=(val)=> {
          onClick={this.move1}
          style={{fontSize: '28px',paddingTop:0,marginRight:36 }} />
          <Icon  type="user" 
-         onClick={this.move1}
+         onClick={this.goToProfile}
          style={{fontSize: '28px',paddingTop:0,marginRight:36 }} />
 {/*, color: '#1890ff' */}
          <Icon  type="setting" style={{fontSize: '27px'}} />
@@ -298,10 +302,10 @@ onSearch3=(val)=> {
    
     actions={[
       <Icon  type="message" 
-      onClick={()=>this.gotoChat(item)}
+     // onClick={()=>this.gotoChat(item)}
       style={{fontSize: '28px',paddingTop:0,marginRight:36 }} />,
       <Icon  type="save" 
-      onClick={()=>this.saveCard(item)}
+     // onClick={()=>this.saveCard(item)}
       style={{fontSize: '28px',paddingTop:0,marginRight:36 }} />
    
     ]}
