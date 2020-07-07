@@ -262,7 +262,7 @@ class Fillin extends Component {
                   <Input onChange={this.addPhone} style={{ width: 500 }} />
                   <h3 className="h3"> Age </h3>
                   <Input onChange={this.addAge} style={{ width: 500 }} />
-                  <h3 className="h3"> Email addresss </h3>
+                  <h3 className="h3"> Email address </h3>
                   <Input onChange={this.addEmail} style={{ width: 500 }} />
 
                   <h3 className="h3"> About you and your class </h3>
