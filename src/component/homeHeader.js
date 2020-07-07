@@ -10,7 +10,7 @@ const menu = (
   <Menu theme={"dark"} style={{ lineHeight: "115px" }}>
     <Menu.Item>
       <NavLink
-        to="/sign"
+        to="/signteacher"
         style={{ fontWeight: "bold", fontSize: "35", textAlign: "center" }}
       >
         {" "}
@@ -41,7 +41,7 @@ const menulog = (
     </Menu.Item>
     <Menu.Item>
       <NavLink
-        to="/login"
+        to="/loginstudent"
         style={{ fontWeight: "bold", fontSize: "35", textAlign: "center" }}
       >
         {" "}
