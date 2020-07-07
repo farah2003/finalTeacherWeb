@@ -86,7 +86,7 @@ class Signin extends Component {
     )
 */
 
-    this.props.history.push("./student/studentHome");
+    this.props.history.push("./teacher/Hometeacher");
   };
 
   render() {
@@ -109,7 +109,7 @@ class Signin extends Component {
           className="card"
           title={
             <h2 style={{ color: "#002266", marginTop: 20, fontWeight: "bold" }}>
-              Signing up as student
+              Signing up as teacher
             </h2>
           }
           style={{
