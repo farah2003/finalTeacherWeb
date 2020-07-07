@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Icon, Input, Button, Card } from "antd";
 
 import * as firebase from "firebase";
-import "./signteacher";
+import "./sign";
 
 class Login extends Component {
   state = {
@@ -20,7 +20,7 @@ class Login extends Component {
     });
   };
   login = () => {
-    this.props.history.push("./teacher/HomeTeacher");
+    this.props.history.push("./student/studenthome");
     /* var email=this.state.email
     var password=this.state.password
 
@@ -40,7 +40,7 @@ class Login extends Component {
   };
   signup = () => {
     console.log("fdfdjs");
-    this.props.history.push("./signteacher");
+    this.props.history.push("./sign");
   };
 
   render() {
@@ -83,7 +83,7 @@ class Login extends Component {
               type="password"
               placeholder="Password"
             />
-            <a href="./signteacher">forgot password </a>
+            <a href="./sign">forgot password </a>
             <Button
               type="primary"
               htmlType="submit"
@@ -93,7 +93,7 @@ class Login extends Component {
             >
               Log in
             </Button>
-            Or <a href="./signteacher">create acount </a>
+            Or <a href="./sign">create acount </a>
           </Card>
         </div>
         <div style={{ float: "right", width: 700, height: 670, marginTop: 0 }}>

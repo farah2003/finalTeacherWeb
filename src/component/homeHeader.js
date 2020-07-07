@@ -10,11 +10,11 @@ const menu = (
   <Menu theme={"dark"} style={{ lineHeight: "115px" }}>
     <Menu.Item>
       <NavLink
-        to="/sign"
+        to="/signteacher"
         style={{ fontWeight: "bold", fontSize: "35", textAlign: "center" }}
       >
         {" "}
-        Sign as student{" "}
+        Sign up as teacher{" "}
       </NavLink>
     </Menu.Item>
     <Menu.Item>
@@ -23,7 +23,7 @@ const menu = (
         style={{ fontWeight: "bold", fontSize: "35", textAlign: "center" }}
       >
         {" "}
-        Sign as teacher{" "}
+        Sign up as student{" "}
       </NavLink>
     </Menu.Item>
   </Menu>
@@ -36,16 +36,16 @@ const menulog = (
         style={{ fontWeight: "bold", fontSize: "35", textAlign: "center" }}
       >
         {" "}
-        Log in as student{" "}
+        Log in as teacher{" "}
       </NavLink>
     </Menu.Item>
     <Menu.Item>
       <NavLink
-        to="/login"
+        to="/loginstudent"
         style={{ fontWeight: "bold", fontSize: "35", textAlign: "center" }}
       >
         {" "}
-        Log in as teacher{" "}
+        Log in as student{" "}
       </NavLink>
     </Menu.Item>
   </Menu>
@@ -140,7 +140,7 @@ class Nav extends Component {
                       }}
                     >
                       {" "}
-                      Sign in{" "}
+                      Sign up{" "}
                     </NavLink>
                   </Dropdown>
                 </Menu.Item>
