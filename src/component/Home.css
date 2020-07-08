@@ -1,0 +1,4 @@
+.ant-menu.ant-menu-dark .ant-menu.customclass {
+    background-color: green; /*Overriden property*/
+  }
+  

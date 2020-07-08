@@ -4,20 +4,20 @@ import { NavLink } from "react-router-dom";
 import { Menu, Layout, Dropdown } from "antd";
 
 import darkTheme from "@ant-design/dark-theme";
-
+import './Home.css'
 const { Header } = Layout;
 const menu = (
-  <Menu theme={"dark"} style={{ lineHeight: "115px" }}>
+  <Menu className="customclass" style={{ lineHeight: "115px" }}>
     <Menu.Item>
       <NavLink
         to="/signteacher"
         style={{ fontWeight: "bold", fontSize: "35", textAlign: "center" }}
       >
-        {" "}
-        Sign up as teacher{" "}
+     
+        Sign up as teacher
       </NavLink>
-    </Menu.Item>
-    <Menu.Item>
+    </Menu.Item >
+    <Menu.Item   >
       <NavLink
         to="/sign"
         style={{ fontWeight: "bold", fontSize: "35", textAlign: "center" }}
@@ -56,7 +56,7 @@ class Nav extends Component {
     return (
       <div>
         <Layout className="layout">
-          <Header style={{ background: darkTheme, width: "100%", height: 115 }}>
+          <Header style={{ background: '#ffe6ff', width: "100%", height: 115 }}>
             <div style={{ float: "left", marginTop: 20 }}>
               <label
                 className="Label"
@@ -73,10 +73,11 @@ class Nav extends Component {
             </div>
             <div style={{ float: "right" }}>
               <Menu
-                theme={"dark"}
+              className="customclass"
+             
                 mode="horizontal"
                 defaultSelectedKeys={["2"]}
-                style={{ lineHeight: "115px" }}
+                style={{ lineHeight: "115px",backgroundColor:'#ffe6ff' }}
               >
                 <Menu.Item key="1" style={{ width: 170 }}>
                   <NavLink
@@ -91,7 +92,7 @@ class Nav extends Component {
                   </NavLink>
                 </Menu.Item>
 
-                <Menu.Item key="2" style={{ width: 170 }}>
+                <Menu.Item key="2" style={{ width: 170 }} >
                   <NavLink
                     to="/contact"
                     style={{
