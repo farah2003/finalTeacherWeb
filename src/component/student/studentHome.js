@@ -25,7 +25,7 @@ class SHome extends Component{
    getlist=()=>{
     let  user = firebase.auth().currentUser;
     const db = firebase.firestore();
-    db.collection("Student").doc(user.uid).get().then((userdoc) =>{
+    db.collection("Users").doc(user.uid).get().then((userdoc) =>{
   
       
    

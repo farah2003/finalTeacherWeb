@@ -70,7 +70,7 @@ async componentWillMount(){
         console.log(userdoc.data())
   
       var card=userdoc.data().savecard
-  console.lordg(card)
+  console.log(card)
   
       })
   

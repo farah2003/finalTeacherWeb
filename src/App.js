@@ -16,7 +16,7 @@ import PCard from './component/profile and update will use later/allpage'
 import SHome from './component/student/studentHome'
 
 import  HomeTeacher from './component/teacher/HomeTeacher'
-
+import Choose from './component/choose'
 
 class App extends Component{
 
@@ -45,6 +45,7 @@ test=()=>{
     <Route path='/student/ProfileStudent' component={ProfileStudent}></Route>
     <Route path='/student/studentHome' component={SHome}></Route>
     <Route path='/teacher/HomeTeacher' component={ HomeTeacher}></Route>
+    <Route path='/choose' component={Choose }></Route>
     </Switch>
     </div>
     </BrowserRouter>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { Input, Button,Card,Icon } from 'antd';
 import './profile and update will use later/allpage'
-import './student/studentHome'
+import './choose'
 
 import * as firebase from 'firebase'
 
@@ -30,10 +30,7 @@ class Signin extends Component{
     
 
   }
-  move=()=>{
-   
-    this.props.history.push(  './ForDentist/HomeDent')
-  }
+
   addFullName=(e)=>{
     this.setState({
       FullName:e.target.value
@@ -55,7 +52,7 @@ class Signin extends Component{
 
   }
   
-    fire = async()=>{
+   goToChoose= async()=>{
    var firstN=this.state.name;
     var lastN=this.state.FullName;
     var PhoneNum=this.state.PhoneNum;
@@ -78,13 +75,13 @@ class Signin extends Component{
       console.log('user',user.uid)
       
 
-    db.collection("Student").doc(user.uid).set({
+    db.collection("Users").doc(user.uid).set({
         Name: firstN,
        UsersName: lastN,
         phone: PhoneNum,
         Email:email,
         Password:password,
-        savecard:[]
+        
 
     })
         .then(function (docRef) {
@@ -96,7 +93,7 @@ class Signin extends Component{
             console.error("Error adding document: ", error);
         })
     }).then(()=>{
-      this.props.history.push( './student/studentHome')
+      this.props.history.push( './choose')
     })
 
    
@@ -149,7 +146,7 @@ class Signin extends Component{
 </div>
 <div style={{marginTop:30,}}> 
   <Button type="primary" htmlType="submit" className="login-form-button" 
-  onClick={this.fire} style={{width:450,height:40}}> 
+  onClick={this.goToChoose} style={{width:450,height:40}}> 
  sign up
 </Button>
 </div>
