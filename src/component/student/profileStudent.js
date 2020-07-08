@@ -24,53 +24,32 @@ async componentWillMount(){
     userid
    })
    console.log(userid)
-   this.getuserCard()
+  
     this.getUseInfo()
   
   }
-  getuserCard = async()=>{
-
  
-     const db = firebase.firestore();
-
-   
-  
-    let user =   await firebase.auth().currentUser
-  //  const id= await user.uid
-
-   //  
-   console.log('state',this.state.userid)
-    let newList =[]
-   
-   /* db.collection("Student").where('id','==',user.uid).get().then((userSnapshot) => {
-
-        
-      userSnapshot.docs.map((doc) => {
-        
-          console.log( 'cardfor user ', doc.data())
-      let x= doc.data()
-  
-         console.log(x) 
-      newList.push(x)    
-      } );  
-    this.setState({
-        list:newList
-      })
-    
-})*/
-  }
   getUseInfo=async ()=>{
     const db = firebase.firestore();
     
 
     let user =   await firebase.auth().currentUser
   // const  id= await user.uid
-    db.collection("Student").doc(user.uid).get().then((userdoc) =>{
+    db.collection("Users").doc(user.uid).get().then((userdoc) =>{
 
         console.log(userdoc.data())
-  
+      
+        var Phone=userdoc.data().phone
+        var Name=userdoc.data().Name
+        var Email =userdoc.data().Email
       var card=userdoc.data().savecard
-  console.log(card)
+      console.log('card',card)
+      this.setState({
+        list:card,
+        Phone:Phone,
+        Name:Name,
+        Email: Email
+      })
   
       })
   
@@ -110,7 +89,7 @@ async componentWillMount(){
 
 <div style={{float:"right",height:400,marginTop:150,marginLeft:30,width:400}}>
 <h2>{this.state.UserName}</h2>
-<h4>student level 5</h4>
+
 
   
 
@@ -185,8 +164,8 @@ async componentWillMount(){
            
 
               <h3 style={{fontSize:18}}> <label style={{fontSize:18,marginRight:7}}>Age</label>:{item.Age}</h3>
-              <h3 style={{fontSize:18}}> <label style={{fontSize:18,marginRight:7}}> treatment</label>: Orthodontics </h3>
-              <h3 style={{fontSize:18}}> <label style={{fontSize:18,marginRight:7}}> Note</label>:{item.Notes} </h3>
+              <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:10}}> Price:</label >{item.Price} </h6>
+              <h3 style={{fontSize:18}}> <label style={{fontSize:18,marginRight:7}}> sub</label>:{item.sub} </h3>
               
 
     </div>

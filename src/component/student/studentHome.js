@@ -4,8 +4,8 @@ import { Select,Avatar } from 'antd';
 import * as firebase from 'firebase'
 import './profileStudent'
 
-import { SaveOutlined , MessageOutlined, CodeSandboxCircleFilled} from '@ant-design/icons';
 
+import darkTheme from '@ant-design/dark-theme'
 
 
 const { Text, } = Typography;
@@ -23,29 +23,32 @@ class SHome extends Component{
    }
 
    getlist=()=>{
-    let  user = firebase.auth().currentUser;
     const db = firebase.firestore();
+    let  user = firebase.auth().currentUser;
+   
     db.collection("Users").doc(user.uid).get().then((userdoc) =>{
   
       
    
       
-      let listfromData= userdoc.data().savepost
+      let listfromData= userdoc.data().savecard
   
       this.setState({
         ListPost: listfromData,
         id:user.uid
       })
       
-      console.log(listfromData)
+      console.log('list from dta',listfromData)
+      console.log('this.listpost', this.state.ListPost)
       
     })}
+  
   componentWillMount(){
   
   const db = firebase.firestore();
    
   let newList =[]
-  db.collection("teacher").get().then((userSnapshot) => {
+  db.collection("Cards").get().then((userSnapshot) => {
 
 
     
@@ -70,7 +73,7 @@ this.getlist()
   saveCard=(i)=>{
     const{ListPost}=this.state
   console.log('iiiiii',i)
-  ListPost.push(i)
+ListPost.push(i)
  
    
     const db = firebase.firestore()
@@ -78,7 +81,7 @@ this.getlist()
    
   
     console.log('useerrrrr',user.uid)
-   let  washingtonRef = db.collection("Student").doc(user.uid)
+   let  washingtonRef = db.collection("Users").doc(user.uid)
  
  console.log('washingtonRef',washingtonRef)
 
@@ -92,23 +95,24 @@ console.log('LLLLLL',this.state.ListPost)
   })
 
   }
-  unsave = (index)=>{
+  unsave = (id)=>{
+  console.log("iddddddddddd",id)
     const db = firebase.firestore()
     let  user = firebase.auth().currentUser;
     let { ListPost} = this.state;
-   let x =  ListPost.filter((item,i)=>i!=index)
-
+   let x =  ListPost.filter((i)=> i.id !== id )
+console.log('newlist',x)
     this.setState({
       ListPost :x
     })
-    let  washingtonRef = db.collection("Student").doc(user.uid)
+    let  washingtonRef = db.collection("Users").doc(user.uid)
  
     console.log('washingtonRef',washingtonRef)
   
    
-   console.log('LLLLLL',this.state.ListPost)
+
      return washingtonRef.update({
-      savecard :this.state.ListPost
+      savecard :x
      })
    
 
@@ -157,7 +161,7 @@ onSearch3=(val)=> {
       const db = firebase.firestore();
    
       let newList =[]
-      db.collection("teacher").where('sub','==',sub).where('city','==',location).where('grade','==',grade).get().then((userSnapshot) => {
+      db.collection("Cards").where('sub','==',sub).where('city','==',location).where('grade','==',grade).get().then((userSnapshot) => {
   
     
         
@@ -191,7 +195,7 @@ onSearch3=(val)=> {
     console.log('list',list)
     return( 
      <div >
-           <div style={{height:60,width:"100%",marginTop:0,backgroundColor:"wh",marginBottom:2,borderBottom:"1px solid #f2f2f2"}}>
+           <div style={{height:60,width:"100%",marginTop:0,backgroundColor:"#001a33" ,marginBottom:2,borderBottom:"1px solid #f2f2f2"}}>
         <div style={{paddingTop:18,float:"right",marginRight:70}}>
         <Icon  type="home" 
          onClick={this.move1}
@@ -212,7 +216,7 @@ onSearch3=(val)=> {
         
         </div>
         <div>
-        <img style={{backgroundColor:'red', width:'100%',height:250}}  src={require("./homestudent.jpg")} onClick={this.pri} alt="img"/>
+        <img style={{backgroundColor:'red', width:'100%',height:320}}  src={require("./homestudent.jpg")} onClick={this.pri} alt="img"/>
         </div>
 <div>
 {/////////////filter here
@@ -225,8 +229,8 @@ onSearch3=(val)=> {
            
             mode="horizontal"
             id="navbar"
-            defaultSelectedKeys={['2']}
-            style={{ lineHeight: '80px',backgroundColor:"#e6e6fa" ,display:'flex',justifyContent:'space-around',alignItems:'center'}}
+     
+            style={{ lineHeight: '80px',display:'flex',justifyContent:'space-around',alignItems:'center'}}
           >
            
           <Text >filter by</Text>
@@ -279,7 +283,7 @@ onSearch3=(val)=> {
     <Option value="piology">piology</Option>
     <Option value="chemistry">chemistry</Option>
   </Select>
-  <Button type="primary" onClick={this.filter} style={{width:150,height:45}}>
+  <Button  onClick={this.filter} style={{width:150,height:45}}>
           Apply
         </Button>
   </Menu>
@@ -288,7 +292,7 @@ onSearch3=(val)=> {
           </div>
 
    
-          <div style={{backgroundColor:"white"}}>
+          <div style={{backgroundColor:"#f4f7f8"}}>
               {list.map((item,index)=>{
   
        
@@ -296,7 +300,7 @@ onSearch3=(val)=> {
 
           <div style={{paddingTop:100}}> 
        
-       <div  style={{backgroundColor:"white"}}>
+       <div  style={{backgroundColor:"#f4f7f8"}}>
        <Card
     style={{ width:'63%',margin:'0 auto'}}
    
@@ -305,69 +309,36 @@ onSearch3=(val)=> {
      // onClick={()=>this.gotoChat(item)}
       style={{fontSize: '28px',paddingTop:0,marginRight:36 }} />,
       <Icon  type="save" 
-     // onClick={()=>this.saveCard(item)}
+     onClick={()=>this.saveCard(item)}
       style={{fontSize: '28px',paddingTop:0,marginRight:36 }} />
    
     ]}
   >
     <Meta
       avatar={<Avatar style={{width:140, height:140}}src={require("./profile.png")}/>}
-      title={<h4 style ={{marginTop:20}}> farah shaqoura</h4>}
+      title={<h4 style ={{marginTop:20}}>{item.Name} </h4>}
       description={
      <div style={{textAlign:"right",display:"flex"}}>
                <div style={{float:"right"}}> 
               
-                <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:40}}> subject </label >{item.sub} </h6>
-                <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:40}}> subject </label >{item.sub} </h6>
-                <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:40}}> subject </label >{item.sub} </h6>
+                <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:10}}> subject: </label >{item.sub} </h6>
+                <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:10}}> Grade: </label >{item.grade} </h6>
+                <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:10}}> Phone </label >{item.Phone} </h6>
             
         
                 </div> 
                 <div style={{float:"left",marginLeft:'30%'}}>
-                <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:40}}> subject </label >{item.sub} </h6>
-                <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:40}}> subject </label >{item.sub} </h6>
-          <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:40}}> subject </label >{item.sub} </h6>
-                <button onClick={()=>this.unsave(index)}>unsave</button>
+                <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:10}}> City:</label >{item.city} </h6>
+                <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:10}}> Price:</label >{item.Price} </h6>
+          <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:10}}> Age:</label >{item.Age}</h6>
+                <button onClick={()=>this.unsave(item.id)}>unsave</button>
                 </div>
       </div>}
     />
   </Card>
         
-    {/* <Card 
-      
- style={{ width: 800,height:300 ,marginLeft:220,marginBottom:0, paddingTop:0}}>
-          <Meta
-      avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" style={{width:100,height:100}} />}
-      title={<h4 style={{height:10,marginTop:3,fontWeight:'bold' ,marginRight:30,textAlign:"right"}}>farah shaqoura</h4>}
-      description="This is the description"
-    />
-         {/*  <div style={{textAlign:"right",display:"flex",height: 200}}>
-               <div style={{float:"right",height: 200,marginLeft:50}}> 
-                <h3 style={{fontSize:18}}> <label style={{fontSize:18,marginRight:7}}> Name</label>:{item.name} </h3>
-                <h3 style={{fontSize:18}}> <label style={{fontSize:18,marginRight:7}}> subject</label>:{item.sub} </h3>
-            
-                <h3 style={{fontSize:18}}> <label style={{fontSize:18,marginRight:7}}>grade</label>:{item.grade}</h3>
-            
-                <div style={{marginTop:0}}>
-      
-    </div>
-                </div> 
-                <div style={{float:"left",height: 200,marginLeft:160}}>
-             
-                <h3 style={{fontSize:18}}> <label style={{fontSize:18,marginRight:7}}> city  :</label> {item.city}</h3>
-                <h3 style={{fontSize:18}}> <label style={{fontSize:18,marginRight:7}}>Notes :</label>{item.Notes}</h3>
-             
-               
-                
-  
-      </div>
-      
-    
-      </div>
-                
-    
-                </Card>
-    */}
+   
+
                  
              
     

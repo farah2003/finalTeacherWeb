@@ -1,0 +1,77 @@
+
+</div>
+<div style={{float:'left',width:'55%'}}>
+            <Card
+              className="card"
+              style={{
+                textAlign: "left",
+                width: '65%',
+
+             
+              }}
+            >
+              <div style={{ marginLeft: 70 }}>
+                <h1 style={{ marginBottom: 50 }}>Please fill in</h1>
+
+                <div style={{ marginRight: 60 }}>
+                  <h3 className="h3"> Teacher name </h3>
+                  <Input onChange={this.addName} style={{ width: 500 }} />
+                  <h3 className="h3"> Phone number </h3>
+                  <Input onChange={this.addPhone} style={{ width: 500 }} />
+                  <h3 className="h3"> Age </h3>
+                  <Input onChange={this.addAge} style={{ width: 500 }} />
+                  <h3 className="h3"> Email address </h3>
+                  <Input onChange={this.addEmail} style={{ width: 500 }} />
+
+                  <h3 className="h3"> About you and your class </h3>
+                  <TextArea
+                    rows={4}
+                    onChange={this.addNotes}
+                    style={{ width: 500 }}
+                  />
+
+                  <h3 className="h3"> Other notes </h3>
+                  <TextArea
+                    rows={4}
+                    onChange={this.addDisease}
+                    style={{ width: 500 }}
+                  />
+
+                  <h3 className="h3">The subject you teach </h3>
+                  <div style={{ alignItems: "flex_start" }}>
+                    <div>
+                      <Checkbox onChange={this.checkA} /> Biology
+                    </div>
+
+                    <div>
+                      <Checkbox onChange={this.checkB} /> Mathematics
+                    </div>
+                    <div>
+                      <Checkbox onChange={this.checkC} /> Chemistry
+                    </div>
+                    <div>
+                      <Checkbox onChange={this.checkD} /> English
+                    </div>
+                    <div>
+                      <Checkbox onChange={this.checkE} /> Arabic
+                    </div>
+                    <div>
+                      <Checkbox onChange={this.checkF} /> Physics
+                    </div>
+                  </div>
+
+                  <Button
+                    type="primary"
+                    style={{ color: " #466995", width: 230, marginTop: 20 }}
+                    onClick={this.send}
+                  >
+                    <h2
+                      style={{ fontFamily: "AdventPro-Bold	", color: "white" }}
+                    >
+                      send
+                    </h2>
+                  </Button>
+                </div>
+              </div>
+            </Card>
+          </div>

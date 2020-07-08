@@ -8,7 +8,7 @@ import darkTheme from '@ant-design/dark-theme'
 
 const { Header } = Layout;
 const menu = (
-  <Menu  theme={"dark"} style={{ lineHeight: '115px'}}>
+  <Menu  theme={'light'} style={{ lineHeight: '115px'}}>
     <Menu.Item>
     <NavLink to="/sign"  style={{fontWeight:'bold',fontSize:'35',textAlign:'center'}}> sign as student  </NavLink>
      
@@ -51,7 +51,7 @@ class Nav extends Component{
           </div>
           <div style={{float:'right'}}>
           <Menu
-            theme={"dark"}
+            theme={'light'}
             mode="horizontal"
             defaultSelectedKeys={['2']}
             style={{ lineHeight: '115px'}}

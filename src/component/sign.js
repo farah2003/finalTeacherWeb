@@ -81,6 +81,7 @@ class Signin extends Component{
         phone: PhoneNum,
         Email:email,
         Password:password,
+        savecard:[]
         
 
     })
@@ -114,11 +115,11 @@ class Signin extends Component{
   render(){
     return(
       <div>
-     <h1 style={{fontFamily:"Satisfy" ,fontSize:70,marginTop:30,marginLeft:500,color:'#002266',fontWeight:'bold'}}>Dent Guide</h1>
-
+         <div style={{float:'right',marginRight:'15%'}}>
+  
      
 
-<Card className="card"   title={<h2 style={{color:'#002266',marginTop:20,fontWeight:'bold'}}>signing Up as Docoter</h2> }  style={{ width: 500,height:650 ,marginTop:30,marginLeft:370,marginBottom:50}}>
+<Card className="card"   title={<h2 style={{color:'#002266',marginTop:15,fontWeight:'bold',height: 30}}>signing Up as Docoter</h2> }  style={{ width: 500,height:600 ,marginTop:30}}>
         
 <div > 
 
@@ -144,7 +145,7 @@ class Signin extends Component{
 
 
 </div>
-<div style={{marginTop:30,}}> 
+<div style={{marginTop:30}}> 
   <Button type="primary" htmlType="submit" className="login-form-button" 
   onClick={this.goToChoose} style={{width:450,height:40}}> 
  sign up
@@ -155,7 +156,13 @@ class Signin extends Component{
   
       
         </div>  
-    
+        <div  style={{float: 'left' ,width:'40%',height:'100%',marginTop:0}} >
+                     
+ <img style={{backgroundColor:'red', width:'100%',height:'100%',opacity:'0,5' 
+  ,filter: 'alpha(opacity=50)'}}  src={require("../login.jpg")} onClick={this.pri} alt="img"/>
+            
+           </div>
+        </div>
     )
   }
 }
