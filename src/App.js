@@ -15,7 +15,7 @@ import loginstudent from "./component/loginstudent";
 import PCard from "./component/profile and update will use later/allpage";
 import SHome from "./component/student/studentHome";
 import Signupall from "./component/signupall";
-import loginall from "./component/loginall";
+
 import HomeTeacher from "./component/teacher/HomeTeacher";
 
 class App extends Component {
