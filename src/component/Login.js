@@ -83,7 +83,7 @@ class Login extends Component {
               type="password"
               placeholder="Password"
             />
-            <a href="./signteacher">forgot password </a>
+            <a href="./signupall">forgot password </a>
             <Button
               type="primary"
               htmlType="submit"
@@ -93,7 +93,7 @@ class Login extends Component {
             >
               Log in
             </Button>
-            Or <a href="./signteacher">create acount </a>
+            Or <a href="./signupall">create acount </a>
           </Card>
         </div>
         <div style={{ float: "right", width: 700, height: 670, marginTop: 0 }}>
