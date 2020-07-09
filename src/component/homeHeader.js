@@ -1,105 +1,145 @@
 import React, { Component } from "react";
 
 import { NavLink } from "react-router-dom";
-import { Menu, Layout, Dropdown } from "antd";
+import { Menu, Layout, Dropdown, Icon } from "antd";
 
 import darkTheme from "@ant-design/dark-theme";
-import './Home.css'
+import "./Home.css";
 const { Header } = Layout;
 const menu = (
-  <Menu className="customclass" style={{ lineHeight: "115px" }}>
+  <Menu theme={"dark"} style={{ lineHeight: "115px" }}>
     <Menu.Item>
       <NavLink
-        to="/signteacher"
-        style={{ fontWeight: "bold", fontSize: "35", textAlign: "center" }}
-      >
-     
-        Sign up as teacher
-      </NavLink>
-    </Menu.Item >
-    <Menu.Item   >
-      <NavLink
         to="/sign"
-        style={{ fontWeight: "bold", fontSize: "35", textAlign: "center" }}
+        style={{
+          fontWeight: "bold",
+          fontSize: "35",
+          textAlign: "center",
+          color: "white",
+        }}
       >
         {" "}
         Sign up as student{" "}
       </NavLink>
     </Menu.Item>
-  </Menu>
-);
-const menulog = (
-  <Menu theme={"dark"} style={{ lineHeight: "115px" }}>
     <Menu.Item>
       <NavLink
-        to="/login"
-        style={{ fontWeight: "bold", fontSize: "35", textAlign: "center" }}
+        to="/signteacher"
+        style={{
+          fontWeight: "bold",
+          fontSize: "35",
+          textAlign: "center",
+          color: "white",
+        }}
       >
         {" "}
-        Log in as teacher{" "}
-      </NavLink>
-    </Menu.Item>
-    <Menu.Item>
-      <NavLink
-        to="/loginstudent"
-        style={{ fontWeight: "bold", fontSize: "35", textAlign: "center" }}
-      >
-        {" "}
-        Log in as student{" "}
+        Sign up as teacher{" "}
       </NavLink>
     </Menu.Item>
   </Menu>
 );
+// const menulog = (
+//   <Menu style={{ lineHeight: "115px", background: "#12B7EB" }}>
+//     <Menu.Item>
+//       <NavLink
+//         to="/login"
+//         style={{
+//           fontWeight: "bold",
+//           fontSize: "35",
+//           textAlign: "center",
+//           color: "white",
+//         }}
+//       >
+//         {" "}
+//         Log in{" "}
+//       </NavLink>
+//     </Menu.Item>
+//     <Menu.Item>
+//       <NavLink
+//         to="/signupall"
+//         style={{
+//           fontWeight: "bold",
+//           fontSize: "35",
+//           textAlign: "center",
+//           color: "white",
+//         }}
+//       >
+//         {" "}
+//         sign up{" "}
+//       </NavLink>
+//     </Menu.Item>
+//     <Menu.Item>
+//       <NavLink
+//         to="/about"
+//         style={{
+//           fontWeight: "bold",
+//           fontSize: "35",
+//           textAlign: "center",
+//           color: "white",
+//         }}
+//       >
+//         {" "}
+//         Learn more about us{" "}
+//       </NavLink>
+//     </Menu.Item>
+//   </Menu>
+// );
 
 class Nav extends Component {
   render() {
     return (
       <div>
         <Layout className="layout">
-          <Header style={{ background: 'white', width: "100%", height: 90 }}>
-            <div style={{ float: "left" ,marginLeft:30}}>
-            
-              <img
-                src={require("../component/logo.png")}
-                style={{ width: 150, height: 130,marginBottom:20}}
-                alt="img1"
-              />
-        
-                
-            </div>
-            <div style={{ float: "right" ,marginRight:100}}>
-              <Menu
-              className="customclass"
-             
-                mode="horizontal"
-        
-                style={{ lineHeight: "90px" }}
+          <Header style={{ background: "white", width: "100%", height:"115px",marginBottom:3
+         }}>
+            <div style={{ float: "left", marginTop: 20 }}>
+              {/* <label
+                className="Label"
+                style={{
+                  marginLeft: 120,
+                  marginTop: 40,
+                  color: "white",
+                  fontFamily: "Satisfy",
+                  fontSize: 50,
+                }}
               >
-                <Menu.Item key="1" style={{ width: 130 }}>
+                Tutors PS
+              </label> */}
+              <NavLink to="/">
+                {" "}
+                <h1
+                  style={{
+                    marginLeft: 120,
+                    marginTop: 13,
+                    color: "white",
+                    fontFamily: "Satisfy",
+                    fontSize: 45,
+                  }}
+                >
+                  {" "}
+                  TutorsPS{" "}
+                </h1>
+              </NavLink>
+            </div>
+            <div style={{ float: "right" }}>
+              <Menu
+                className="customclass"
+                defaultSelectedKeys={['2']}
+                mode="horizontal"
+                style={{ lineHeight: "115px" }}
+              >
+                <Menu.Item key="1" style={{ width: 100,marginRight:50 }}>
                   <NavLink
                     to="/"
                     style={{
                       fontSize: "25",
                       textAlign: "center",
                       fontWeight: "bold",
+                      color:'#1890ff'
+                    
                     }}
                   >
                     Home
-                  </NavLink>
-                </Menu.Item>
-
-         
-
-                <Menu.Item key="3" style={{ width: 170 }}>
-                  <NavLink
-                    to="/about"
-                    style={{
-                      fontWeight: "bold",
-                      fontSize: "25",
-                      textAlign: "center",
-                    }}
-                  >
-                    About us
                   </NavLink>
                 </Menu.Item>
 
@@ -114,24 +154,44 @@ class Nav extends Component {
           <Menu.Item key="6">  <Menu.Item key="5"> <NavLink to="/login"  style={{fontWeight:'bold',fontSize:'35',textAlign:'center'}}> log in as student  </NavLink></Menu.Item></Menu.Item>
         
     </SubMenu>*/}
-
-                <Menu.Item key="4" style={{ width: 170 }}>
-                  <Dropdown overlay={menu} placement="bottomCenter">
-                    <NavLink
-                      to="#"
-                      style={{
-                        fontWeight: "bold",
-                        fontSize: "35",
-                        textAlign: "center",
-                      }}
-                    >
-                      {" "}
-                      Sign up{" "}
-                    </NavLink>
-                  </Dropdown>
+                <Menu.Item key="2" style={{ width: 100,marginRight:50 }}>
+                  <NavLink
+                    to="/about"
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "35",
+                      textAlign: "center",
+                      color:'#1890ff'
+                    }}
+                  >
+                    about us
+                  </NavLink>
                 </Menu.Item>
-                <Menu.Item key="5" style={{ width: 170 }}>
-                  <Dropdown overlay={menulog} placement="bottomCenter">
+                <Menu.Item key="3" style={{ width: 100,marginRight:50 }}>
+                  <NavLink
+                    to="/signupall"
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "35",
+                      textAlign: "center",
+                      color:'#1890ff'
+                    }}
+                  >
+                    {" "}
+                    Sign up{" "}
+                  </NavLink>
+                </Menu.Item>
+                <Menu.Item key="4" style={{ width: 100,marginRight:50 }}>
+                  <NavLink
+                    to="/login"
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "35",
+                      textAlign: "center",
+                      color:'#1890ff'
+                    }}
+                  >
+                    login
                     <NavLink
                       to="#"
                       style={{
@@ -139,11 +199,8 @@ class Nav extends Component {
                         fontSize: "35",
                         textAlign: "center",
                       }}
-                    >
-                      {" "}
-                      Log in{" "}
-                    </NavLink>
-                  </Dropdown>
+                    ></NavLink>
+                  </NavLink>
                 </Menu.Item>
               </Menu>
             </div>

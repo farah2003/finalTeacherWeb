@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Icon, Input, Button, Card } from "antd";
-
+import { NavLink } from "react-router-dom";
 import * as firebase from "firebase";
 import "./signteacher";
 
@@ -23,7 +23,6 @@ class Login extends Component {
     this.props.history.push("./teacher/HomeTeacher");
     /* var email=this.state.email
     var password=this.state.password
-
     
     firebase.auth().signInWithEmailAndPassword(email,
       password).catch(function (error) {
@@ -35,7 +34,6 @@ class Login extends Component {
              console.error("Error adding document: ", error);
          }).then(
    
-
          )*/
   };
   signup = () => {
@@ -47,17 +45,20 @@ class Login extends Component {
     return (
       <div>
         <div style={{ float: "left" }}>
-          <h1
-            style={{
-              fontFamily: "Satisfy",
-              fontSize: 50,
-              marginTop: 40,
-              marginLeft: 230,
-              color: "#002266",
-            }}
-          >
-            TUTORS PS
-          </h1>
+          <NavLink to="/">
+            {" "}
+            <h1
+              style={{
+                fontFamily: "Satisfy",
+                fontSize: 50,
+                marginTop: 40,
+                marginLeft: 230,
+                color: "#002266",
+              }}
+            >
+              TUTORS PS
+            </h1>
+          </NavLink>
 
           <Card
             className="card"
@@ -83,7 +84,7 @@ class Login extends Component {
               type="password"
               placeholder="Password"
             />
-            <a href="./signteacher">forgot password </a>
+            <a href="./signupall">forgot password </a>
             <Button
               type="primary"
               htmlType="submit"
@@ -93,7 +94,7 @@ class Login extends Component {
             >
               Log in
             </Button>
-            Or <a href="./signteacher">create acount </a>
+            Or <a href="./signupall">create acount </a>
           </Card>
         </div>
         <div style={{ float: "right", width: 700, height: 670, marginTop: 0 }}>
