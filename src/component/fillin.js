@@ -231,7 +231,7 @@ class Fillin extends Component {
               <h1
                 style={{
                   marginLeft: 120,
-                  paddingTop: 60,
+                  paddingTop: 13,
                   fontFamily: "Satisfy",
                   fontSize: 30,
                 }}
