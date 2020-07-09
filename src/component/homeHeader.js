@@ -59,7 +59,7 @@ class Nav extends Component {
     return (
       <div>
         <Layout className="layout">
-          <Header style={{ background: "#12B7EB", width: "100%", height: 115 }}>
+          <Header style={{ background: "#52C460", width: "100%", height: 115 }}>
             <div style={{ float: "left", marginTop: 20 }}>
               {/* <label
                 className="Label"
@@ -93,7 +93,7 @@ class Nav extends Component {
               <Menu
                 className="customclass"
                 mode="horizontal"
-                style={{ lineHeight: "115px", background: "#12B7EB" }}
+                style={{ lineHeight: "115px", background: "#52C460" }}
               >
                 <Menu.Item key="2" style={{ width: 170 }}>
                   <NavLink
@@ -103,6 +103,7 @@ class Nav extends Component {
                       textAlign: "center",
                       fontWeight: "bold",
                       color: "white",
+                      backgroundColor: "#52C460",
                     }}
                   >
                     Home

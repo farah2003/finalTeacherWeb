@@ -1,8 +1,3 @@
-
- 
-
-
-
 import React, { Component } from "react";
 
 import { Button, Card, Layout, Icon, Carousel } from "antd";
@@ -76,7 +71,7 @@ class Home extends Component {
 
         <Footer
           style={{
-            backgroundColor: "#12B7EB",
+            backgroundColor: "#25A035",
             height: "300px",
             paddingBottom: 0,
           }}
@@ -95,7 +90,7 @@ class Home extends Component {
             <a>
               {" "}
               <Icon type="phone" style={{ fontSize: 30, color: "navy" }} />
-              <label style={{ color: "white", fontSize: 22 }}>
+              <label style={{ color: "#BFC9CA", fontSize: 22 }}>
                 {" "}
                 0321312000000
               </label>
