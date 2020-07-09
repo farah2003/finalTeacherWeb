@@ -56,26 +56,26 @@ class Nav extends Component {
     return (
       <div>
         <Layout className="layout">
-          <Header style={{ background: 'white', width: "100%", height: 88 }}>
-            <div style={{ float: "left" ,marginLeft:80}}>
+          <Header style={{ background: 'white', width: "100%", height: 90 }}>
+            <div style={{ float: "left" ,marginLeft:30}}>
             
               <img
-                src={require("../component/tutor.png")}
-                style={{ width: 100, height: 80}}
+                src={require("../component/logo.png")}
+                style={{ width: 150, height: 130,marginBottom:20}}
                 alt="img1"
               />
         
                 
             </div>
-            <div style={{ float: "right" }}>
+            <div style={{ float: "right" ,marginRight:100}}>
               <Menu
               className="customclass"
              
                 mode="horizontal"
-                defaultSelectedKeys={["2"]}
+        
                 style={{ lineHeight: "90px" }}
               >
-                <Menu.Item key="1" style={{ width: 170 }}>
+                <Menu.Item key="1" style={{ width: 130 }}>
                   <NavLink
                     to="/"
                     style={{
@@ -88,18 +88,7 @@ class Nav extends Component {
                   </NavLink>
                 </Menu.Item>
 
-                <Menu.Item key="2" style={{ width: 170 }} >
-                  <NavLink
-                    to="/contact"
-                    style={{
-                      fontWeight: "bold",
-                      fontSize: "30",
-                      textAlign: "center",
-                    }}
-                  >
-                    Contact us
-                  </NavLink>
-                </Menu.Item>
+         
 
                 <Menu.Item key="3" style={{ width: 170 }}>
                   <NavLink
