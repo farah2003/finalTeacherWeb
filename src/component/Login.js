@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Icon, Input, Button, Card } from "antd";
-
+import { NavLink } from "react-router-dom";
 import * as firebase from "firebase";
 import "./signteacher";
 
@@ -47,17 +47,20 @@ class Login extends Component {
     return (
       <div>
         <div style={{ float: "left" }}>
-          <h1
-            style={{
-              fontFamily: "Satisfy",
-              fontSize: 50,
-              marginTop: 40,
-              marginLeft: 230,
-              color: "#002266",
-            }}
-          >
-            TUTORS PS
-          </h1>
+          <NavLink to="/">
+            {" "}
+            <h1
+              style={{
+                fontFamily: "Satisfy",
+                fontSize: 50,
+                marginTop: 40,
+                marginLeft: 230,
+                color: "#002266",
+              }}
+            >
+              TUTORS PS
+            </h1>
+          </NavLink>
 
           <Card
             className="card"

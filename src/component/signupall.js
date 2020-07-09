@@ -36,17 +36,30 @@ export default class Signupall extends Component {
             <Icon type="setting" style={{ fontSize: "27px" }} />
           </div>
           <div>
-            <label
-              className="Label"
-              style={{
-                marginLeft: 120,
-                paddingTop: 60,
-                fontFamily: "Satisfy",
-                fontSize: 30,
-              }}
-            >
-              Tutors PS
-            </label>
+            <NavLink to="/">
+              {/* <label
+                className="Label"
+                style={{
+                  marginLeft: 120,
+                  paddingTop: 60,
+                  fontFamily: "Satisfy",
+                  fontSize: 30,
+                }}
+              >
+                Tutors PS
+              </label> */}
+              <h1
+                style={{
+                  marginLeft: 110,
+                  paddingTop: 15,
+                  fontFamily: "Satisfy",
+                  fontSize: 30,
+                }}
+              >
+                {" "}
+                TutorsPS
+              </h1>
+            </NavLink>
           </div>
         </div>
         {/* <div>
