@@ -22,20 +22,22 @@ class Home extends Component {
       <div>
         <Nav style={{ position: "fixed" }}></Nav>
 
-        <Carousel autoplay style={{ flexWrap: "wrap" }}>
+        <Carousel autoplay style={{ flexWrap: "wrap" ,marginLeft:'3%'}}>
           <div>
             <div>
+              
               <img
                 src={require("../component/tutoring.jpg")}
-                style={{ width: "100%", height: 500, marginTop: 0 }}
+                style={{ width: "95%", height: 500, marginTop: 0 }}
                 alt="img1"
               />
+              
             </div>
           </div>
           <div>
             <img
               src={require("../component/algebra.jpg")}
-              style={{ width: "100%", height: 500, marginTop: 0 }}
+              style={{ width: "90%", height: 500, marginTop: 0 }}
               alt="img2"
             />
           </div>
@@ -43,10 +45,12 @@ class Home extends Component {
           <div>
             <img
               src={require("../component/peer-tutoring.jpg")}
-              style={{ width: "100%", height: 500, marginTop: 0 }}
+              style={{ width: "90%", height: 500, marginTop: 0 }}
               alt="img3"
             />
+            
           </div>
+          
         </Carousel>
         {/* <div style={{ backgroundColor: "#ffffff", height: 200 }}>
           <div style={{ marginLeft: 340, paddingTop: 30 }}>
@@ -75,7 +79,7 @@ class Home extends Component {
 
         <Footer
           style={{
-            backgroundColor: "#12B7EB",
+            backgroundColor: "#133f91",
             height: "300px",
             paddingBottom: 0,
           }}

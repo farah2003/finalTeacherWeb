@@ -92,33 +92,23 @@ class Nav extends Component {
         <Layout className="layout">
           <Header style={{ background: "white", width: "100%", height:"115px",marginBottom:3
          }}>
-            <div style={{ float: "left", marginTop: 20 }}>
-              {/* <label
-                className="Label"
-                style={{
-                  marginLeft: 120,
-                  marginTop: 40,
-                  color: "white",
-                  fontFamily: "Satisfy",
-                  fontSize: 50,
-                }}
-              >
-                Tutors PS
-              </label> */}
+            <div style={{ float: "left" }}>
+            
               <NavLink to="/">
-                {" "}
-                <h1
-                  style={{
-                    marginLeft: 120,
-                    marginTop: 13,
-                    color: "white",
-                    fontFamily: "Satisfy",
-                    fontSize: 45,
-                  }}
-                >
-                  {" "}
-                  TutorsPS{" "}
-                </h1>
+              <img
+            style={{
+              marginLeft:'50%',
+              marginTop:0,
+              width: 170,
+              height: 130,
+              opacity: "0,5",
+              filter: "alpha(opacity=50)",
+            }}
+            src={require("./LOGO.png")}
+         
+            alt="img"
+          />
+               
               </NavLink>
             </div>
             <div style={{ float: "right" }}>
@@ -135,7 +125,7 @@ class Nav extends Component {
                       fontSize: "25",
                       textAlign: "center",
                       fontWeight: "bold",
-                      color:'#1890ff'
+                      color:'#3676eb'
                     
                     }}
                   >
@@ -161,7 +151,7 @@ class Nav extends Component {
                       fontWeight: "bold",
                       fontSize: "35",
                       textAlign: "center",
-                      color:'#1890ff'
+                      color:'#3676eb'
                     }}
                   >
                     about us
@@ -174,7 +164,7 @@ class Nav extends Component {
                       fontWeight: "bold",
                       fontSize: "35",
                       textAlign: "center",
-                      color:'#1890ff'
+                      color:'#3676eb'
                     }}
                   >
                     {" "}
@@ -188,7 +178,7 @@ class Nav extends Component {
                       fontWeight: "bold",
                       fontSize: "35",
                       textAlign: "center",
-                      color:'#1890ff'
+                      color:'#3676eb'
                     }}
                   >
                     login

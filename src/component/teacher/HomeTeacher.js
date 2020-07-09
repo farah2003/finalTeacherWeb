@@ -1,15 +1,128 @@
 import React, { Component } from "react";
-import { Icon, Button } from "antd";
+import { Icon, Button ,Layout ,Menu} from "antd";
 import { NavLink } from "react-router-dom";
+import { MessageOutlined ,SettingFilled} from '@ant-design/icons';
+const { Header } = Layout;
 export default class HomeTeacher extends Component {
   state = {};
 
   render() {
     return (
       <div>
-        <div
+        <Layout className="layout">
+          <Header style={{ background: "white", width: "100%", height:"80px",marginBottom:3
+         }}>
+            <div style={{ float: "left" }}>
+            
+              <NavLink to="/">
+              <img
+            style={{
+              marginLeft:'50%',
+              marginTop:0,
+              width: 130,
+              height: 80,
+              opacity: "0,5",
+              filter: "alpha(opacity=50)",
+            }}
+            src={require("./logostudent.png")}
+         
+            alt="img"
+          />
+               
+              </NavLink>
+            </div>
+            <div style={{ float: "right" }}>
+              <Menu
+                className="customclass"
+                defaultSelectedKeys={['2']}
+                mode="horizontal"
+                style={{ lineHeight: "80px" ,marginRight:70}}
+              >
+                <Menu.Item key="1" style={{ width: 80,marginRight:50 }}>
+                  <NavLink
+                    to="/"
+                    style={{
+                      fontSize: "25",
+                      textAlign: "center",
+                      fontWeight: "bold",
+                      color:'#3676eb'
+                    
+                    }}
+                  >
+                    Home
+                  </NavLink>
+                </Menu.Item>
+
+                {/*  <SubMenu  style={{width:170}} key="4" title="sign in">
+          <Menu.Item key="5">fgh</Menu.Item>
+          <Menu.Item key="6">Option 6</Menu.Item>
+        
+        </SubMenu>
+              
+        <SubMenu   style={{width:170}} key="5" title="log in">
+          <Menu.Item key="5"> <NavLink to="/login"  style={{fontWeight:'bold',fontSize:'35',textAlign:'center'}}> log in as student  </NavLink></Menu.Item>
+          <Menu.Item key="6">  <Menu.Item key="5"> <NavLink to="/login"  style={{fontWeight:'bold',fontSize:'35',textAlign:'center'}}> log in as student  </NavLink></Menu.Item></Menu.Item>
+        
+    </SubMenu>
+                <Menu.Item key="2" style={{ width: 100,marginRight:50 }}>
+                  <NavLink
+                    to="/about"
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "35",
+                      textAlign: "center",
+                      color:'#3676eb'
+                    }}
+                  >
+                    about us
+                  </NavLink>
+                  </Menu.Item>*/}
+                <Menu.Item key="3" style={{ width: 80,marginRight:50 }}>
+                  <NavLink
+                    to="/signupall"
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "35",
+                      textAlign: "center",
+                      color:'#3676eb'
+                    }}
+                  >
+                  Profile
+                  </NavLink>
+                </Menu.Item>
+                <Menu.Item key="4" style={{ width: 80,marginRight:50 }}>
+                  <NavLink
+                    to="/login"
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "35",
+                      textAlign: "center",
+                      color:'#3676eb'
+                    }}
+                  >
+                   Fill in
+                    <NavLink
+                      to="#"
+                      style={{
+                        fontWeight: "bold",
+                        fontSize: "35",
+                        textAlign: "center",
+                      }}
+                    ></NavLink>
+                  </NavLink>
+                </Menu.Item>
+                <SettingFilled   style={{ fontSize: "25px", paddingTop: 0, marginRight: 50}} />
+                < MessageOutlined   style={{ fontSize: "25px", paddingTop: 0, marginRight: 50 }}/>
+                
+            
+ 
+              </Menu>
+            </div>
+          </Header>
+        </Layout>
+     {/* <div
           style={{
-            height: 60,
+            height: 70,
             width: "100%",
             marginTop: 0,
             backgroundColor: "wh",
@@ -17,40 +130,45 @@ export default class HomeTeacher extends Component {
             borderBottom: "1px solid #f2f2f2",
           }}
         >
-          <div style={{ paddingTop: 18, float: "right", marginRight: 70 }}>
+          <div style={{ paddingTop: 18, float: "right", marginRight: '13%' }}>
             <Icon
               type="home"
               onClick={this.move1}
-              style={{ fontSize: "28px", paddingTop: 0, marginRight: 36 }}
+              style={{ fontSize: "30px", paddingTop: 0, marginRight: 70,color:'#3676eb' }}
             />
 
             <Icon
               type="message"
               onClick={this.move1}
-              style={{ fontSize: "28px", paddingTop: 0, marginRight: 36 }}
+              style={{ fontSize: "30px", paddingTop: 0, marginRight: 70,color:'#3676eb' }}
             />
             <Icon
               type="user"
               onClick={this.move1}
-              style={{ fontSize: "28px", paddingTop: 0, marginRight: 36 }}
+              style={{ fontSize: "30px", paddingTop: 0, marginRight: 70,color:'#3676eb' }}
             />
-            {/*, color: '#1890ff' */}
-            <Icon type="setting" style={{ fontSize: "27px" }} />
+            <Icon type="setting"  style={{ fontSize: "30px", paddingTop:0 ,color:'#3676eb' }} />
           </div>
+          
           <div>
-            <label
-              className="Label"
-              style={{
-                marginLeft: 120,
-                paddingTop: 60,
-                fontFamily: "Satisfy",
-                fontSize: 30,
-              }}
-            >
-              Tutors PS
-            </label>
+          <NavLink to="/">
+              <img
+            style={{
+              marginLeft:'10%',
+              marginTop:0,
+              width: 100,
+              height: 70,
+              opacity: "0,5",
+              filter: "alpha(opacity=50)",
+            }}
+            src={require("./logostudent.png")}
+         
+            alt="img"
+          />
+               
+              </NavLink>
           </div>
-        </div>
+        </div>*/}
         <div>
           <img
             style={{
