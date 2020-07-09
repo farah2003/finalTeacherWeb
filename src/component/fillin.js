@@ -1,29 +1,20 @@
 import React, { Component } from "react";
-import { Input, Checkbox, Button, Card } from "antd";
+import { Input, Button, Card } from "antd";
 import { Icon } from "antd";
-
-import darkTheme from "@ant-design/dark-theme";
-import { NavLink } from "react-router-dom";
+import { Radio } from 'antd';
 import * as firebase from "firebase";
-import { Layout } from "antd";
-const { Header } = Layout;
-const { TextArea } = Input;
-
 class Fillin extends Component {
   state = {
     name: "",
     phone: "",
     age: "",
     email: "",
-    notes: "",
-    disease: "",
-    defaultChecked: "",
-    idA: "",
-    idB: "",
-    idC: "",
-    idD: "",
-    idE: "",
-    idF: "",
+    Price:"",
+    grade:"",
+    sub:"",
+    city:"",
+
+   
   };
 
   addName = (e) => {
@@ -60,126 +51,82 @@ class Fillin extends Component {
       disease: e.target.value,
     });
   };
-  checkA = (e) => {
+
+  addPrice = (e) => {
     this.setState({
-      idA: "",
+      Price: e.target.value,
     });
-    console.log(e.target.checked);
-    if (e.target.checked === true) {
-      console.log("A");
-      this.setState({
-        idA: e.target.checked,
-      });
-    } else {
-      this.setState({
-        idA: "",
-      });
-    }
-  };
-  checkB = (e) => {
-    console.log(e.target.checked);
-    if (e.target.checked === true) {
-      this.setState({
-        idB: e.target.checked,
-      });
-    } else {
-      this.setState({
-        idB: "",
-      });
-    }
   };
 
-  checkC = (e) => {
-    console.log(e.target.checked);
-    if (e.target.checked === true) {
-      this.setState({
-        idC: e.target.checked,
-      });
-    } else {
-      this.setState({
-        idC: "",
-      });
-    }
+  onChangeGrade = e => {
+   
+    this.setState({
+      grade: e.target.value,
+    });
   };
 
-  checkD = (e) => {
-    console.log(e.target.checked);
-    if (e.target.checked === true) {
-      this.setState({
-        idD: e.target.checked,
-      });
-    } else {
-      this.setState({
-        idD: "",
-      });
-    }
+  onChangeSub = e => {
+   console.log(e)
+    this.setState({
+      sub: e.target.value,
+    });
   };
-
-  checkF = (e) => {
-    console.log(e.target.checked);
-    if (e.target.checked === true) {
-      this.setState({
-        idF: e.target.checked,
-      });
-    } else {
-      this.setState({
-        idF: "",
-      });
-    }
-  };
-  checkE = (e) => {
-    console.log(e.target.checked);
-    if (e.target.checked === true) {
-      this.setState({
-        idF: e.target.checked,
-      });
-      this.setState({
-        idF: "",
-      });
-    }
-  };
-
+  onChangeCity = e => {
+    console.log(e)
+     this.setState({
+     city: e.target.value,
+     });
+   };
   send = () => {
-    console.log("bbb", this.state.idB);
-    var name = this.state.name;
-    var phone = this.state.phone;
-    var age = this.state.age;
-    var email = this.state.email;
-    var notes = this.state.notes;
-    var disease = this.state.disease;
-    var idA = this.state.idA;
-    var idB = this.state.idB;
-    var idC = this.state.idC;
-    var idD = this.state.idD;
-    var idF = this.state.idF;
-    var idE = this.state.idE;
+  
+    let  name = this.state.name;
+    let phone = this.state.phone;
+    let age = this.state.age;
+    let email = this.state.email;
+    let Price =this.state.Price
+    let grade=this.state.grade
+    let sub =this.state.sub
+    let city =this.state.city
 
     const db = firebase.firestore();
 
-    db.collection("patients")
+    db.collection("Cards")
       .add({
         Name: name,
         Phone: phone,
         Age: age,
         Email: email,
-        Notes: notes,
-        Disease: disease,
-        calssA: idA,
-        classB: idB,
-        classC: idC,
-        classD: idD,
-        classE: idE,
-        classF: idF,
+        Price:Price,
+        grade:grade,
+        sub:sub,
+        city:city
+       
       })
       .then(function (docRef) {
         console.log("Document written with ID: ", docRef.id);
+       /* this.setState({
+          name:"",
+          phone:"",
+          age:"",
+          email:"",
+          Price:"",
+          grade:"",
+          sub:"",
+          city:""
+        })*/
       })
       .catch(function (error) {
         console.error("Error adding document: ", error);
-      });
+      })
   };
 
+
   render() {
+    const radioStyle = {
+      display: 'block',
+      height: '30px',
+      lineHeight: '30px',
+    };
     return (
       <div>
         <div
@@ -188,18 +135,16 @@ class Fillin extends Component {
             width: "100%",
             marginTop: 0,
             backgroundColor: "wh",
-            marginBottom: 2,
-            borderBottom: "1px solid #f2f2f2",
+        
+           
           }}
         >
           <div style={{ paddingTop: 18, float: "right", marginRight: 70 }}>
-            <NavLink to="./teacher/HomeTeacher">
-              <Icon
-                type="home"
-                onClick={this.move1}
-                style={{ fontSize: "28px", paddingTop: 0, marginRight: 36 }}
-              />
-            </NavLink>
+            <Icon
+              type="home"
+              onClick={this.move1}
+              style={{ fontSize: "28px", paddingTop: 0, marginRight: 36 }}
+            />
 
             <Icon
               type="message"
@@ -215,7 +160,7 @@ class Fillin extends Component {
             <Icon type="setting" style={{ fontSize: "27px" }} />
           </div>
           <div>
-            {/* <label
+            <label
               className="Label"
               style={{
                 marginLeft: 120,
@@ -225,81 +170,86 @@ class Fillin extends Component {
               }}
             >
               Tutors PS
-            </label> */}
-            <NavLink to="./teacher/HomeTeacher">
-              {" "}
-              <h1
-                style={{
-                  marginLeft: 120,
-                  paddingTop: 13,
-                  fontFamily: "Satisfy",
-                  fontSize: 30,
-                }}
-              >
-                TutorsPS
-              </h1>
-            </NavLink>
+            </label>
           </div>
         </div>
-        {/* <div style={{paddingBottom:20}}>
-      <Layout className="layout">
-        <Header style={{ backgroundColor: darkTheme , width:'100%',height:60}}  > 
-          
-         <h1 style={{color:'white'}}>Fill in</h1>
-        </Header>
-     
-        </Layout>
-    </div >*/}
-        <div style={{ backgroundColor: "#e6e6fa" }}>
-          <div
-            style={{ marginBottom: 40, backgroundColor: "#e6e6fa", height: 70 }}
-          ></div>
+      
+        
 
-          <div style={{ width: 200, backgroundColor: "#e6e6fa" }}>
-            <Card
+          <div style={{ backgroundColor:'red',width:'100%',height:'100%' }}>
+          
+<div style={{float:'left',backgroundColor:'green' ,width:'40%',height:'100%'}}> 
+<div style={{backgroundColor:'green',height:860}}> hi</div></div>
+<div style={{float:'right',width:'60%'}}>  <Card
               className="card"
               style={{
                 textAlign: "left",
-                width: 800,
-                height: 900,
-                marginLeft: "80%",
-                marginBottom: 10,
-                borderRadius: 5,
+               
+
+             
               }}
             >
               <div style={{ marginLeft: 70 }}>
                 <h1 style={{ marginBottom: 50 }}>Please fill in</h1>
 
                 <div style={{ marginRight: 60 }}>
+                  
                   <h3 className="h3"> Teacher name </h3>
                   <Input onChange={this.addName} style={{ width: 500 }} />
-                  <h3 className="h3"> Phone number </h3>
-                  <Input onChange={this.addPhone} style={{ width: 500 }} />
                   <h3 className="h3"> Age </h3>
                   <Input onChange={this.addAge} style={{ width: 500 }} />
+                  <h3 className="h3"> Phone number </h3>
+                  <Input onChange={this.addPhone} style={{ width: 500 }} />
+                
                   <h3 className="h3"> Email address </h3>
                   <Input onChange={this.addEmail} style={{ width: 500 }} />
 
-                  <h3 className="h3"> About you and your class </h3>
-                  <TextArea
-                    rows={4}
-                    onChange={this.addNotes}
-                    style={{ width: 500 }}
-                  />
+                  <h3 className="h3"> Price </h3>
+                  <Input onChange={this.addPrice} style={{ width: 500 }} />
+               
+                  <div >
+                 <h3 className="h3">Grade</h3>
+                  < Radio.Group onChange={this.onChangeGrade} value={this.state.grade} size='large'>
+                 <Radio value={'tenth'}style={radioStyle}>  tenth</Radio>
+                 <Radio value={'eleventh'} style={radioStyle} >eleventh</Radio>
+                 <Radio value={'twelfth'}  style={radioStyle}>twelfth</Radio>
 
-                  <h3 className="h3"> Other notes </h3>
-                  <TextArea
-                    rows={4}
-                    onChange={this.addDisease}
-                    style={{ width: 500 }}
-                  />
+                 </Radio.Group>
+                 </div>
+                  <div style={{marginBottom:230}}> 
 
+
+
+<div style={{float:'right' ,width:'40%'}}>
+<h3 className="h3">city</h3>
+< Radio.Group onChange={this.onChangeCity} value={this.state.city} size='large'>
+   <Radio value={'Gaza'} style={radioStyle}>  Gaza</Radio>
+   <Radio value={'westGaza'} style={radioStyle}>westGaza</Radio>
+   <Radio value={'Rafah'} style={radioStyle}>Rafah</Radio>
+   <Radio value={'Khan Younes'} style={radioStyle}>Khan Younes</Radio>
+
+ </Radio.Group>
+
+ </div>
+<div  style={{float:'left' ,width:'40%'}}>
                   <h3 className="h3">The subject you teach </h3>
+                  
                   <div style={{ alignItems: "flex_start" }}>
+                  <Radio.Group onChange={this.onChangeSub} value={this.state.sub} size='large'>
+        <Radio value={'Biology'} style={radioStyle}>  Biology</Radio>
+        <Radio value={'Mathematics'} style={radioStyle}>Mathematics</Radio>
+        <Radio value={'Chemistry'} style={radioStyle}>Chemistry</Radio>
+        <Radio value={'Arabic'} style={radioStyle}>Arabic</Radio>
+        <Radio value={'Physics'} style={radioStyle}>Physics</Radio>
+      </Radio.Group>
+ 
+
+
+      </div>
+                    {/*
                     <div>
                       <Checkbox onChange={this.checkA} /> Biology
                     </div>
-
                     <div>
                       <Checkbox onChange={this.checkB} /> Mathematics
                     </div>
@@ -314,12 +264,13 @@ class Fillin extends Component {
                     </div>
                     <div>
                       <Checkbox onChange={this.checkF} /> Physics
-                    </div>
+                    </div>*/}
                   </div>
-
+                  </div >
+                  <div style={{display:'flex'}}>
                   <Button
                     type="primary"
-                    style={{ color: " #466995", width: 230, marginTop: 20 }}
+                    style={{ width: 230,marginLeft:'70%' }}
                     onClick={this.send}
                   >
                     <h2
@@ -328,11 +279,11 @@ class Fillin extends Component {
                       send
                     </h2>
                   </Button>
+                  </div>
                 </div>
               </div>
-            </Card>
+            </Card></div>
           </div>
-        </div>
       </div>
     );
   }
