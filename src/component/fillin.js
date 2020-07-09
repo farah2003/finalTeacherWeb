@@ -3,7 +3,7 @@ import { Input, Checkbox, Button, Card } from "antd";
 import { Icon } from "antd";
 
 import darkTheme from "@ant-design/dark-theme";
-
+import { NavLink } from "react-router-dom";
 import * as firebase from "firebase";
 import { Layout } from "antd";
 const { Header } = Layout;
@@ -193,11 +193,13 @@ class Fillin extends Component {
           }}
         >
           <div style={{ paddingTop: 18, float: "right", marginRight: 70 }}>
-            <Icon
-              type="home"
-              onClick={this.move1}
-              style={{ fontSize: "28px", paddingTop: 0, marginRight: 36 }}
-            />
+            <NavLink to="./teacher/HomeTeacher">
+              <Icon
+                type="home"
+                onClick={this.move1}
+                style={{ fontSize: "28px", paddingTop: 0, marginRight: 36 }}
+              />
+            </NavLink>
 
             <Icon
               type="message"
@@ -213,7 +215,7 @@ class Fillin extends Component {
             <Icon type="setting" style={{ fontSize: "27px" }} />
           </div>
           <div>
-            <label
+            {/* <label
               className="Label"
               style={{
                 marginLeft: 120,
@@ -223,7 +225,20 @@ class Fillin extends Component {
               }}
             >
               Tutors PS
-            </label>
+            </label> */}
+            <NavLink to="./teacher/HomeTeacher">
+              {" "}
+              <h1
+                style={{
+                  marginLeft: 120,
+                  paddingTop: 60,
+                  fontFamily: "Satisfy",
+                  fontSize: 30,
+                }}
+              >
+                TutorsPS
+              </h1>
+            </NavLink>
           </div>
         </div>
         {/* <div style={{paddingBottom:20}}>

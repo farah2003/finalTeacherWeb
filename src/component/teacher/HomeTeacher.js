@@ -18,11 +18,14 @@ export default class HomeTeacher extends Component {
           }}
         >
           <div style={{ paddingTop: 18, float: "right", marginRight: 70 }}>
-            <Icon
-              type="home"
-              onClick={this.move1}
-              style={{ fontSize: "28px", paddingTop: 0, marginRight: 36 }}
-            />
+            <NavLink to="./HomeTeacher">
+              {" "}
+              <Icon
+                type="home"
+                onClick={this.move1}
+                style={{ fontSize: "28px", paddingTop: 0, marginRight: 36 }}
+              />
+            </NavLink>
 
             <Icon
               type="message"
@@ -38,7 +41,7 @@ export default class HomeTeacher extends Component {
             <Icon type="setting" style={{ fontSize: "27px" }} />
           </div>
           <div>
-            <label
+            {/* <label
               className="Label"
               style={{
                 marginLeft: 120,
@@ -48,7 +51,20 @@ export default class HomeTeacher extends Component {
               }}
             >
               Tutors PS
-            </label>
+            </label> */}
+            <NavLink to="/">
+              <h1
+                style={{
+                  marginLeft: 120,
+                  paddingTop: 13,
+                  fontFamily: "Satisfy",
+                  fontSize: 30,
+                  flex: 1,
+                }}
+              >
+                TutorsPS
+              </h1>
+            </NavLink>
           </div>
         </div>
         <div>
