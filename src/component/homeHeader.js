@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { NavLink } from "react-router-dom";
-import { Menu, Layout, Dropdown } from "antd";
+import { Menu, Layout, Dropdown, Icon } from "antd";
 
 import darkTheme from "@ant-design/dark-theme";
 
@@ -36,16 +36,16 @@ const menulog = (
         style={{ fontWeight: "bold", fontSize: "35", textAlign: "center" }}
       >
         {" "}
-        Log in as teacher{" "}
+        Log in{" "}
       </NavLink>
     </Menu.Item>
     <Menu.Item>
       <NavLink
-        to="/loginstudent"
+        to="/signupall"
         style={{ fontWeight: "bold", fontSize: "35", textAlign: "center" }}
       >
         {" "}
-        Log in as student{" "}
+        sign up{" "}
       </NavLink>
     </Menu.Item>
   </Menu>
@@ -129,7 +129,7 @@ class Nav extends Component {
         
     </SubMenu>*/}
 
-                <Menu.Item key="4" style={{ width: 170 }}>
+                {/* <Menu.Item key="4" style={{ width: 170 }}>
                   <Dropdown overlay={menu} placement="bottomCenter">
                     <NavLink
                       to="#"
@@ -143,7 +143,7 @@ class Nav extends Component {
                       Sign up{" "}
                     </NavLink>
                   </Dropdown>
-                </Menu.Item>
+                </Menu.Item> */}
                 <Menu.Item key="5" style={{ width: 170 }}>
                   <Dropdown overlay={menulog} placement="bottomCenter">
                     <NavLink
@@ -154,8 +154,21 @@ class Nav extends Component {
                         textAlign: "center",
                       }}
                     >
-                      {" "}
-                      Log in{" "}
+                      <Icon
+                        type="user"
+                        style={{
+                          fontSize: "28px",
+                          flex: "center",
+                        }}
+                      />
+                      <NavLink
+                        to="#"
+                        style={{
+                          fontWeight: "bold",
+                          fontSize: "35",
+                          textAlign: "center",
+                        }}
+                      ></NavLink>
                     </NavLink>
                   </Dropdown>
                 </Menu.Item>
