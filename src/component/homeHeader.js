@@ -179,7 +179,7 @@ class Nav extends Component {
                     Sign up{" "}
                   </NavLink>
                 </Menu.Item>
-                <Menu.Item key="5" style={{ width: 170 }}>
+                <Menu.Item key="6" style={{ width: 170 }}>
                   <NavLink
                     to="/login"
                     style={{
