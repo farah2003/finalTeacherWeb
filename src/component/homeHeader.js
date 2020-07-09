@@ -4,14 +4,12 @@ import { NavLink } from "react-router-dom";
 import { Menu, Layout, Dropdown, Icon } from "antd";
 
 import darkTheme from "@ant-design/dark-theme";
-import './Home.css'
+import "./Home.css";
 const { Header } = Layout;
-
 
 const menulog = (
   <Menu style={{ lineHeight: "115px", background: "#12B7EB" }}>
     <Menu.Item>
-
       <NavLink
         to="/login"
         style={{
@@ -61,9 +59,7 @@ class Nav extends Component {
     return (
       <div>
         <Layout className="layout">
-
           <Header style={{ background: "#12B7EB", width: "100%", height: 115 }}>
-
             <div style={{ float: "left", marginTop: 20 }}>
               {/* <label
                 className="Label"
@@ -95,11 +91,9 @@ class Nav extends Component {
             </div>
             <div style={{ float: "right" }}>
               <Menu
-
-       className="customclass         
-      mode="horizontal"
+                className="customclass"
+                mode="horizontal"
                 style={{ lineHeight: "115px", background: "#12B7EB" }}
-
               >
                 <Menu.Item key="2" style={{ width: 170 }}>
                   <NavLink
