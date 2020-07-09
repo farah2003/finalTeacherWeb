@@ -21,7 +21,7 @@ class SHome extends Component {
     const db = firebase.firestore();
 
     let newList = [];
-    db.collection("teacher")
+    db.collection("Cards")
       .get()
       .then((userSnapshot) => {
         userSnapshot.docs.map((doc) => {
@@ -74,7 +74,7 @@ class SHome extends Component {
     const db = firebase.firestore();
 
     let newList = [];
-    db.collection("teacher")
+    db.collection("Cards")
       .where("sub", "==", sub)
       .where("city", "==", location)
       .where("grade", "==", grade)
@@ -83,6 +83,7 @@ class SHome extends Component {
         userSnapshot.docs.map((doc) => {
           console.log("map", doc);
           let x = doc.data();
+
           console.log(x);
           x.id = doc.id;
           newList.push(x);
@@ -227,7 +228,7 @@ class SHome extends Component {
           </Menu>
         </div>
 
-        <div style={{ backgroundColor: "white" }}>
+        <div style={{ backgroundColor: "#dfe3e9" }}>
           {list.map((item, index) => {
             return (
               <div style={{ paddingTop: 100 }}>

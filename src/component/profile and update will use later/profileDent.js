@@ -70,7 +70,9 @@ async componentWillMount(){
     const db = firebase.firestore();
     
 
+    let user1 =   await firebase.auth().currentUser.displayName
     let user =   await firebase.auth().currentUser
+    console.log('ussser',user1)
   // const  id= await user.uid
     db.collection("Users").doc(user.uid).get().then((userdoc) =>{
 
