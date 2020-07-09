@@ -44,7 +44,7 @@ class App extends Component {
                 path="/teacher/HomeTeacher"
                 component={HomeTeacher}
               ></Route>
-              <Route path="/loginall" component={loginall}></Route>
+
               <Route path="/signupall" component={Signupall}></Route>
             </Switch>
           </div>
