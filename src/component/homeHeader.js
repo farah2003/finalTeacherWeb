@@ -90,43 +90,44 @@ class Nav extends Component {
     return (
       <div>
         <Layout className="layout">
-          <Header style={{ background: "white", width: "100%", height:"115px",marginBottom:3
-         }}>
-            <div style={{ float: "left" }}>
-            
-              <NavLink to="/">
-              <img
+          <Header
             style={{
-              marginLeft:'50%',
-              marginTop:0,
-              width: 170,
-              height: 130,
-              opacity: "0,5",
-              filter: "alpha(opacity=50)",
+              background: "white",
+              width: "100%",
+              height: "115px",
+              marginBottom: 3,
             }}
-            src={require("./LOGO.png")}
-         
-            alt="img"
-          />
-               
+          >
+            <div style={{ float: "left" }}>
+              <NavLink to="/">
+                <img
+                  style={{
+                    marginLeft: "50%",
+                    marginTop: 0,
+                    width: 170,
+                    height: 130,
+                    opacity: "0,5",
+                    filter: "alpha(opacity=50)",
+                  }}
+                  src={require("./LOGO.png")}
+                  alt="img"
+                />
               </NavLink>
             </div>
             <div style={{ float: "right" }}>
               <Menu
                 className="customclass"
-                defaultSelectedKeys={['2']}
                 mode="horizontal"
                 style={{ lineHeight: "115px" }}
               >
-                <Menu.Item key="1" style={{ width: 100,marginRight:50 }}>
+                <Menu.Item key="1" style={{ width: 100, marginRight: 50 }}>
                   <NavLink
                     to="/"
                     style={{
                       fontSize: "25",
                       textAlign: "center",
                       fontWeight: "bold",
-                      color:'#3676eb'
-                    
+                      color: "#3676eb",
                     }}
                   >
                     Home
@@ -144,41 +145,41 @@ class Nav extends Component {
           <Menu.Item key="6">  <Menu.Item key="5"> <NavLink to="/login"  style={{fontWeight:'bold',fontSize:'35',textAlign:'center'}}> log in as student  </NavLink></Menu.Item></Menu.Item>
         
     </SubMenu>*/}
-                <Menu.Item key="2" style={{ width: 100,marginRight:50 }}>
+                <Menu.Item key="2" style={{ width: 100, marginRight: 50 }}>
                   <NavLink
                     to="/about"
                     style={{
                       fontWeight: "bold",
                       fontSize: "35",
                       textAlign: "center",
-                      color:'#3676eb'
+                      color: "#3676eb",
                     }}
                   >
                     about us
                   </NavLink>
                 </Menu.Item>
-                <Menu.Item key="3" style={{ width: 100,marginRight:50 }}>
+                <Menu.Item key="3" style={{ width: 100, marginRight: 50 }}>
                   <NavLink
                     to="/signupall"
                     style={{
                       fontWeight: "bold",
                       fontSize: "35",
                       textAlign: "center",
-                      color:'#3676eb'
+                      color: "#3676eb",
                     }}
                   >
                     {" "}
                     Sign up{" "}
                   </NavLink>
                 </Menu.Item>
-                <Menu.Item key="4" style={{ width: 100,marginRight:50 }}>
+                <Menu.Item key="4" style={{ width: 100, marginRight: 50 }}>
                   <NavLink
                     to="/login"
                     style={{
                       fontWeight: "bold",
                       fontSize: "35",
                       textAlign: "center",
-                      color:'#3676eb'
+                      color: "#3676eb",
                     }}
                   >
                     login
