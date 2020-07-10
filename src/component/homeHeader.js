@@ -104,8 +104,8 @@ class Nav extends Component {
                   style={{
                     marginLeft: "50%",
                     marginTop: 0,
-                    width: 170,
-                    height: 130,
+                    width: 150,
+                    height: 110,
                     opacity: "0,5",
                     filter: "alpha(opacity=50)",
                   }}
