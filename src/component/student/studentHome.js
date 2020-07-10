@@ -195,7 +195,7 @@ onSearch3=(val)=> {
     console.log('list',list)
     return( 
      <div >
-           <div style={{height:60,width:"100%",marginTop:0,backgroundColor:"#001a33" ,marginBottom:2,borderBottom:"1px solid #f2f2f2"}}>
+           <div style={{height:60,width:"100%",marginTop:0 ,marginBottom:2,borderBottom:"1px solid #f2f2f2"}}>
         <div style={{paddingTop:18,float:"right",marginRight:70}}>
         <Icon  type="home" 
          onClick={this.move1}
@@ -308,9 +308,6 @@ onSearch3=(val)=> {
       <Icon  type="message" 
      // onClick={()=>this.gotoChat(item)}
       style={{fontSize: '28px',paddingTop:0,marginRight:36 }} />,
-      <Icon  type="save" 
-     onClick={()=>this.saveCard(item)}
-      style={{fontSize: '28px',paddingTop:0,marginRight:36 }} />
    
     ]}
   >
@@ -331,7 +328,9 @@ onSearch3=(val)=> {
                 <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:10}}> City:</label >{item.city} </h6>
                 <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:10}}> Price:</label >{item.Price} </h6>
           <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:10}}> Age:</label >{item.Age}</h6>
-                <button onClick={()=>this.unsave(item.id)}>unsave</button>
+                <button onClick={()=>this.unsave(item.id)}>delete from booked</button>
+                <button onClick={()=>this.saveCard(item)}>booked</button>
+
                 </div>
       </div>}
     />
