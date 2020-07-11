@@ -12,8 +12,8 @@ import Fillin from "./component/fillin";
 import Signinteacher from "./component/signteacher";
 
 import loginstudent from "./component/loginstudent";
-
 import SHome from "./component/student/studentHome";
+import   Rating  from "./component/student/rating";
 import Signupall from "./component/signupall";
 import  HomeTeacher from './component/teacher/HomeTeacher'
 
@@ -45,6 +45,7 @@ class App extends Component {
                 path="/teacher/HomeTeacher"
                 component={HomeTeacher}
               ></Route>
+ <Route path='/student/rating' component={Rating}></Route>
  <Route path='/student/ProfileStudent' component={ProfileStudent}></Route>
               <Route path="/signupall" component={Signupall}></Route>
             </Switch>

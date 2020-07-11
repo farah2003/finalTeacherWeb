@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Input, Button, Card } from "antd";
 import { Icon } from "antd";
 import { Radio } from 'antd';
+import { Rate } from 'antd';
 import * as firebase from "firebase";
 class Fillin extends Component {
   state = {
@@ -267,6 +268,8 @@ class Fillin extends Component {
                     </div>*/}
                   </div>
                   </div >
+
+                
                   <div style={{display:'flex'}}>
                   <Button
                     type="primary"
