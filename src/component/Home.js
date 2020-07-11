@@ -22,15 +22,15 @@ class Home extends Component {
       <div>
         <Nav style={{ position: "fixed" }}></Nav>
         
-        <Content>
-        <div >
-        <img style={{ width:'50%',height:'50%',opacity:'0,5' 
+        <div style={{marginBottom:100,height:500}}>
+        <div style={{float:'left',height:500,backgroundColor:'red',marginRight: 200,}}>
+        <img style={{height:'50%',opacity:'0,5' 
   ,filter: 'alpha(opacity=50)'}}  src={require("./home2.png")} alt="img"/>
   </div>
-  <div style={{float:'Left'}}>
+  <div style={{float:'right',height:500,backgroundColor:'green'}}>
   <h1 >Tutor ps</h1>
   </div>
-      </Content>
+      </div>
 
         <Footer
           style={{
