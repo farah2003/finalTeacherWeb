@@ -11,7 +11,7 @@ import { NavLink } from "react-router-dom";
 
 import "./fillin";
 import Nav from "./homeHeader";
-const { Footer } = Layout;
+const { Footer, Content } = Layout;
 class Home extends Component {
   move = () => {
     this.props.history.push("./fillin");
@@ -21,61 +21,16 @@ class Home extends Component {
     return (
       <div>
         <Nav style={{ position: "fixed" }}></Nav>
-
-        <Carousel autoplay style={{ flexWrap: "wrap" ,marginLeft:'3%'}}>
-          <div>
-            <div>
-              
-              <img
-                src={require("../component/tutoring.jpg")}
-                style={{ width: "95%", height: 500, marginTop: 0 }}
-                alt="img1"
-              />
-              
-            </div>
-          </div>
-          <div>
-            <img
-              src={require("../component/algebra.jpg")}
-              style={{ width: "90%", height: 500, marginTop: 0 }}
-              alt="img2"
-            />
-          </div>
-
-          <div>
-            <img
-              src={require("../component/peer-tutoring.jpg")}
-              style={{ width: "90%", height: 500, marginTop: 0 }}
-              alt="img3"
-            />
-            
-          </div>
-          
-        </Carousel>
-        {/* <div style={{ backgroundColor: "#ffffff", height: 200 }}>
-          <div style={{ marginLeft: 340, paddingTop: 30 }}>
-            <h1 style={{ color: "#002266" }}>
-              {" "}
-              YOU CAN SEND YOUR STATE FROM HERE{" "}
-            </h1>
-          </div>
-          <div style={{ marginLeft: 550, paddingTop: 20 }}>
-            <NavLink to="/fillin">
-              {" "}
-              <Button
-                style={{ width: 200, height: 60 }}
-                onClick={this.move}
-                type="primary"
-              >
-                {" "}
-                <h2 style={{ fontFamily: "AdventPro-Bold	", color: "navy" }}>
-                  {" "}
-                  Fill In{" "}
-                </h2>{" "}
-              </Button>
-            </NavLink>
-          </div>
-        </div> */}
+        
+        <Content>
+        <div >
+        <img style={{ width:'50%',height:'50%',opacity:'0,5' 
+  ,filter: 'alpha(opacity=50)'}}  src={require("./home2.png")} alt="img"/>
+  </div>
+  <div style={{float:'Left'}}>
+  <h1 >Tutor ps</h1>
+  </div>
+      </Content>
 
         <Footer
           style={{
