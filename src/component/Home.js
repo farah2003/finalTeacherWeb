@@ -23,12 +23,17 @@ class Home extends Component {
         <Nav style={{ position: "fixed" }}></Nav>
         
         <div style={{marginBottom:100,height:500}}>
-        <div style={{float:'left',height:500,backgroundColor:'red',marginRight: 200,}}>
+        <div style={{float:'left',marginRight: 200, width:500}}>
         <img style={{height:'50%',opacity:'0,5' 
   ,filter: 'alpha(opacity=50)'}}  src={require("./home2.png")} alt="img"/>
   </div>
-  <div style={{float:'right',height:500,backgroundColor:'green'}}>
-  <h1 >Tutor ps</h1>
+  <div style={{float:'right',height:500,marginRight:140,marginTop:80,}}>
+  <h1 style={{fontSize:60}} > Start </h1>
+  <h1 style={{fontSize:60, paddingBottom:2}} > Learning </h1>
+  <h1 style={{fontSize:90}} > Now ! </h1>
+
+
+
   </div>
       </div>
 
