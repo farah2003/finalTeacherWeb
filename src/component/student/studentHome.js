@@ -28,7 +28,7 @@ class SHome extends Component{
    getlist=()=>{
     const db = firebase.firestore();
     let  user = firebase.auth().currentUser;
-   
+   console.log('useeer',user)
     db.collection("Users").doc(user.uid).get().then((userdoc) =>{
   
       
@@ -217,6 +217,7 @@ onSearch3=(val)=> {
     move1=()=>{
       let  user = firebase.auth().currentUser;
       console.log(user)
+      this.props.history.push('/Chat/chat')
        
        }
 

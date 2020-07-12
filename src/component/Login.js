@@ -20,22 +20,26 @@ class Login extends Component {
     });
   };
   login = () => {
+    console.log('doneeeeehere')
     var email = this.state.email;
     var password = this.state.password;
 
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .catch(function (error) {
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
         // Handle Errors here.
         var errorM = error.code;
         console.log("error", errorM);
+        console.log('doneeeee')
         // ...
       })
       .catch(function (error) {
         console.error("Error adding document: ", error);
+        console.log('doneeeee')
+      }).then(()=>{
+        console.log('log')
+        console.log( 'userr',firebase.auth().currentUser.uid)
+        this.props.history.push( "/student/studentHome")
       })
-      .then(this.props.history.push("./choose"));
+      
   };
   signup = () => {
     this.props.history.push("./sign");
@@ -43,10 +47,8 @@ class Login extends Component {
 
 
         
-     signup=()=>{
-       
-      this.props.history.push('./sign')
-     }
+ 
+  
  
   render(){
     return(
