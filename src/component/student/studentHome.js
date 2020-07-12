@@ -395,7 +395,7 @@ changevisible=(id)=>{
           <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:10}}> Age:</label >{item.Age}</h6>
           <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:10}}> Rate:</label >{item.rating}</h6>
                 <button onClick={()=>this.unsave(item.id)}>delete from booked</button>
-                <button onClick={this.saveCard}>booked</button>
+                <button onClick={()=>this.saveCard(item)}>booked</button>
               
               <label> rate <Rate allowHalf defaultValue={0} onChange={()=>this.changevisible(item.id)}   readOnly  /> </label> 
                 
