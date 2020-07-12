@@ -31,7 +31,7 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Switch>
-              <Route path="/Chat/chat" component={Home} exact></Route>
+              <Route path="/" component={Home} exact></Route>
               <Route path="/about" component={Aboutus}></Route>
               <Route path="/contact" component={Contactus}></Route>
               <Route path="/sign" component={Signin}></Route>
@@ -41,7 +41,7 @@ class App extends Component {
               <Route path="/loginstudent" component={loginstudent}></Route>
               <Route path="/student/studentHome" component={SHome}></Route>
               <Route path='/teacher/HomeTeacher' component={HomeTeacher}></Route>
-              <Route path='/' component={Chat}></Route>
+              <Route path='/Chat/chat' component={Chat}></Route>
               
          
               <Route
