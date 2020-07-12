@@ -41,20 +41,20 @@ class Login extends Component {
     this.props.history.push("./sign");
   };
 
-  render() {
-    return (
-      <div>
-        <div style={{ float: "right" }}>
-          <h1
-            style={{
-              fontFamily: "Satisfy",
-              fontSize: 50,
-              marginTop: 40,
-              color: "#002266",
-            }}
-          >
-            Dent Guide
-          </h1>
+
+        
+     signup=()=>{
+       
+      this.props.history.push('./sign')
+     }
+ 
+  render(){
+    return(
+      <div >
+        <div style={{float:'right'}}>
+       
+     
+     
 
           <Card
             className="card"
@@ -92,21 +92,17 @@ class Login extends Component {
             </Button>
             Or <a href="./signupall">create acount </a>
           </Card>
-        </div>
-        <div style={{ float: "left", width: "45%", height: 670, marginTop: 0 }}>
-          <img
-            style={{
-              backgroundColor: "red",
-              width: "100%",
-              height: "100%",
-              opacity: "0,5",
-              filter: "alpha(opacity=50)",
-            }}
-            src={require("../login.jpg")}
-            onClick={this.pri}
-            alt="img"
-          />
-        </div>
+
+          </div>
+          
+          <div  style={{float: 'left' ,width:'45%',height:670,marginTop:0}} >
+                     
+ <img style={{backgroundColor:'red', width:'100%',height:'100%',opacity:'0,5' 
+  ,filter: 'alpha(opacity=50)'}}  src={require("./tutor.png")} onClick={this.pri} alt="img"/>
+            
+           </div>
+             
+     
       </div>
     );
   }

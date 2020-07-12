@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Menu,Icon, Typography,Button,Card } from 'antd';
-import { Select,Avatar } from 'antd';
+import { Select,Avatar,Modal } from 'antd';
 import * as firebase from 'firebase'
 import './profileStudent'
-
+import { Rate } from 'antd';
 
 import darkTheme from '@ant-design/dark-theme'
 
@@ -18,7 +18,10 @@ class SHome extends Component{
        grade:"",
        location:'',
        list:[],
-       ListPost:[]
+       ListPost:[],
+       rating:'',
+       visible:false,
+       id:''
 
    }
 
@@ -44,10 +47,30 @@ class SHome extends Component{
     })}
   
   componentWillMount(){
+    let newList =[]
+    /*const db = firebase.firestore();
+
+    const observer =db.collection('Cards').onSnapshot(querySnapshot => {
+      querySnapshot.docs.map(doc =>{
+    
+        let x= doc.data()
+    console.log('item',x)
+        x.id=doc.id
+        newList.push(x)    
+           } );
+    
   
+    this.setState({
+            list:newList
+      })
+  }, err => {
+    console.log(`Encountered error: ${err}`);
+  })
+  return ()=>  observer();*/
+
   const db = firebase.firestore();
    
-  let newList =[]
+ 
   db.collection("Cards").get().then((userSnapshot) => {
 
 
@@ -154,10 +177,11 @@ onSearch3=(val)=> {
 
   }
   filter=()=>{
+    console.log('filter')
       const {sub}=this.state
       const {grade}=this.state
       const {location}=this.state
-   
+   console.log(sub,grade,location,'you can filtrr')
       const db = firebase.firestore();
    
       let newList =[]
@@ -168,7 +192,7 @@ onSearch3=(val)=> {
         userSnapshot.docs.map(doc =>{
        console.log("map",doc)
         let x= doc.data()
-    console.log(x)
+    console.log('fliter list',x)
         x.id=doc.id
         newList.push(x)    
            } );
@@ -180,6 +204,11 @@ onSearch3=(val)=> {
     })
 
   }
+  rate=()=>{
+    console.log('rate me')
+    this.props.history.push('./rating')
+ 
+  }
   goToProfile=()=>{
     console.log('goooo')
     this.props.history.push('./profileStudent')
@@ -190,12 +219,48 @@ onSearch3=(val)=> {
       console.log(user)
        
        }
+
+ratingvalue=(value)=>{
+  
+  this.setState({
+    rating:value
+    })
+
+      
+       }
+onOK=(id)=>{
+         const {rating }=this.state
+         console.log('rating',rating)
+         console.log('value in ok',id)
+        
+        const db = firebase.firestore();
+        this.setState({
+          visible:false
+        })
+       
+        let  washingtonRef = db.collection("Cards").doc(id)
+ 
+        console.log('washingtonRef',washingtonRef)
+        return washingtonRef.update({
+        rating
+         })
+        
+      
+       }
+changevisible=(id)=>{
+  console.log('idddddddddddd',id)
+    this.setState({
+      visible:true,
+      id
+    })
+       }
+
   render(){
-    const {list}=this.state
+    const {list,id}=this.state
     console.log('list',list)
     return( 
      <div >
-           <div style={{height:60,width:"100%",marginTop:0,backgroundColor:"#001a33" ,marginBottom:2,borderBottom:"1px solid #f2f2f2"}}>
+           <div style={{height:60,width:"100%",marginTop:0 ,marginBottom:2,borderBottom:"1px solid #f2f2f2"}}>
         <div style={{paddingTop:18,float:"right",marginRight:70}}>
         <Icon  type="home" 
          onClick={this.move1}
@@ -279,9 +344,9 @@ onSearch3=(val)=> {
   
   >
     <Option value="Math">Math</Option>
-    <Option value="physics">physics</Option>
-    <Option value="piology">piology</Option>
-    <Option value="chemistry">chemistry</Option>
+    <Option value="Physics">physics</Option>
+    <Option value="Biology">piology</Option>
+    <Option value="Chemistry">chemistry</Option>
   </Select>
   <Button  onClick={this.filter} style={{width:150,height:45}}>
           Apply
@@ -295,7 +360,7 @@ onSearch3=(val)=> {
           <div style={{backgroundColor:"#f4f7f8"}}>
               {list.map((item,index)=>{
   
-       
+      
         return(
 
           <div style={{paddingTop:100}}> 
@@ -308,9 +373,6 @@ onSearch3=(val)=> {
       <Icon  type="message" 
      // onClick={()=>this.gotoChat(item)}
       style={{fontSize: '28px',paddingTop:0,marginRight:36 }} />,
-      <Icon  type="save" 
-     onClick={()=>this.saveCard(item)}
-      style={{fontSize: '28px',paddingTop:0,marginRight:36 }} />
    
     ]}
   >
@@ -331,7 +393,26 @@ onSearch3=(val)=> {
                 <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:10}}> City:</label >{item.city} </h6>
                 <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:10}}> Price:</label >{item.Price} </h6>
           <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:10}}> Age:</label >{item.Age}</h6>
-                <button onClick={()=>this.unsave(item.id)}>unsave</button>
+          <h6 style={{fontSize:14 }}> <label style={{fontSize:14,marginRight:10}}> Rate:</label >{item.rating}</h6>
+                <button onClick={()=>this.unsave(item.id)}>delete from booked</button>
+                <button onClick={this.saveCard}>booked</button>
+              
+              <label> rate <Rate allowHalf defaultValue={0} onChange={()=>this.changevisible(item.id)}   readOnly  /> </label> 
+                
+                <Modal
+          title="Rating"
+          visible={this.state.visible}
+          onOk={()=>this.onOK(id)}
+          onCancel={()=>{
+            this.setState({
+              visible:false
+            })
+          }}
+        >
+         <Rate allowHalf defaultValue={0} onChange={this.ratingvalue}/>
+
+        </Modal>
+
                 </div>
       </div>}
     />

@@ -81,7 +81,8 @@ class Signin extends Component{
         phone: PhoneNum,
         Email:email,
         Password:password,
-        savecard:[]
+        savecard:[],
+        rating:""
         
 
     })

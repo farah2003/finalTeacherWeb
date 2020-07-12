@@ -92,7 +92,7 @@ export default class HomeTeacher extends Component {
                 </Menu.Item>
                 <Menu.Item key="4" style={{ width: 80,marginRight:50 }}>
                   <NavLink
-                    to="/login"
+                    to="/fillin"
                     style={{
                       fontWeight: "bold",
                       fontSize: "35",
@@ -101,14 +101,7 @@ export default class HomeTeacher extends Component {
                     }}
                   >
                    Fill in
-                    <NavLink
-                      to="#"
-                      style={{
-                        fontWeight: "bold",
-                        fontSize: "35",
-                        textAlign: "center",
-                      }}
-                    ></NavLink>
+                   
                   </NavLink>
                 </Menu.Item>
                 <SettingFilled   style={{ fontSize: "25px", paddingTop: 0, marginRight: 50}} />

@@ -12,12 +12,12 @@ import Fillin from "./component/fillin";
 import Signinteacher from "./component/signteacher";
 
 import loginstudent from "./component/loginstudent";
-
 import SHome from "./component/student/studentHome";
+import   Rating  from "./component/student/rating";
 import Signupall from "./component/signupall";
 import  HomeTeacher from './component/teacher/HomeTeacher'
-
-
+import  Chat from './component/Chat/chat';
+import Try from './component/try'
 class App extends Component {
   pri = () => {
     console.log("farah");
@@ -40,11 +40,15 @@ class App extends Component {
               <Route path="/signteacher" component={Signinteacher}></Route>
               <Route path="/loginstudent" component={loginstudent}></Route>
               <Route path="/student/studentHome" component={SHome}></Route>
-              <Route path='/teacher/HomeTeacher' component={ HomeTeacher}></Route>
+              <Route path='/teacher/HomeTeacher' component={HomeTeacher}></Route>
+              <Route path='/Chat/chat' component={Chat}></Route>
+              
+         
               <Route
-                path="/teacher/HomeTeacher"
-                component={HomeTeacher}
+                path="/Home/try"
+                component={Try}
               ></Route>
+ <Route path='/student/rating' component={Rating}></Route>
  <Route path='/student/ProfileStudent' component={ProfileStudent}></Route>
               <Route path="/signupall" component={Signupall}></Route>
             </Switch>
