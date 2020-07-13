@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -12,10 +13,10 @@ import Typography from "@material-ui/core/Typography";
 import CardHeader from "@material-ui/core/CardHeader";
 import SendIcon from "@material-ui/icons/Send";
 import Input from "@material-ui/core/Input";
-import Paper from '@material-ui/core/Paper';
 import CardActions from "@material-ui/core/CardActions";
-import Moment from 'moment';
-import * as firebase from 'firebase'
+import { NavLink } from "react-router-dom";
+import { Menu, Icon, Button } from "antd";
+
 const useStyles = makeStyles((theme) => ({
   root1: {
     width: "100%",
@@ -39,106 +40,67 @@ const useStyles = makeStyles((theme) => ({
     float: "right",
     marginRight: "9%",
   },
-  root4: {
-    margin:'0 auto',
-    minWidth: '90%',
-
-   
-  },
-  
-  container: {
-    bottom: 0
-  
-  },
- 
-  bubble: {
-    border: "0.5px solid black",
-    borderRadius: "10px",
-    margin: "5px",
-    padding: "10px",
-    display: "inline-block"
-  },
-  composeInput: {
-    padding: '8px',
-
-  },
-  
 }));
-
 
 export default function Chat() {
   const classes = useStyles();
   const [selectedIndex, setSelectedIndex] = React.useState(1);
-  const [Text, setText] = React.useState("");
   const handleListItemClick = (event, index) => {
     setSelectedIndex(index);
   };
-  
-  
-  const dummyData = [
-    {
-      message: " This should be in left",
-      direction: "left"
-    },
-    {
-      message: " This should be in right",
-      direction: "right"
-    },
-    {
-      message: " This should be in left again",
-      direction: "left"
-    },
-    {
-      message: " This should be in right again",
-      direction: "right"
-    }
-  ];
-
-  const chatBubbles = dummyData.map((obj, i = 0) => (
-    <div style={{ display: 'flex'}}>
-       <Avatar alt='Remy Sharp'  />
-      <div className={classes.bubble} >{obj.message}</div>
-    </div>
-  ));
-  const handleChange= (event) => {
-  
-    
-
-   
-  
-    
-    setText(event.target.value)
-    console.log('event',event.target.value)
- 
-  };
-  const timestamp = Moment().valueOf().toString()
-  const gitText=()=>{
-    /////defult uid 
-    const reciverid='3LzS2IyLP2dq4xwr013jiXgPKli1'
-    const senderid="1q4mSLp8ogR7bWSCw1SYi53z7xo2"
-    const db = firebase.firestore();
-    db.collection("finatChat")
-    .doc(reciverid +"_"+ senderid).collection('massage').add ({
-      senderid:senderid,
-      reciverid:reciverid,
-      contant:"hello",
-      time: timestamp
-    })
-   /*to get data
-   db.collection("finatChat")
-   .doc(reciverid +"_"+ senderid)
-   .collection(massage)
-   .onSnapshot(
-      snapshot => {
-        snapshot.docChanges().forEach(change => */
-  }
-
-
-
-
   return (
     <div style={{ height: 900, backgroundColor: "#f5f5f0" }}>
-      <div style={{ height: 60, backgroundColor: "#001a33" }}>
+      <div
+        style={{
+          height: 60,
+          width: "100%",
+          marginTop: 0,
+          marginBottom: 2,
+          borderBottom: "1px solid #f2f2f2",
+        }}
+      >
+        <div style={{ paddingTop: 18, float: "right", marginRight: 70 }}>
+          <NavLink to="../student/studentHome">
+            {" "}
+            <Icon
+              type="home"
+              style={{ fontSize: "28px", paddingTop: 0, marginRight: 36 }}
+            />
+          </NavLink>
+
+          {/* <Icon
+            type="message"
+            style={{ fontSize: "28px", paddingTop: 0, marginRight: 36 }}
+          /> */}
+          <NavLink to="../student/profileStudent">
+            {" "}
+            <Icon
+              type="user"
+              style={{ fontSize: "28px", paddingTop: 0, marginRight: 36 }}
+            />
+          </NavLink>
+
+          {/*, color: '#1890ff' */}
+          <Icon type="setting" style={{ fontSize: "27px" }} />
+        </div>
+        <div style={{ float: "left" }}>
+          <NavLink to="/">
+            <img
+              style={{
+                marginLeft: 100,
+                marginTop: 0,
+                width: 80,
+                height: 60,
+                opacity: "0,5",
+                filter: "alpha(opacity=50)",
+              }}
+              src={require("./LOGO.png")}
+              alt="img"
+            />
+          </NavLink>
+        </div>
+      </div>
+      {/* <div style={{ height: 60, backgroundColor: "#001a33" }}>
         <div style={{ paddingTop: 18, float: "right", marginRight: 70 }}></div>
         <div>
           <label
@@ -152,7 +114,7 @@ export default function Chat() {
             }}
           ></label>
         </div>
-      </div>
+      </div> */}
       <div style={{ marginTop: 30 }}>
         <Card className={classes.root} variant="outlined">
           <scroll>
@@ -176,8 +138,76 @@ export default function Chat() {
                   />
                 </ListItem>
                 <Divider />
-                
-               
+                <ListItem
+                  button
+                  selected={selectedIndex === 1}
+                  onClick={(event) => handleListItemClick(event, 1)}
+                >
+                  <ListItemAvatar>
+                    <Avatar />
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary="Karam Hillis"
+                    secondary="okay  12 July 2020"
+                  />
+                </ListItem>
+                <Divider />
+                <ListItem
+                  button
+                  selected={selectedIndex === 2}
+                  onClick={(event) => handleListItemClick(event, 2)}
+                >
+                  <ListItemAvatar>
+                    <Avatar />
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary="Sufyan Serdah"
+                    secondary="okay  12 July 2020"
+                  />
+                </ListItem>
+                <Divider />
+                <ListItem
+                  button
+                  selected={selectedIndex === 3}
+                  onClick={(event) => handleListItemClick(event, 3)}
+                >
+                  <ListItemAvatar>
+                    <Avatar />
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary="Farah Shaqoura"
+                    secondary="okay  12 July 2020"
+                  />
+                </ListItem>
+                <Divider />
+                <ListItem
+                  button
+                  selected={selectedIndex === 4}
+                  onClick={(event) => handleListItemClick(event, 4)}
+                >
+                  <ListItemAvatar>
+                    <Avatar />
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary="Farah Shaqoura"
+                    secondary="okay  12 July 2020"
+                  />
+                </ListItem>
+                <Divider />
+                <ListItem
+                  button
+                  selected={selectedIndex === 5}
+                  onClick={(event) => handleListItemClick(event, 5)}
+                >
+                  <ListItemAvatar>
+                    <Avatar />
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary="Farah Shaqoura"
+                    secondary="okay  12 July 2020"
+                  />
+                </ListItem>
+                <Divider />
               </List>
             </CardContent>
           </scroll>
@@ -192,25 +222,15 @@ export default function Chat() {
           />
           <Divider />
 
-          <CardContent style={{ marginTop: "60%" }}>
-          <div className={classes.container}>{chatBubbles}</div>
-          </CardContent>
+          <CardContent style={{ marginTop: "60%" }}></CardContent>
           <CardActions>
-          <Card   className={classes.root4}>
-           
             <Input
-            className={classes.composeInput}
               multiline={true}
               fullWidth={true}
               disableUnderline={true}
-              onChange ={handleChange}
               placeholder={"Send a message!"}
-              endAdornment={<SendIcon  className={classes.searchIcon} 
-              onClick={gitText}
-             />}
+              endAdornment={<SendIcon className={classes.searchIcon} />}
             />
-
-            </Card>
           </CardActions>
         </Card>
       </div>
