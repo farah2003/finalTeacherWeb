@@ -16,24 +16,18 @@ export default class Signupall extends Component {
           }}
         >
           <div style={{ paddingTop: 18, float: "right", marginRight: 70 }}>
+            <NavLink to="/">
             <Icon
               type="home"
               onClick={this.move1}
               style={{ fontSize: "28px", paddingTop: 0, marginRight: 36 }}
-            />
 
-            <Icon
-              type="message"
-              onClick={this.move1}
-              style={{ fontSize: "28px", paddingTop: 0, marginRight: 36 }}
             />
-            <Icon
-              type="user"
-              onClick={this.move1}
-              style={{ fontSize: "28px", paddingTop: 0, marginRight: 36 }}
-            />
-            {/*, color: '#1890ff' */}
-            <Icon type="setting" style={{ fontSize: "27px" }} />
+            </NavLink>
+
+
+
+
           </div>
           <div style={{ float: "left" }}>
             <NavLink to="/">
@@ -52,40 +46,48 @@ export default class Signupall extends Component {
             </NavLink>
           </div>
         </div>
-        {/* <div>
-            <img
-              style={{
-                backgroundColor: "red",
-                width: "100%",
-                height: 500,
-                opacity: 0.5,
-              }}
-              onClick={this.pri}
-              alt="img"
-            />
-          </div> */}
-        <div style={{ backgroundColor: "#ffffff", height: 200 }}>
-          <div style={{ marginLeft: 340, paddingTop: 30 }}>
-            <h1 style={{ color: "#002266" }}> join Tutors PS as: </h1>
-          </div>
 
+        <div style={{ backgroundColor: "#ffffff", height: 200 }}>
+        
+          <img
+            style={{
+              width: 1000,
+              height:"220%",
+              alignItems: "center",
+              display: "flex",
+              marginLeft:200,
+              justifyContent: "center",
+              
+            }}
+            src={require("./unsp.jpg")}
+            
+            alt="img"
+          />
+  <div style={{ marginLeft: 120, paddingTop: 20, }}>
+            <h1 style={{ color: "#636e72",marginTop:-10 }}> join Tutors PS as: </h1>
+          </div>
           <div
             style={{
-              marginLeft: 550,
-              paddingTop: 20,
+              
+
+              marginLeft: 500,
+              marginBottom:-50,
+              marginTop:-65,
+              paddingTop: 10,
               justifyContent: "space-between",
               flex: "column",
             }}
+            
           >
             <NavLink to="/sign">
               {" "}
               <Button
-                style={{ width: 200, height: 60, flex: "row-reverse" }}
+                style={{ width: 200, height: 70, flex: "row-reverse",marginRight:100 }}
                 onClick={this.move}
-                type="primary"
+                type="dashed"
               >
                 {" "}
-                <h2 style={{ fontFamily: "AdventPro-Bold	", color: "white" }}>
+                <h2 style={{ fontFamily: "AdventPro-Bold	", color: "#0984e3" }}>
                   {" "}
                   Student{" "}
                 </h2>{" "}
@@ -95,12 +97,12 @@ export default class Signupall extends Component {
             <NavLink to="/signteacher">
               {" "}
               <Button
-                style={{ width: 200, height: 60, margin: 60 }}
+                style={{ width: 200, height: 70, flex:"row-reverse" }}
                 onClick={this.move}
-                type="primary"
+                type="dashed"
               >
                 {" "}
-                <h2 style={{ fontFamily: "AdventPro-Bold	", color: "white" }}>
+                <h2 style={{ fontFamily: "AdventPro-Bold	", color: "#0984e3" }}>
                   {" "}
                   Teacher{" "}
                 </h2>{" "}

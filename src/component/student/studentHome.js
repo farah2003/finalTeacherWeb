@@ -265,8 +265,9 @@ class SHome extends Component {
               />
             </NavLink>
             {/*, color: '#1890ff' */}
-            <Icon type="setting" style={{ fontSize: "27px" }} />
+
           </div>
+          
           <div style={{ float: "left" }}>
             <NavLink to="/">
               <img
