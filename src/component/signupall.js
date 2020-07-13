@@ -35,30 +35,20 @@ export default class Signupall extends Component {
             {/*, color: '#1890ff' */}
             <Icon type="setting" style={{ fontSize: "27px" }} />
           </div>
-          <div>
+          <div style={{ float: "left" }}>
             <NavLink to="/">
-              {/* <label
-                className="Label"
+              <img
                 style={{
-                  marginLeft: 120,
-                  paddingTop: 60,
-                  fontFamily: "Satisfy",
-                  fontSize: 30,
+                  marginLeft: 100,
+                  marginTop: 0,
+                  width: 80,
+                  height: 55,
+                  opacity: "0,5",
+                  filter: "alpha(opacity=50)",
                 }}
-              >
-                Tutors PS
-              </label> */}
-              <h1
-                style={{
-                  marginLeft: 110,
-                  paddingTop: 15,
-                  fontFamily: "Satisfy",
-                  fontSize: 30,
-                }}
-              >
-                {" "}
-                TutorsPS
-              </h1>
+                src={require("./LOGO.png")}
+                alt="img"
+              />
             </NavLink>
           </div>
         </div>
