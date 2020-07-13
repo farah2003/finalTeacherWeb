@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -13,6 +14,9 @@ import CardHeader from "@material-ui/core/CardHeader";
 import SendIcon from "@material-ui/icons/Send";
 import Input from "@material-ui/core/Input";
 import CardActions from "@material-ui/core/CardActions";
+import { NavLink } from "react-router-dom";
+import { Menu, Icon, Button } from "antd";
+
 const useStyles = makeStyles((theme) => ({
   root1: {
     width: "100%",
@@ -46,7 +50,57 @@ export default function Chat() {
   };
   return (
     <div style={{ height: 900, backgroundColor: "#f5f5f0" }}>
-      <div style={{ height: 60, backgroundColor: "#001a33" }}>
+      <div
+        style={{
+          height: 60,
+          width: "100%",
+          marginTop: 0,
+          marginBottom: 2,
+          borderBottom: "1px solid #f2f2f2",
+        }}
+      >
+        <div style={{ paddingTop: 18, float: "right", marginRight: 70 }}>
+          <NavLink to="../student/studentHome">
+            {" "}
+            <Icon
+              type="home"
+              style={{ fontSize: "28px", paddingTop: 0, marginRight: 36 }}
+            />
+          </NavLink>
+
+          {/* <Icon
+            type="message"
+            style={{ fontSize: "28px", paddingTop: 0, marginRight: 36 }}
+          /> */}
+          <NavLink to="../student/profileStudent">
+            {" "}
+            <Icon
+              type="user"
+              style={{ fontSize: "28px", paddingTop: 0, marginRight: 36 }}
+            />
+          </NavLink>
+
+          {/*, color: '#1890ff' */}
+          <Icon type="setting" style={{ fontSize: "27px" }} />
+        </div>
+        <div style={{ float: "left" }}>
+          <NavLink to="/">
+            <img
+              style={{
+                marginLeft: 100,
+                marginTop: 0,
+                width: 80,
+                height: 60,
+                opacity: "0,5",
+                filter: "alpha(opacity=50)",
+              }}
+              src={require("./LOGO.png")}
+              alt="img"
+            />
+          </NavLink>
+        </div>
+      </div>
+      {/* <div style={{ height: 60, backgroundColor: "#001a33" }}>
         <div style={{ paddingTop: 18, float: "right", marginRight: 70 }}></div>
         <div>
           <label
@@ -60,7 +114,7 @@ export default function Chat() {
             }}
           ></label>
         </div>
-      </div>
+      </div> */}
       <div style={{ marginTop: 30 }}>
         <Card className={classes.root} variant="outlined">
           <scroll>
