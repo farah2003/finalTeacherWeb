@@ -214,8 +214,7 @@ export default class HomeTeacher extends Component {
         >
           <div style={{ marginLeft: 340, paddingTop: 30 }}>
             <h1 style={{ color: "#002266" }}>
-              {" "}
-              make your own teacher card by pressing the button below{" "}
+              Make your own teacher card by pressing the button below
             </h1>
           </div>
 

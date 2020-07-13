@@ -289,6 +289,7 @@ class SHome extends Component {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            backgroundColor: "",
           }}
         >
           <img
