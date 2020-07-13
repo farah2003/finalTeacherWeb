@@ -1,8 +1,3 @@
-
- 
-
-
-
 import React, { Component } from "react";
 
 import { Button, Card, Layout, Icon, Carousel } from "antd";
@@ -21,21 +16,32 @@ class Home extends Component {
     return (
       <div>
         <Nav style={{ position: "fixed" }}></Nav>
-        
-        <div style={{marginBottom:100,height:500}}>
-        <div style={{float:'left',marginRight: 200, width:500}}>
-        <img style={{height:'50%',opacity:'0,5' 
-  ,filter: 'alpha(opacity=50)'}}  src={require("./home2.png")} alt="img"/>
-  </div>
-  <div style={{float:'right',height:500,marginRight:140,marginTop:80,}}>
-  <h1 style={{fontSize:60}} > Start </h1>
-  <h1 style={{fontSize:60, paddingBottom:2}} > Learning </h1>
-  <h1 style={{fontSize:90}} > Now ! </h1>
 
-
-
-  </div>
-      </div>
+        <div style={{ marginBottom: 100, height: 500 }}>
+          <div style={{ float: "left", marginRight: 200, width: 500 }}>
+            <img
+              style={{
+                height: "50%",
+                opacity: "0,5",
+                filter: "alpha(opacity=50)",
+              }}
+              src={require("./home2.png")}
+              alt="img"
+            />
+          </div>
+          <div
+            style={{
+              float: "right",
+              height: 500,
+              marginRight: 140,
+              marginTop: 80,
+            }}
+          >
+            <h1 style={{ fontSize: 60 }}> Start </h1>
+            <h1 style={{ fontSize: 60, paddingBottom: 2 }}> Learning </h1>
+            <h1 style={{ fontSize: 90 }}> Now ! </h1>
+          </div>
+        </div>
 
         <Footer
           style={{
@@ -45,9 +51,9 @@ class Home extends Component {
           }}
         >
           <div style={{ padding: 20 }}>
-            <h2 style={{ color: "navy" }}>Contact us</h2>
+            <h2 style={{ color: "grey" }}>Contact us</h2>
             <a href="https://mail.google.com/mail/u/1/#inbox">
-              <Icon type="mail" style={{ fontSize: 30, color: "navy" }} />
+              <Icon type="mail" style={{ fontSize: 30, color: "grey" }} />
               <label style={{ color: "white", fontSize: 22 }}>
                 {" "}
                 tutorsps@gmail.com
@@ -57,7 +63,7 @@ class Home extends Component {
           <div style={{ paddingLeft: 17 }}>
             <a>
               {" "}
-              <Icon type="phone" style={{ fontSize: 30, color: "navy" }} />
+              <Icon type="phone" style={{ fontSize: 30, color: "grey" }} />
               <label style={{ color: "white", fontSize: 22 }}>
                 {" "}
                 0321312000000
@@ -68,7 +74,7 @@ class Home extends Component {
           <div style={{ paddingLeft: 17, padding: 15 }}>
             <a href="https://www.facebook.com/karam.hillis">
               {" "}
-              <Icon type="facebook" style={{ fontSize: 30, color: "navy" }} />
+              <Icon type="facebook" style={{ fontSize: 30, color: "grey" }} />
               <label style={{ color: "white", fontSize: 22 }}>
                 {" "}
                 Farah Shaquora{" "}
@@ -78,7 +84,7 @@ class Home extends Component {
           <div style={{ paddingLeft: 30, padding: 15 }}>
             <a href="http://facebook.com/profile.php?id=100025261596847">
               {" "}
-              <Icon type="facebook" style={{ fontSize: 30, color: "navy" }} />
+              <Icon type="facebook" style={{ fontSize: 30, color: "grey" }} />
               <label style={{ color: "white", fontSize: 22 }}>
                 {" "}
                 Karam Hillis

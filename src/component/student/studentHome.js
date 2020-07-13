@@ -284,13 +284,42 @@ class SHome extends Component {
             </NavLink>
           </div>
         </div>
-        <div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <img
-            style={{ backgroundColor: "red", width: "100%", height: 320 }}
+            style={{
+              backgroundColor: "red",
+              width: "70%",
+              height: 450,
+              alignItems: "center",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
             src={require("./homestudent.jpg")}
             onClick={this.pri}
             alt="img"
           />
+          {/* <View
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Text>
+              if one is searching for success, we shall help them find it
+            </Text>
+          </View> */}
         </div>
         <div>
           {
