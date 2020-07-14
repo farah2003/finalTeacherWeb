@@ -14,7 +14,7 @@ export default class HomeTeacher extends Component {
             style={{
               background: "white",
               width: "100%",
-              height: "80px",
+              height: "90px",
               marginBottom: 3,
             }}
           >
@@ -25,7 +25,7 @@ export default class HomeTeacher extends Component {
                     marginLeft: "50%",
                     marginTop: 0,
                     width: 130,
-                    height: 80,
+                    height:90,
                     opacity: "0,5",
                     filter: "alpha(opacity=50)",
                   }}
@@ -39,7 +39,7 @@ export default class HomeTeacher extends Component {
                 className="customclass"
                 defaultSelectedKeys={["2"]}
                 mode="horizontal"
-                style={{ lineHeight: "80px", marginRight: 70 }}
+                style={{ lineHeight: "90px", marginRight: 70 }}
               >
                 <Menu.Item key="1" style={{ width: 80, marginRight: 50 }}>
                   <NavLink
@@ -55,33 +55,10 @@ export default class HomeTeacher extends Component {
                   </NavLink>
                 </Menu.Item>
 
-                {/*  <SubMenu  style={{width:170}} key="4" title="sign in">
-          <Menu.Item key="5">fgh</Menu.Item>
-          <Menu.Item key="6">Option 6</Menu.Item>
-        
-        </SubMenu>
               
-        <SubMenu   style={{width:170}} key="5" title="log in">
-          <Menu.Item key="5"> <NavLink to="/login"  style={{fontWeight:'bold',fontSize:'35',textAlign:'center'}}> log in as student  </NavLink></Menu.Item>
-          <Menu.Item key="6">  <Menu.Item key="5"> <NavLink to="/login"  style={{fontWeight:'bold',fontSize:'35',textAlign:'center'}}> log in as student  </NavLink></Menu.Item></Menu.Item>
-        
-    </SubMenu>
-                <Menu.Item key="2" style={{ width: 100,marginRight:50 }}>
-                  <NavLink
-                    to="/about"
-                    style={{
-                      fontWeight: "bold",
-                      fontSize: "35",
-                      textAlign: "center",
-                      color:'#3676eb'
-                    }}
-                  >
-                    about us
-                  </NavLink>
-                  </Menu.Item>*/}
                 <Menu.Item key="3" style={{ width: 80, marginRight: 50 }}>
                   <NavLink
-                    to=""
+                    to="./HomeTeacher"
                     style={{
                       fontWeight: "bold",
                       fontSize: "35",
@@ -105,66 +82,26 @@ export default class HomeTeacher extends Component {
                     Fill in
                   </NavLink>
                 </Menu.Item>
-                <SettingFilled
-                  style={{ fontSize: "25px", paddingTop: 0, marginRight: 50 }}
-                />
-                <MessageOutlined
-                  style={{ fontSize: "25px", paddingTop: 0, marginRight: 50 }}
-                />
+                <Menu.Item key="5" style={{ width: 80, marginRight: 10 }}>
+                  <NavLink
+                    to="/fillin"
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "35",
+                      textAlign: "center",
+                      color: "#3676eb",
+                    }}
+                  >
+                    Chat
+                  </NavLink>
+                </Menu.Item>
+              
               </Menu>
             </div>
           </Header>
         </Layout>
-        {/* <div
-          style={{
-            height: 70,
-            width: "100%",
-            marginTop: 0,
-            backgroundColor: "wh",
-            marginBottom: 2,
-            borderBottom: "1px solid #f2f2f2",
-          }}
-        >
-          <div style={{ paddingTop: 18, float: "right", marginRight: '13%' }}>
-            <Icon
-              type="home"
-              onClick={this.move1}
-              style={{ fontSize: "30px", paddingTop: 0, marginRight: 70,color:'#3676eb' }}
-            />
-
-            <Icon
-              type="message"
-              onClick={this.move1}
-              style={{ fontSize: "30px", paddingTop: 0, marginRight: 70,color:'#3676eb' }}
-            />
-            <Icon
-              type="user"
-              onClick={this.move1}
-              style={{ fontSize: "30px", paddingTop: 0, marginRight: 70,color:'#3676eb' }}
-            />
-            <Icon type="setting"  style={{ fontSize: "30px", paddingTop:0 ,color:'#3676eb' }} />
-          </div>
-          
-          <div>
-          <NavLink to="/">
-              <img
-            style={{
-              marginLeft:'10%',
-              marginTop:0,
-              width: 100,
-              height: 70,
-              opacity: "0,5",
-              filter: "alpha(opacity=50)",
-            }}
-            src={require("./logostudent.png")}
-         
-            alt="img"
-          />
-               
-              </NavLink>
-          </div>
-        </div>*/}
-        <div>
+        
+      {/*  <div>
           <img
             style={{
               backgroundColor: "red",
@@ -192,8 +129,8 @@ export default class HomeTeacher extends Component {
             >
               Teachers make the world a better place{" "}
             </h1>
-
-            {/* <Button
+            
+             <Button
               type="dashed"
               htmlType="submit"
               className="login-form-button"
@@ -202,9 +139,9 @@ export default class HomeTeacher extends Component {
             >
               {" "}
               Learn more{" "}
-            </Button> */}
+            </Button> 
           </div>
-        </div>
+        </div>  */}
         <div
           style={{
             backgroundColor: "#ffffff",
@@ -212,13 +149,33 @@ export default class HomeTeacher extends Component {
             justifyContent: "center",
           }}
         >
-          <div style={{ marginLeft: 340, paddingTop: 30 }}>
-            <h1 style={{ color: "#002266" }}>
-              Make your own teacher card by pressing the button below
-            </h1>
+        
+       
+          <div style={{ marginBottom: 100, height: 500 }}>
+          <div style={{ float: "left", marginRight: 200, width: 500 }}>
+            <img
+              style={{
+                height: "100",
+                width:"100",
+                opacity: "0,5",
+                filter: "alpha(opacity=50)",
+              }}
+              src={require("./home2.png")}
+              alt="img"
+            />
           </div>
-
-          <div style={{ paddingTop: 20, left: "32%" }}>
+          <div
+            style={{
+              float: "right",
+              height: 500,
+              marginRight: 140,
+              marginTop: 80,
+            }}
+          >
+            <h1 style={{ fontSize: 60 }}> fill </h1>
+            <h1 style={{ fontSize: 60, paddingBottom: 2 }}> your </h1>
+            <h1 style={{ fontSize: 90 }}> info </h1>
+            <div style={{ paddingTop: 20, left: "32%" }}>
             <NavLink to="/fillin">
               {" "}
               <Button
@@ -226,14 +183,16 @@ export default class HomeTeacher extends Component {
                 onClick={this.move}
                 type="primary"
               >
-                {" "}
+           
                 <h2 style={{ fontFamily: "AdventPro-Bold	", color: "white" }}>
-                  {" "}
-                  Fill In{" "}
-                </h2>{" "}
+            
+                  Fill In
+                </h2>
               </Button>
             </NavLink>
           </div>
+          </div>
+        </div>
         </div>
       </div>
     );

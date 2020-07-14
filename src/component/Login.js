@@ -53,7 +53,7 @@ class Login extends Component {
   render(){
     return(
       <div >
-        <div style={{float:'right'}}>
+        <div style={{float:'right',marginTop:120}}>
        
      
      
@@ -97,10 +97,18 @@ class Login extends Component {
 
           </div>
           
-          <div  style={{float: 'left' ,width:'45%',height:670,marginTop:0}} >
+          <div  style={{float: 'left' ,width:'45%',height:670,marginTop:0,backgroundColor:"#f4f7f8"}} >
+            <div style={{marginTop:150}}>
+              <div style={{marginLeft:80}}>
+              <h1>hhhjhjhkjhhhjhjhkjhhhjhjhkjhhhjhjhkj</h1>
+              <h1 style={{marginLeft:20,color:' #ffcc00'}}>hhhjhjhkjhhhjhjhkjhhhjhj</h1>
+              <h1 style={{marginLeft:40}}>hhhjhjhkjhhhjhjhkjhh</h1>
+              </div>
+             
+            </div>
                      
- <img style={{backgroundColor:'red', width:'100%',height:'100%',opacity:'0,5' 
-  ,filter: 'alpha(opacity=50)'}}  src={require("./tutor.png")} onClick={this.pri} alt="img"/>
+ <img style={{backgroundColor:'red', width:'25%',height:'25%',opacity:'0,5' ,marginLeft:200
+  ,filter: 'alpha(opacity=50)'}}  src={require("./LOGO LOG IN.png")} onClick={this.pri} alt="img"/>
             
            </div>
              

@@ -1,114 +1,74 @@
 import React, { Component } from "react";
-import { Icon, Button } from "antd";
+import 'antd/dist/antd.css';
+import { Icon, Input, Button, Card } from "antd";
+import { Radio } from 'antd';
 import { NavLink } from "react-router-dom";
+import Nav from "./homeHeader";
+
 export default class Signupall extends Component {
+state={
+  value:""
+}
+
+  onChange4 = e => {
+    console.log('radio4 checked', e.target.value);
+    this.setState({
+      value: e.target.value,
+    });
+  };
+  goTeacher=()=>{
+    this.props.history.push( "/signteacher")
+  }
+  goStudent=()=>{
+    this.props.history.push( "/sign")
+  }
   render() {
+
+    
     return (
-      <div>
-        <div
-          style={{
-            height: 60,
-            width: "100%",
-            marginTop: 0,
-            backgroundColor: "wh",
-            marginBottom: 2,
-            borderBottom: "1px solid #f2f2f2",
-          }}
-        >
-          <div style={{ paddingTop: 18, float: "right", marginRight: 70 }}>
-            <NavLink to="/">
-            <Icon
-              type="home"
-              onClick={this.move1}
-              style={{ fontSize: "28px", paddingTop: 0, marginRight: 36 }}
+      <div style={{backgroundColor:"#f4f7f8"}}>
+        <Nav style={{ position: "fixed" }}></Nav>
+        <div style={{marginTop:0,backgroundColor:"#f4f7f8",display:'flex',justifyContent:'center',marginTop:80,marginBottom:100}}>
+        <div style={{width:'85%'}}>
+        <div style={{float:'right'}}>
+       
+     
+     
 
-            />
-            </NavLink>
-
-
-
-
-          </div>
-          <div style={{ float: "left" }}>
-            <NavLink to="/">
-              <img
-                style={{
-                  marginLeft: 100,
-                  marginTop: 0,
-                  width: 80,
-                  height: 55,
-                  opacity: "0,5",
-                  filter: "alpha(opacity=50)",
-                }}
-                src={require("./LOGO.png")}
-                alt="img"
-              />
-            </NavLink>
-          </div>
-        </div>
-
-        <div style={{ backgroundColor: "#ffffff", height: 200 }}>
-        
-          <img
-            style={{
-              width: 1000,
-              height:"220%",
-              alignItems: "center",
-              display: "flex",
-              marginLeft:200,
-              justifyContent: "center",
-              
-            }}
-            src={require("./unsp.jpg")}
-            
-            alt="img"
-          />
-  <div style={{ marginLeft: 120, paddingTop: 20, }}>
-            <h1 style={{ color: "#636e72",marginTop:-10 }}> join Tutors PS as: </h1>
-          </div>
-          <div
-            style={{
-              
-
-              marginLeft: 500,
-              marginBottom:-50,
-              marginTop:-65,
-              paddingTop: 10,
-              justifyContent: "space-between",
-              flex: "column",
-            }}
-            
+          <Card
+            className="card"
+           
+            style={{ width: 550, height: 450,marginRight:24,height:500}}
           >
-            <NavLink to="/sign">
-              {" "}
-              <Button
-                style={{ width: 200, height: 70, flex: "row-reverse",marginRight:100 }}
-                onClick={this.move}
-                type="dashed"
-              >
-                {" "}
-                <h2 style={{ fontFamily: "AdventPro-Bold	", color: "#0984e3" }}>
-                  {" "}
-                  Student{" "}
-                </h2>{" "}
-              </Button>
-            </NavLink>
+             <div style={{marginTop:60}}>
+           <div style={{display:'flex',justifyContent:'center'}}>
+             <h3>Join Toutor PS  as a</h3>
+            </div>
+          
+       <div style={{display:'flex',justifyContent:'center'}}>
+          <Radio.Group defaultValue="a" buttonStyle="solid"onChange={this.onChange4} >
+      <Radio.Button value="a" style={{width:130,textAlign:'center',height:40}} onClick={this.goStudent}>Student</Radio.Button>
+      <Radio.Button value="b" style={{width:130,textAlign:'center',height:40}}onClick={this.goTeacher} >Teacher</Radio.Button>
 
-            <NavLink to="/signteacher">
-              {" "}
-              <Button
-                style={{ width: 200, height: 70, flex:"row-reverse" }}
-                onClick={this.move}
-                type="dashed"
-              >
-                {" "}
-                <h2 style={{ fontFamily: "AdventPro-Bold	", color: "#0984e3" }}>
-                  {" "}
-                  Teacher{" "}
-                </h2>{" "}
-              </Button>
-            </NavLink>
+    </Radio.Group>
+    </div>
+    </div>
+    <div style={{marginTop:50}}>
+    <img style={{backgroundColor:'red', width:'50%',height:'50%',opacity:'0,5' ,marginLeft:110
+  ,filter: 'alpha(opacity=50)'}}  src={require("./logo.png")} onClick={this.pri} alt="img"/>
+            
+    </div>
+          </Card>
+
           </div>
+          
+          <div  style={{float: 'left' ,width:550,height:500,backgroundColor:"#1761e8",marginLeft:24}} >
+            <h1>fhjfhjfhfjhfjdk</h1>
+            
+           </div>
+             
+     
+      </div>
         </div>
       </div>
     );

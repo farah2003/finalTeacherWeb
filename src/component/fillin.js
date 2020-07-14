@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { Input, Button, Card } from "antd";
+import { Input, Button, Card ,Layout, Menu} from "antd";
 import { Icon } from "antd";
 import { Radio } from "antd";
 import { Rate } from "antd";
 import { NavLink } from "react-router-dom";
 
 import * as firebase from "firebase";
+const { Header } = Layout;
 class Fillin extends Component {
   state = {
     name: "",
@@ -126,61 +127,112 @@ class Fillin extends Component {
     };
     return (
       <div>
-        <div
-          style={{
-            height: 60,
-            width: "100%",
-            marginTop: 0,
-            marginBottom: 2,
-            borderBottom: "1px solid #f2f2f2",
-          }}
-        >
-          <div style={{ paddingTop: 18, float: "right", marginRight: 70 }}>
-            <NavLink to="./teacher/HomeTeacher">
-              {" "}
-              <Icon
-                type="home"
-                style={{ fontSize: "28px", paddingTop: 0, marginRight: 36 }}
-              />
-            </NavLink>
-
-            {/* <Icon
-            type="message"
-            style={{ fontSize: "28px", paddingTop: 0, marginRight: 36 }}
-          /> */}
-
-            {/*, color: '#1890ff' */}
-            <Icon type="setting" style={{ fontSize: "27px" }} />
-          </div>
-          <div style={{ float: "left" }}>
-            <NavLink to="/">
-              <img
-                style={{
-                  marginLeft: 100,
-                  marginTop: 0,
-                  width: 80,
-                  height: 60,
-                  opacity: "0,5",
-                  filter: "alpha(opacity=50)",
-                }}
-                src={require("./LOGO.png")}
-                alt="img"
-              />
-            </NavLink>
-          </div>
-        </div>
-
-        <div style={{ backgroundColor: "red", width: "100%", height: "100%" }}>
-          <div
+       
+         
+          <Header
             style={{
-              float: "left",
-              backgroundColor: "green",
-              width: "40%",
-              height: "100%",
+              background: "white",
+              width: "100%",
+              height: "75px",
+              marginBottom: 3,
             }}
           >
-            <div style={{ backgroundColor: "green", height: 860 }}> hi</div>
-          </div>
+            <div style={{ float: "left" }}>
+              <NavLink to="/">
+                <img
+                  style={{
+                    marginLeft: "50%",
+                    marginTop: 0,
+                    width: 130,
+                    height:75,
+                    opacity: "0,5",
+                    filter: "alpha(opacity=50)",
+                  }}
+                  src={require("./logostudent.png")}
+                  alt="img"
+                />
+              </NavLink>
+            </div>
+            <div style={{ float: "right" }}>
+              <Menu
+                className="customclass"
+                defaultSelectedKeys={["2"]}
+                mode="horizontal"
+                style={{ lineHeight: "76px", marginRight: 70 }}
+              >
+                <Menu.Item key="1" style={{ width: 80, marginRight: 50 }}>
+                  <NavLink
+                    to="./teacher/HomeTeacher"
+                    style={{
+                      fontSize: "25",
+                      textAlign: "center",
+                      fontWeight: "bold",
+                      color: "#3676eb",
+                    }}
+                  >
+                    Home
+                  </NavLink>
+                </Menu.Item>
+
+              
+                <Menu.Item key="3" style={{ width: 80, marginRight: 50 }}>
+                  <NavLink
+           
+
+                    to="./teacher/HomeTeacher"
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "35",
+                      textAlign: "center",
+                      color: "#3676eb",
+                    }}
+                  >
+                    Profile
+                  </NavLink>
+                </Menu.Item>
+                <Menu.Item key="4" style={{ width: 80, marginRight: 50 }}>
+                  <NavLink
+                    to="/fillin"
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "35",
+                      textAlign: "center",
+                      color: "#3676eb",
+                    }}
+                  >
+                    Fill in
+                  </NavLink>
+                </Menu.Item>
+                <Menu.Item key="5" style={{ width: 80, marginRight: 10 }}>
+                  <NavLink
+                    to="/fillin"
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "35",
+                      textAlign: "center",
+                      color: "#3676eb",
+                    }}
+                  >
+                    Chat
+                  </NavLink>
+                </Menu.Item>
+              
+              </Menu>
+            </div>
+          </Header>
+        <div style={{ backgroundColor: "red", width: "100%", height: "100%" }}>
+        <div  style={{float: 'left' ,width:'40%',height:675,marginTop:0,backgroundColor:"#1761e8"}} >
+            <div style={{marginTop:190}}>
+              <div style={{marginLeft:40}}>
+              <h1  style={{color:' white'}}>hhhjhjhkjhhhjhjhkjhhhjhjhkjhhhjhjhkj</h1>
+              <h1 style={{marginLeft:20,color:' white'}}>hhhjhjhkjhhhjhjhkjhhhjhj</h1>
+              <h1 style={{marginLeft:40,color:' white'}}>hhhjhjhkjhhhjhjhkjhh</h1>
+              </div>
+             
+            </div>
+ 
+            
+           </div>
           <div style={{ float: "right", width: "60%" }}>
             {" "}
             <Card
@@ -189,29 +241,30 @@ class Fillin extends Component {
                 textAlign: "left",
               }}
             >
-              <div style={{ marginLeft: 70 }}>
-                <h1 style={{ marginBottom: 50 }}>Please fill in</h1>
+              <div style={{ marginLeft: 90 }}>
+               
 
                 <div style={{ marginRight: 60 }}>
-                  <h3 className="h3"> Teacher name </h3>
-                  <Input onChange={this.addName} style={{ width: 500 }} />
-                  <h3 className="h3"> Age </h3>
-                  <Input onChange={this.addAge} style={{ width: 500 }} />
-                  <h3 className="h3"> Phone number </h3>
-                  <Input onChange={this.addPhone} style={{ width: 500 }} />
+                  <h3 className="h3" style={{marginBottom:20}}> Teacher name:
+                  <Input onChange={this.addName} style={{ marginLeft:20,width: 400 }} /></h3>
+                  <h3 className="h3" style={{marginBottom:20}} > Age:
+                  <Input onChange={this.addAge} style={{ marginLeft:95, width: 400 }} /> </h3>
+                  <h3 className="h3" style={{marginBottom:20}} > Phone number:
+                  <Input onChange={this.addPhone} style={{ marginLeft:15, width: 400 }} /></h3>
 
-                  <h3 className="h3"> Email address </h3>
-                  <Input onChange={this.addEmail} style={{ width: 500 }} />
+                  <h3 className="h3" style={{marginBottom:20}} > Email address:
+                  <Input onChange={this.addEmail} style={{marginLeft:20, width: 400 }} /> </h3>
 
-                  <h3 className="h3"> Price </h3>
-                  <Input onChange={this.addPrice} style={{ width: 500 }} />
+                  <h3 className="h3" style={{marginBottom:20}}> Price:
+                  <Input onChange={this.addPrice} style={{marginLeft:84, width: 400 }} /> </h3>
 
                   <div>
-                    <h3 className="h3">Grade</h3>
+                    <h3 className="h3" >Grade</h3>
                     <Radio.Group
                       onChange={this.onChangeGrade}
                       value={this.state.grade}
                       size="large"
+                      style={{marginBottom:20}}
                     >
                       <Radio value={"tenth"} style={radioStyle}>
                         {" "}
@@ -225,7 +278,7 @@ class Fillin extends Component {
                       </Radio>
                     </Radio.Group>
                   </div>
-                  <div style={{ marginBottom: 230 }}>
+                  <div style={{ marginBottom: 190 }}>
                     <div style={{ float: "right", width: "40%" }}>
                       <h3 className="h3">city</h3>
                       <Radio.Group
@@ -275,36 +328,18 @@ class Fillin extends Component {
                           </Radio>
                         </Radio.Group>
                       </div>
-                      {/*
-                    <div>
-                      <Checkbox onChange={this.checkA} /> Biology
-                    </div>
-                    <div>
-                      <Checkbox onChange={this.checkB} /> Mathematics
-                    </div>
-                    <div>
-                      <Checkbox onChange={this.checkC} /> Chemistry
-                    </div>
-                    <div>
-                      <Checkbox onChange={this.checkD} /> English
-                    </div>
-                    <div>
-                      <Checkbox onChange={this.checkE} /> Arabic
-                    </div>
-                    <div>
-                      <Checkbox onChange={this.checkF} /> Physics
-                    </div>*/}
+                     
                     </div>
                   </div>
 
                   <div style={{ display: "flex" }}>
                     <Button
-                      type="primary"
-                      style={{ width: 230, marginLeft: "70%" }}
+                      
+                      style={{ width: 230,height:40, marginLeft: "70%",backgroundColor:'#1761e8' }}
                       onClick={this.send}
                     >
                       <h2
-                        style={{ fontFamily: "AdventPro-Bold	", color: "white" }}
+                        style={{  color: "white", paddingTop:5}}
                       >
                         send
                       </h2>

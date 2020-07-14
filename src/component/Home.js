@@ -46,15 +46,15 @@ class Home extends Component {
         <Footer
           style={{
             backgroundColor: "#133f91",
-            height: "300px",
+            height: "350px",
             paddingBottom: 0,
           }}
         >
           <div style={{ padding: 20 }}>
-            <h2 style={{ color: "grey" }}>Contact us</h2>
+            <h2 style={{ color: "#ffd633" }}>Contact us</h2>
             <a href="https://mail.google.com/mail/u/1/#inbox">
-              <Icon type="mail" style={{ fontSize: 30, color: "grey" }} />
-              <label style={{ color: "white", fontSize: 22 }}>
+              <Icon type="mail" style={{ fontSize: 25, color: "#ffd633" }} />
+              <label style={{ color: "white", fontSize: 18 }}>
                 {" "}
                 tutorsps@gmail.com
               </label>
@@ -63,8 +63,8 @@ class Home extends Component {
           <div style={{ paddingLeft: 17 }}>
             <a>
               {" "}
-              <Icon type="phone" style={{ fontSize: 30, color: "grey" }} />
-              <label style={{ color: "white", fontSize: 22 }}>
+              <Icon type="phone" style={{ fontSize: 25, color: "#ffd633" }} />
+              <label style={{ color: "white", fontSize: 18 }}>
                 {" "}
                 0321312000000
               </label>
@@ -74,18 +74,28 @@ class Home extends Component {
           <div style={{ paddingLeft: 17, padding: 15 }}>
             <a href="https://www.facebook.com/karam.hillis">
               {" "}
-              <Icon type="facebook" style={{ fontSize: 30, color: "grey" }} />
-              <label style={{ color: "white", fontSize: 22 }}>
+              <Icon type="facebook" style={{ fontSize: 25, color: "#ffd633" }} />
+              <label style={{ color: "white", fontSize:18}}>
                 {" "}
                 Farah Shaquora{" "}
+              </label>
+            </a>
+          </div>
+          <div style={{ paddingLeft: 17, padding: 15 }}>
+            <a href="https://www.facebook.com/karam.hillis">
+              {" "}
+              <Icon type="facebook" style={{ fontSize: 25, color: "#ffd633" }} />
+              <label style={{ color: "white", fontSize:18}}>
+                {" "}
+                sufyan serdah{" "}
               </label>
             </a>
           </div>
           <div style={{ paddingLeft: 30, padding: 15 }}>
             <a href="http://facebook.com/profile.php?id=100025261596847">
               {" "}
-              <Icon type="facebook" style={{ fontSize: 30, color: "grey" }} />
-              <label style={{ color: "white", fontSize: 22 }}>
+              <Icon type="facebook" style={{ fontSize: 25, color: "#ffd633" }} />
+              <label style={{ color: "white", fontSize: 18 }}>
                 {" "}
                 Karam Hillis
               </label>
@@ -94,7 +104,7 @@ class Home extends Component {
             <label
               style={{
                 color: "white",
-                fontSize: 22,
+                fontSize: 18,
                 paddingLeft: 200,
                 paddingTop: 400,
               }}
@@ -106,7 +116,7 @@ class Home extends Component {
             <label
               style={{
                 color: "white",
-                fontSize: 22,
+                fontSize: 18,
                 paddingLeft: 200,
                 paddingBottom: 0,
               }}
