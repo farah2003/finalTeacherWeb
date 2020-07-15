@@ -98,11 +98,10 @@ class Login extends Component {
           </div>
           
           <div  style={{float: 'left' ,width:'45%',height:670,marginTop:0,backgroundColor:"#f4f7f8"}} >
-            <div style={{marginTop:150}}>
+            <div style={{marginTop:170}}>
               <div style={{marginLeft:80}}>
-              <h1>hhhjhjhkjhhhjhjhkjhhhjhjhkjhhhjhjhkj</h1>
-              <h1 style={{marginLeft:20,color:' #ffcc00'}}>hhhjhjhkjhhhjhjhkjhhhjhj</h1>
-              <h1 style={{marginLeft:40}}>hhhjhjhkjhhhjhjhkjhh</h1>
+              <h1 style={{color:'#3676eb'}}>strive for greatness and success</h1>
+            
               </div>
              
             </div>

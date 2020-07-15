@@ -156,9 +156,8 @@ class Signin extends Component {
         <div  style={{float: 'left' ,width:'45%',height:670,marginTop:0,backgroundColor:"#f4f7f8"}} >
             <div style={{marginTop:150}}>
               <div style={{marginLeft:80}}>
-              <h1>hhhjhjhkjhhhjhjhkjhhhjhjhkjhhhjhjhkj</h1>
-              <h1 style={{marginLeft:20,color:'#ffd633'}}>hhhjhjhkjhhhjhjhkjhhhjhj</h1>
-              <h1 style={{marginLeft:40}}>hhhjhjhkjhhhjhjhkjhh</h1>
+              <h1 style={{color:'#3676eb'}} >The 1000 mile journey start with</h1>
+              <h1 style={{marginLeft:180,color:'#3676eb'}}>steps</h1>
               </div>
              
             </div>

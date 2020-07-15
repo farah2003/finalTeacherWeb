@@ -63,8 +63,11 @@ state={
           </div>
           
           <div  style={{float: 'left' ,width:550,height:500,backgroundColor:"#1761e8",marginLeft:24}} >
-            <h1>fhjfhjfhfjhfjdk</h1>
-            
+          <h2 style ={{marginLeft:30,marginTop:150,color:'white'}}>everyone's approach to greatness id different</h2>
+            <h2 style ={{marginLeft:60,marginTop:10,color:'white'}} >  but the results are always trumendous</h2>
+           
+           
+            the path to greatness is tough but is worth the struggle
            </div>
              
      

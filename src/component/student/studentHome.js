@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { Menu, Icon, Typography, Button, Card } from "antd";
+import { Menu, Icon, Typography, Button, Card, Layout} from "antd";
 import { Select, Avatar, Modal } from "antd";
 import * as firebase from "firebase";
 import "./profileStudent";
 import { Rate } from "antd";
 import { NavLink } from "react-router-dom";
 import darkTheme from "@ant-design/dark-theme";
-
+const { Header } = Layout;
 const { Text } = Typography;
 const { Option } = Select;
 const { Meta } = Card;
@@ -233,57 +233,102 @@ class SHome extends Component {
     return (
       <div>
         <div
-          style={{
-            height: 60,
-            width: "100%",
-            marginTop: 0,
-            marginBottom: 2,
-            borderBottom: "1px solid #f2f2f2",
-          }}
-        >
-          <div style={{ paddingTop: 18, float: "right", marginRight: 70 }}>
-            <NavLink to="./studentHome">
-              {" "}
-              <Icon
-                type="home"
-                style={{ fontSize: "28px", paddingTop: 0, marginRight: 36 }}
-              />
-            </NavLink>
-            <NavLink to="../Chat/chat">
-              {" "}
-              <Icon
-                type="message"
-                style={{ fontSize: "28px", paddingTop: 0, marginRight: 36 }}
-              />
-            </NavLink>
-
-            <NavLink to="./profileStudent">
-              {" "}
-              <Icon
-                type="user"
-                style={{ fontSize: "28px", paddingTop: 0, marginRight: 36 }}
-              />
-            </NavLink>
-            {/*, color: '#1890ff' */}
-
-          </div>
           
-          <div style={{ float: "left" }}>
-            <NavLink to="/">
-              <img
-                style={{
-                  marginLeft: 100,
-                  marginTop: 0,
-                  width: 80,
-                  height: 60,
-                  opacity: "0,5",
-                  filter: "alpha(opacity=50)",
-                }}
-                src={require("./LOGO.png")}
-                alt="img"
-              />
-            </NavLink>
-          </div>
+       
+        >
+           <Layout className="layout">
+          <Header
+            style={{
+              background: "white",
+              width: "100%",
+              height: "90px",
+              marginBottom: 3,
+            }}
+          >
+            <div style={{ float: "left" }}>
+              <NavLink to="/">
+                <img
+                  style={{
+                    marginLeft: "50%",
+                    marginTop: 0,
+                    width: 130,
+                    height:90,
+                    opacity: "0,5",
+                    filter: "alpha(opacity=50)",
+                  }}
+                  src={require("./logo.png")}
+                  alt="img"
+                />
+              </NavLink>
+            </div>
+            <div style={{ float: "right" }}>
+              <Menu
+                className="customclass"
+                defaultSelectedKeys={["2"]}
+                mode="horizontal"
+                style={{ lineHeight: "90px", marginRight: 70 }}
+              >
+                <Menu.Item key="1" style={{ width: 80, marginRight: 50 }}>
+                  <NavLink
+                    to="./HomeTeacher"
+                    style={{
+                      fontSize: "25",
+                      textAlign: "center",
+                      fontWeight: "bold",
+                      color: "#3676eb",
+                    }}
+                  >
+                    Home
+                  </NavLink>
+                </Menu.Item>
+
+              
+                <Menu.Item key="3" style={{ width: 80, marginRight: 50 }}>
+                  <NavLink
+                    to="./HomeTeacher"
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "35",
+                      textAlign: "center",
+                      color: "#3676eb",
+                    }}
+                  >
+                    Profile
+                  </NavLink>
+                </Menu.Item>
+                <Menu.Item key="4" style={{ width: 80, marginRight: 50 }}>
+                  <NavLink
+                    to="/fillin"
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "35",
+                      textAlign: "center",
+                      color: "#3676eb",
+                    }}
+                  >
+                    Fill in
+                  </NavLink>
+                </Menu.Item>
+                <Menu.Item key="5" style={{ width: 80, marginRight: 10 }}>
+                  <NavLink
+                    to="/fillin"
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "35",
+                      textAlign: "center",
+                      color: "#3676eb",
+                    }}
+                  >
+                    Chat
+                  </NavLink>
+                </Menu.Item>
+              
+              </Menu>
+            </div>
+          </Header>
+        </Layout>
+          
+         
         </div>
         <div
           style={{
@@ -296,32 +341,44 @@ class SHome extends Component {
           <img
             style={{
               backgroundColor: "red",
-              width: "70%",
-              height: 450,
+              width: "100%",
+              height: 300,
               alignItems: "center",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
             }}
-            src={require("./homestudent.jpg")}
+            src={require("./findyourteacher.png")}
             onClick={this.pri}
             alt="img"
           />
-          {/* <View
-            style={{
+       
+            <h1  style={{
               position: "absolute",
-              top: 0,
-              left: 0,
+              top: 120,
+              left: 700,
               right: 0,
               bottom: 0,
               justifyContent: "center",
               alignItems: "center",
-            }}
-          >
-            <Text>
-              if one is searching for success, we shall help them find it
-            </Text>
-          </View> */}
+            }}>
+            if one is searching for success
+            </h1>
+
+            <h1  style={{
+              position: "absolute",
+              top: 180,
+              left: 700,
+              right: 0,
+              bottom: 0,
+              justifyContent: "center",
+              alignItems: "center",
+            }}>
+             , we shall help them find it
+            </h1>
+          
+          
+          
         </div>
         <div>
           {
@@ -330,7 +387,7 @@ class SHome extends Component {
         </div>
         <div style={{ borderTop: "1px solid #f2f2f2" }}></div>
 
-        <div>
+        <div >
           <Menu
             mode="horizontal"
             id="navbar"
@@ -383,7 +440,7 @@ class SHome extends Component {
               <Option value="Biology">piology</Option>
               <Option value="Chemistry">chemistry</Option>
             </Select>
-            <Button onClick={this.filter} style={{ width: 150, height: 45 }}>
+            <Button  type="primary" onClick={this.filter} style={{ width: 200, height: 45 }}>
               Apply
             </Button>
           </Menu>
@@ -395,7 +452,7 @@ class SHome extends Component {
               <div style={{ paddingTop: 100 }}>
                 <div style={{ backgroundColor: "#f4f7f8" }}>
                   <Card
-                    style={{ width: "63%", margin: "0 auto" }}
+                    style={{ width: "63%", margin: "0 auto" ,boxShadow:'0 4px 8px 0 rgba(0, 0, 0, 0.2)'}}
                     actions={[
                       <Icon
                         type="message"

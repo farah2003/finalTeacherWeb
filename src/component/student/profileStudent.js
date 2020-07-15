@@ -104,7 +104,7 @@ class ProfileStudent extends Component {
                   opacity: "0,5",
                   filter: "alpha(opacity=50)",
                 }}
-                src={require("./LOGO.png")}
+                src={require("./logo.png")}
                 alt="img"
               />
             </NavLink>
@@ -125,12 +125,12 @@ class ProfileStudent extends Component {
           >
             <div style={{ height: 300, float: "left" }}>
               <img
-                src={require("./homestudent.jpg")}
+                src={require("./profile.png")}
                 style={{
                   position: "absolute",
                   border: "6px solid #f2f2f2",
-                  width: "20%",
-                  height: "40%",
+                  width: "10%",
+                  height: "20%",
                   borderRadius: "50%",
                   marginLeft: 70,
                   marginTop: 60,
@@ -167,42 +167,42 @@ class ProfileStudent extends Component {
           >
             <div>
               {" "}
-              <h1 style={{ marginLeft: 20, marginBottom: 30, marginTop: 30 }}>
+              <h3 style={{ marginLeft: 20, marginBottom: 30, marginTop: 30 }}>
                 {" "}
                 Profile details:
-              </h1>
+              </h3>
             </div>
             <div style={{ display: "flex" }}>
               <div style={{ float: "right", marginRight: 20 }}>
                 <Icon
                   type="user"
-                  style={{ fontSize: "40px", color: "#4d4dff", padding: 20 }}
+                  style={{ fontSize: "25px", color: "#4d4dff", padding: 20 }}
                 />
               </div>
               <div style={{ float: "left" }}>
-                <h1>{this.state.Name}</h1>
+                <h3>{this.state.Name}</h3>
               </div>
             </div>
             <div style={{ display: "flex" }}>
               <div style={{ float: "right", marginRight: 20 }}>
                 <Icon
                   type="mail"
-                  style={{ color: "#4d4dff", fontSize: "40px", padding: 20 }}
+                  style={{ color: "#4d4dff", fontSize: "25px", padding: 20 }}
                 />
               </div>
               <div style={{ float: "left" }}>
-                <h1> {this.state.Email}</h1>
+                <h3> {this.state.Email}</h3>
               </div>
             </div>
             <div style={{ display: "flex" }}>
               <div style={{ float: "right", marginRight: 20 }}>
                 <Icon
                   type="phone"
-                  style={{ color: "#4d4dff", fontSize: "40px", padding: 20 }}
+                  style={{ color: "#4d4dff", fontSize: "25px", padding: 20 }}
                 />
               </div>
               <div style={{ float: "left" }}>
-                <h1>{this.state.Phone}</h1>
+                <h3>{this.state.Phone}</h3>
                 {/* <Button
                   style={{
                     color: "#4d4dff",
@@ -223,10 +223,10 @@ class ProfileStudent extends Component {
 
           {/*card*/}
           <div style={{ alignItems: "center" }}>
-            <h1 style={{ marginLeft: 50, marginBottom: 30, marginTop: 30 }}>
+            <h2 style={{ marginLeft: 50, marginBottom: 30, marginTop: 30 }}>
               {" "}
               Selected teachers:
-            </h1>
+            </h2>
             {list.map((item, index) => {
               return (
                 <div>
