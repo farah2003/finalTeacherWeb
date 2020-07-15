@@ -18,6 +18,7 @@ import Signupall from "./component/signupall";
 import  HomeTeacher from './component/teacher/HomeTeacher'
 import  Chat from './component/Chat/chat';
 import  AotherChat  from './component/Chat/anotherChat';
+import ProfileTeahcer from './component/teacher/TeacherProfile'
 
 import Try from './component/try'
 class App extends Component {
@@ -43,6 +44,7 @@ class App extends Component {
               <Route path="/loginstudent" component={loginstudent}></Route>
               <Route path="/student/studentHome" component={SHome}></Route>
               <Route path='/teacher/HomeTeacher' component={HomeTeacher}></Route>
+              <Route path='/teacher/TeacherProfile' component={ProfileTeahcer}></Route>
               <Route path='/Chat/chat' component={Chat}></Route>
               <Route path='/Chat/aChat' component={AotherChat}></Route>
               

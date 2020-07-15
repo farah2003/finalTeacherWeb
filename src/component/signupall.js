@@ -67,7 +67,7 @@ state={
             <h2 style ={{marginLeft:60,marginTop:10,color:'white'}} >  but the results are always trumendous</h2>
            
            
-            the path to greatness is tough but is worth the struggle
+     
            </div>
              
      

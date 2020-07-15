@@ -59,6 +59,7 @@ class Login extends Component {
      
 
           <Card
+         
             className="card"
             title={
               <h2
@@ -67,7 +68,7 @@ class Login extends Component {
                 log in
               </h2>
             }
-            style={{ width: 450, height: 450, marginTop: 40, marginRight: 200 }}
+            style={{ width: 450, height: 450, marginTop: 40, marginRight: 200, boxShadow:'0 4px 8px 0 rgba(0, 0, 0, 0.2)'}}
           >
             <Input
               style={{ marginTop: 20, height: 35 }}
@@ -98,7 +99,11 @@ class Login extends Component {
           </div>
           
           <div  style={{float: 'left' ,width:'45%',height:670,marginTop:0,backgroundColor:"#f4f7f8"}} >
-            <div style={{marginTop:170}}>
+          <div style={{ backgroundColor:'#3676eb',height:120,width:'100%'  }}>
+            
+            </div>
+            
+            <div style={{marginTop:100}}>
               <div style={{marginLeft:80}}>
               <h1 style={{color:'#3676eb'}}>strive for greatness and success</h1>
             

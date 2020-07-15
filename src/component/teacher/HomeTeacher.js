@@ -58,7 +58,7 @@ export default class HomeTeacher extends Component {
               
                 <Menu.Item key="3" style={{ width: 80, marginRight: 50 }}>
                   <NavLink
-                    to="./HomeTeacher"
+                    to="/teacher/TeacherProfile"
                     style={{
                       fontWeight: "bold",
                       fontSize: "35",
@@ -77,6 +77,19 @@ export default class HomeTeacher extends Component {
                       fontWeight: "bold",
                       fontSize: "35",
                       textAlign: "center",
+                      color: "#3676eb",
+                    }}
+                  >
+                    fill in
+                  </NavLink>
+                </Menu.Item>
+                <Menu.Item key="5" style={{ width: 80, marginRight: 50 }}>
+                  <NavLink
+                    to="./Chat/aChat"
+                    style={{
+                      fontSize: "25",
+                      textAlign: "center",
+                      fontWeight: "bold",
                       color: "#3676eb",
                     }}
                   >
@@ -129,58 +142,60 @@ export default class HomeTeacher extends Component {
               Learn more{" "}
             </Button> 
           </div>
-        </div>  */}
-        <div
-          style={{
-            backgroundColor: "#ffffff",
-            height: 200,
-            justifyContent: "center",
-          }}
-        >
-        
-       
-          <div style={{ marginBottom: 100, height: 500 }}>
-          <div style={{ float: "left", marginRight: 200, width: 500 }}>
-            <img
-              style={{
-                height: "100",
-                width:"100",
-                opacity: "0,5",
-                filter: "alpha(opacity=50)",
-              }}
-              src={require("./home2.png")}
-              alt="img"
-            />
-          </div>
-          <div
+        </div>  */}  
+        <div>
+          <img
             style={{
-              float: "right",
-              height: 500,
-              marginRight: 140,
-              marginTop: 80,
+              backgroundColor: "red",
+              width: "90%",
+              height: 450,
+              opacity: 0.5,
+              marginLeft:'5%'
             }}
-          >
-            <h1 style={{ fontSize: 60 }}> fill </h1>
-            <h1 style={{ fontSize: 60, paddingBottom: 2 }}> your </h1>
-            <h1 style={{ fontSize: 90 }}> info </h1>
-            <div style={{ paddingTop: 20, left: "32%" }}>
+            src={require("./homestudent.jpg")}
+            onClick={this.pri}
+            alt="img"
+          />
+          <div style={{ position: "absolute", top: "30%", right: "20%" }}>
+            <h1 style={{ fontSize: "100", fontWeight: "bold" }}>
+             Teacher make the world {" "}
+            </h1>
+            <h1 style={{ fontSize: "100", fontWeight: "bold" ,right:'2%',marginLeft:100}}>
+             better place {" "}
+            </h1>
+     
+
+          
+          </div>
+        </div>
+
+     
+          
+       
+        <div style={{ backgroundColor: "#ffffff", height: 200 }}>
+          <div style={{ marginLeft:500, paddingTop: 30 }}>
+            <h1 style={{ color: "#002266" }}>
+              {" "}
+            Make your own teaher card{" "}
+            </h1>
+          </div>
+
+          <div style={{ marginLeft: 550, paddingTop: 20 }}>
             <NavLink to="/fillin">
               {" "}
               <Button
-                style={{ width: 200, height: 60, left: "45%" }}
+                style={{ width: 200, height: 60 }}
                 onClick={this.move}
                 type="primary"
               >
-           
+                {" "}
                 <h2 style={{ fontFamily: "AdventPro-Bold	", color: "white" }}>
-            
-                  Fill In
-                </h2>
+                  {" "}
+                  Fill In{" "}
+                </h2>{" "}
               </Button>
             </NavLink>
           </div>
-          </div>
-        </div>
         </div>
       </div>
     );

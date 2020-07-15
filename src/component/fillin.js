@@ -128,12 +128,12 @@ class Fillin extends Component {
     return (
       <div>
        
-         
+       <Layout className="layout">
           <Header
             style={{
               background: "white",
               width: "100%",
-              height: "75px",
+              height: "90px",
               marginBottom: 3,
             }}
           >
@@ -144,7 +144,7 @@ class Fillin extends Component {
                     marginLeft: "50%",
                     marginTop: 0,
                     width: 130,
-                    height:75,
+                    height:90,
                     opacity: "0,5",
                     filter: "alpha(opacity=50)",
                   }}
@@ -158,11 +158,11 @@ class Fillin extends Component {
                 className="customclass"
                 defaultSelectedKeys={["2"]}
                 mode="horizontal"
-                style={{ lineHeight: "76px", marginRight: 70 }}
+                style={{ lineHeight: "90px", marginRight: 70 }}
               >
                 <Menu.Item key="1" style={{ width: 80, marginRight: 50 }}>
                   <NavLink
-                    to="./teacher/HomeTeacher"
+                    to="./HomeTeacher"
                     style={{
                       fontSize: "25",
                       textAlign: "center",
@@ -177,9 +177,7 @@ class Fillin extends Component {
               
                 <Menu.Item key="3" style={{ width: 80, marginRight: 50 }}>
                   <NavLink
-           
-
-                    to="./teacher/HomeTeacher"
+                    to="/teacher/TeacherProfile"
                     style={{
                       fontWeight: "bold",
                       fontSize: "35",
@@ -190,7 +188,8 @@ class Fillin extends Component {
                     Profile
                   </NavLink>
                 </Menu.Item>
-                <Menu.Item key="4" style={{ width: 80, marginRight: 50 }}>
+              
+                <Menu.Item key="4" style={{ width: 80, marginRight: 10 }}>
                   <NavLink
                     to="/fillin"
                     style={{
@@ -200,16 +199,16 @@ class Fillin extends Component {
                       color: "#3676eb",
                     }}
                   >
-                    Fill in
+                    fill in
                   </NavLink>
                 </Menu.Item>
-                <Menu.Item key="5" style={{ width: 80, marginRight: 10 }}>
+                <Menu.Item key="5" style={{ width: 80, marginRight: 50 }}>
                   <NavLink
-                    to="/fillin"
+                    to="./Chat/aChat"
                     style={{
-                      fontWeight: "bold",
-                      fontSize: "35",
+                      fontSize: "25",
                       textAlign: "center",
+                      fontWeight: "bold",
                       color: "#3676eb",
                     }}
                   >
@@ -220,18 +219,19 @@ class Fillin extends Component {
               </Menu>
             </div>
           </Header>
+        </Layout>
         <div style={{ backgroundColor: "red", width: "100%", height: "100%" }}>
         <div  style={{float: 'left' ,width:'40%',height:675,marginTop:0,backgroundColor:"#1761e8"}} >
           <div>
           
             <div style={{marginTop:100,marginLeft:60}}>
-            <h1   style={{color:' white'}}>fill in you information </h1>
+            <h1   style={{color:' white',marginLeft:50}}>fill in you information </h1>
               <div style={{marginLeft:0}}>
           
-              <h1 style={{marginLeft:10,color:' white',marginTop:60}}>To :
+              <h1 style={{marginLeft:30,color:' white',marginTop:60}}>To :
              </h1>
-              <h1 style={{marginLeft:30,color:' white'}}> finding your student</h1>
-              <h1 style={{marginLeft:0,color:' white'}}> conect with your student esialy</h1>
+              <h2 style={{marginLeft:80,color:' white'}}> finding your student</h2>
+              <h2 style={{marginLeft:50,color:' white'}}> conect with your student esialy</h2>
 
               </div>
               </div>

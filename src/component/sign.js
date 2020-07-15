@@ -120,7 +120,7 @@ class Signin extends Component{
   
      
 
-<Card className="card"   title={<h2 style={{color:'#002266',marginTop:15,fontWeight:'bold',height: 30}}>signing Up as Student</h2> }  style={{ width: 500,height:600 ,marginTop:30}}>
+<Card className="card"   title={<h2 style={{color:'#002266',marginTop:15,fontWeight:'bold',height: 30}}>signing Up as Student</h2> }  style={{ width: 500,height:620 ,marginTop:30, boxShadow:'0 4px 8px 0 rgba(0, 0, 0, 0.2)'}}>
         
 <div > 
 
@@ -158,7 +158,10 @@ class Signin extends Component{
       
         </div>  
         <div  style={{float: 'left' ,width:'45%',height:670,marginTop:0,backgroundColor:"#f4f7f8c4"}} >
-            <div style={{marginTop:150}}>
+          <div style={{ backgroundColor:'#3676eb',height:120,width:'100%'  }}>
+            
+          </div>
+            <div style={{marginTop:100}}>
               <div style={{marginLeft:80}}>
               <h1 style={{color:'#3676eb'}} >The 1000 mile journey start with</h1>
               <h1 style={{marginLeft:180,color:'#3676eb'}}>steps</h1>
