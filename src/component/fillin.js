@@ -222,13 +222,19 @@ class Fillin extends Component {
           </Header>
         <div style={{ backgroundColor: "red", width: "100%", height: "100%" }}>
         <div  style={{float: 'left' ,width:'40%',height:675,marginTop:0,backgroundColor:"#1761e8"}} >
-            <div style={{marginTop:190}}>
-              <div style={{marginLeft:40}}>
-              <h1  style={{color:' white'}}>hhhjhjhkjhhhjhjhkjhhhjhjhkjhhhjhjhkj</h1>
-              <h1 style={{marginLeft:20,color:' white'}}>hhhjhjhkjhhhjhjhkjhhhjhj</h1>
-              <h1 style={{marginLeft:40,color:' white'}}>hhhjhjhkjhhhjhjhkjhh</h1>
+          <div>
+          
+            <div style={{marginTop:100,marginLeft:60}}>
+            <h1   style={{color:' white'}}>fill in you information </h1>
+              <div style={{marginLeft:0}}>
+          
+              <h1 style={{marginLeft:10,color:' white',marginTop:60}}>To :
+             </h1>
+              <h1 style={{marginLeft:30,color:' white'}}> finding your student</h1>
+              <h1 style={{marginLeft:0,color:' white'}}> conect with your student esialy</h1>
+
               </div>
-             
+              </div>
             </div>
  
             
@@ -295,9 +301,10 @@ class Fillin extends Component {
                         </Radio>
                         <Radio value={"Rafah"} style={radioStyle}>
                           Rafah
-                        </Radio>
+                        
+                          </Radio>
                         <Radio value={"Khan Younes"} style={radioStyle}>
-                          Khan Younes
+                          North Gaza
                         </Radio>
                       </Radio.Group>
                     </div>

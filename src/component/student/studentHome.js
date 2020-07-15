@@ -20,6 +20,7 @@ class SHome extends Component {
     rating: "",
     visible: false,
     id: "",
+    disabled:false
   };
 
   getlist = () => {
@@ -98,6 +99,7 @@ class SHome extends Component {
 
     this.setState({
       ListPost,
+      disabled:true
     });
 
     console.log("LLLLLL", this.state.ListPost);
@@ -270,7 +272,7 @@ class SHome extends Component {
               >
                 <Menu.Item key="1" style={{ width: 80, marginRight: 50 }}>
                   <NavLink
-                    to="./HomeTeacher"
+                     to="/student/studentHome"
                     style={{
                       fontSize: "25",
                       textAlign: "center",
@@ -285,7 +287,8 @@ class SHome extends Component {
               
                 <Menu.Item key="3" style={{ width: 80, marginRight: 50 }}>
                   <NavLink
-                    to="./HomeTeacher"
+                    to="./ProfileStudent"
+                 
                     style={{
                       fontWeight: "bold",
                       fontSize: "35",
@@ -298,20 +301,7 @@ class SHome extends Component {
                 </Menu.Item>
                 <Menu.Item key="4" style={{ width: 80, marginRight: 50 }}>
                   <NavLink
-                    to="/fillin"
-                    style={{
-                      fontWeight: "bold",
-                      fontSize: "35",
-                      textAlign: "center",
-                      color: "#3676eb",
-                    }}
-                  >
-                    Fill in
-                  </NavLink>
-                </Menu.Item>
-                <Menu.Item key="5" style={{ width: 80, marginRight: 10 }}>
-                  <NavLink
-                    to="/fillin"
+                    to="/Chat/chat"
                     style={{
                       fontWeight: "bold",
                       fontSize: "35",
@@ -322,6 +312,7 @@ class SHome extends Component {
                     Chat
                   </NavLink>
                 </Menu.Item>
+                
               
               </Menu>
             </div>
@@ -404,7 +395,7 @@ class SHome extends Component {
               size="large"
               showSearch
               style={{ width: 200 }}
-              placeholder="Select a person"
+              placeholder="Select a city"
               optionFilterProp="children"
               onChange={this.onChange1}
               onSearch={this.onSearch1}
@@ -412,6 +403,8 @@ class SHome extends Component {
               <Option value="Gaza">Gaza</Option>
               <Option value="Rafah">Rafah</Option>
               <Option value="NorthGaza">NorthGaza</Option>
+              <Option value="westGaza">westGaza</Option>
+              <Option value="Khan Younes">Khan Younes</Option>
             </Select>
             <Select
               size="large"
@@ -452,18 +445,9 @@ class SHome extends Component {
               <div style={{ paddingTop: 100 }}>
                 <div style={{ backgroundColor: "#f4f7f8" }}>
                   <Card
+                  bordered={false}
                     style={{ width: "63%", margin: "0 auto" ,boxShadow:'0 4px 8px 0 rgba(0, 0, 0, 0.2)'}}
-                    actions={[
-                      <Icon
-                        type="message"
-                        // onClick={()=>this.gotoChat(item)}
-                        style={{
-                          fontSize: "28px",
-                          paddingTop: 0,
-                          marginRight: 36,
-                        }}
-                      />,
-                    ]}
+                   
                   >
                     <Meta
                       avatar={
@@ -474,6 +458,7 @@ class SHome extends Component {
                       }
                       title={<h4 style={{ marginTop: 20 }}>{item.Name} </h4>}
                       description={
+                        <div>
                         <div style={{ textAlign: "right", display: "flex" }}>
                           <div style={{ float: "right" }}>
                             <h6 style={{ fontSize: 14 }}>
@@ -493,38 +478,36 @@ class SHome extends Component {
                               {item.grade}{" "}
                             </h6>
                             <h6 style={{ fontSize: 14 }}>
-                              {" "}
-                              <label style={{ fontSize: 14, marginRight: 10 }}>
-                                {" "}
-                                Phone{" "}
-                              </label>
-                              {item.Phone}{" "}
-                            </h6>
+                            Phone{" "}
+                           
+                              <label style={{ fontSize: 14, marginRight: 5 }}>
+                              
+                                </label>{item.Phone}{" "} </h6>
                           </div>
                           <div style={{ float: "left", marginLeft: "30%" }}>
-                            <h6 style={{ fontSize: 14 }}>
-                              {" "}
-                              <label style={{ fontSize: 14, marginRight: 10 }}>
+                            <h6 style={{ fontSize: 14, marginRight: 10  }}>
+                            City:
+                              <label style={{ fontSize: 14 }}>
                                 {" "}
-                                City:
+                                {item.city}{" "}
                               </label>
-                              {item.city}{" "}
+                             
                             </h6>
-                            <h6 style={{ fontSize: 14 }}>
-                              {" "}
-                              <label style={{ fontSize: 14, marginRight: 10 }}>
+                            <h6 style={{ fontSize: 14,marginRight: 10  }}>
+                            Price:
+                              <label style={{ fontSize: 14}}>
                                 {" "}
-                                Price:
+                                {item.Price}{" "}
                               </label>
-                              {item.Price}{" "}
+                           
                             </h6>
-                            <h6 style={{ fontSize: 14 }}>
-                              {" "}
-                              <label style={{ fontSize: 14, marginRight: 10 }}>
+                            <h6 style={{ fontSize: 14 , marginRight: 10 }}>
+                            Age:
+                              <label style={{ fontSize: 14 }}>
                                 {" "}
-                                Age:
+                                {item.Age}
                               </label>
-                              {item.Age}
+                              
                             </h6>
                             <h6 style={{ fontSize: 14 }}>
                               {" "}
@@ -534,12 +517,10 @@ class SHome extends Component {
                               </label>
                               {item.rating}
                             </h6>
-                            <button onClick={() => this.unsave(item.id)}>
+                          {/*  <button onClick={() => this.unsave(item.id)}>
                               delete from booked
                             </button>
-                            <button onClick={() => this.saveCard(item)}>
-                              book
-                            </button>
+                      */}
 
                             <label>
                               {" "}
@@ -569,6 +550,12 @@ class SHome extends Component {
                               />
                             </Modal>
                           </div>
+                        </div>
+                        <div >
+                        <Button style={{marginRight:'20%',width:100,height:40,backgroundColor:'#ffd633'}}>massage</Button>
+                        <Button style={{marginRight:'20%',width:100,height:40,borderColor:' #1890ff',textEmphasisColor:'blue'}}>see profile</Button>
+                        <Button  disabled={this.state.disabled}  onClick={() => this.saveCard(item)} onClick={() => this.saveCard(item)} type="primary" style={{width:100,height:40}}>booked</Button>
+                        </div>
                         </div>
                       }
                     />

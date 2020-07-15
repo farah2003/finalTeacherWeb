@@ -65,7 +65,7 @@ oseInput: {
   },
 }));
 
-export default function Chat() {
+export default function AotherChat() {
   const classes = useStyles();
   const [selectedIndex, setSelectedIndex] = useState(1);
   const [Text, setText] = useState("");
@@ -84,9 +84,9 @@ export default function Chat() {
   useEffect (() => {
       const ListMassge=[]
 
-      const reciverid =  "7Byqa6tYrDV3B6vonF0QEsycgYX2"
+      const reciverid = "5iVRbFTumggMmQdayk17TeHpj0U2" 
   
-    const senderid=  "5iVRbFTumggMmQdayk17TeHpj0U2"
+    const senderid="7Byqa6tYrDV3B6vonF0QEsycgYX2"
     let user1="fghsfgh"
     let user2 ="fgh"
     if (senderid < reciverid ){
@@ -134,8 +134,9 @@ const timestamp = moment()
 .valueOf()
 .toString()
 const getText=()=>{
-    const senderid="5iVRbFTumggMmQdayk17TeHpj0U2"
-    const reciverid="7Byqa6tYrDV3B6vonF0QEsycgYX2"
+    const reciverid = "5iVRbFTumggMmQdayk17TeHpj0U2" 
+  
+    const senderid="7Byqa6tYrDV3B6vonF0QEsycgYX2"
     let user1="fghsfgh"
     let user2 ="fgh"
     if (senderid < reciverid ){
@@ -148,6 +149,7 @@ const getText=()=>{
       user2=senderid;
      
     }
+   
     const db=firebase.firestore()
     db.collection("Chat").doc(user1+ "_"+user2).collection("massage").doc(timestamp).set({
         senderid:senderid,
@@ -162,7 +164,7 @@ const getText=()=>{
     
     const getBubbleStyle = (userid) => {
       return {
-          backgroundColor: (userid === "5iVRbFTumggMmQdayk17TeHpj0U2" ? "white" : "blue"),
+          backgroundColor: (userid === "7Byqa6tYrDV3B6vonF0QEsycgYX2" ? "white" : "blue"),
           border: "0.5px solid black",
           borderRadius: "10px",
           margin: "5px",
@@ -181,7 +183,7 @@ const getText=()=>{
         display: "flex" ,
      
       
-       justifyContent: (userid === "5iVRbFTumggMmQdayk17TeHpj0U2" ? "flex-start" : "flex-end"),
+       justifyContent: (userid === "7Byqa6tYrDV3B6vonF0QEsycgYX2" ? "flex-start" : "flex-end"),
        
     }
 }

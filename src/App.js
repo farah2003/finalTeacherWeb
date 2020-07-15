@@ -17,6 +17,8 @@ import   Rating  from "./component/student/rating";
 import Signupall from "./component/signupall";
 import  HomeTeacher from './component/teacher/HomeTeacher'
 import  Chat from './component/Chat/chat';
+import  AotherChat  from './component/Chat/anotherChat';
+
 import Try from './component/try'
 class App extends Component {
   pri = () => {
@@ -42,6 +44,7 @@ class App extends Component {
               <Route path="/student/studentHome" component={SHome}></Route>
               <Route path='/teacher/HomeTeacher' component={HomeTeacher}></Route>
               <Route path='/Chat/chat' component={Chat}></Route>
+              <Route path='/Chat/aChat' component={AotherChat}></Route>
               
          
               <Route

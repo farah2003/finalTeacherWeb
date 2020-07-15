@@ -69,20 +69,8 @@ export default class HomeTeacher extends Component {
                     Profile
                   </NavLink>
                 </Menu.Item>
-                <Menu.Item key="4" style={{ width: 80, marginRight: 50 }}>
-                  <NavLink
-                    to="/fillin"
-                    style={{
-                      fontWeight: "bold",
-                      fontSize: "35",
-                      textAlign: "center",
-                      color: "#3676eb",
-                    }}
-                  >
-                    Fill in
-                  </NavLink>
-                </Menu.Item>
-                <Menu.Item key="5" style={{ width: 80, marginRight: 10 }}>
+              
+                <Menu.Item key="4" style={{ width: 80, marginRight: 10 }}>
                   <NavLink
                     to="/fillin"
                     style={{
