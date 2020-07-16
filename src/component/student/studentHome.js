@@ -108,6 +108,7 @@ class SHome extends Component {
 
     this.setState({
       ListPost,
+      disabled:true
     
     });
 
@@ -254,13 +255,17 @@ addtoStudent= async  (i)=>{
     });
   };
   onOK = (id) => {
-    const { rating } = this.state;
+this.setState({
+  rating:4,
+  visible: false,
+})
+  /*  const { rating } = this.state;
     console.log("rating", rating);
     console.log("value in ok", id);
 
     const db = firebase.firestore();
     this.setState({
-      visible: false,
+     
     });
 
     let washingtonRef = db.collection("Cards").doc(id);
@@ -268,7 +273,7 @@ addtoStudent= async  (i)=>{
     console.log("washingtonRef", washingtonRef);
     return washingtonRef.update({
       rating,
-    });
+    });*/
   };
   changevisible = (id) => {
     console.log("idddddddddddd", id);
@@ -564,7 +569,7 @@ addtoStudent= async  (i)=>{
                                 {" "}
                                 Rate:
                               </label>
-                              {item.rating}
+                             {this.state.rating}
                             </h6>
                           {/*  <button onClick={() => this.unsave(item.id)}>
                               delete from booked
@@ -585,7 +590,7 @@ addtoStudent= async  (i)=>{
                             <Modal
                               title="Rating"
                               visible={this.state.visible}
-                              onOk={() => this.onOK(id)}
+                              onOk={() => this.onOK(item.id)}
                               onCancel={() => {
                                 this.setState({
                                   visible: false,

@@ -336,23 +336,11 @@ console.log('ttttt',time)
                   </ListItemAvatar>
                   <ListItemText
                     primary="Farah Shaqoura"
-                    secondary="okay  12 July 2020"
+                    secondary="16 July 2020"
                   />
                 </ListItem>
                 <Divider />
-                <ListItem
-                  button
-                  selected={selectedIndex === 1}
-                  onClick={(event) => handleListItemClick(event, 1)}
-                >
-                  <ListItemAvatar>
-                    <Avatar />
-                  </ListItemAvatar>
-                  <ListItemText
-                    primary="Karam Hillis"
-                    secondary="okay  12 July 2020"
-                  />
-                </ListItem>
+             
                 <Divider />
 
                 <Divider />

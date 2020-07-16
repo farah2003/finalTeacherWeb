@@ -319,10 +319,10 @@ class ProfileStudent extends Component {
                         <div style={{ textAlign: "right", display: "flex" }}>
                           <div style={{ float: "right" }}>
                             <h6 style={{ fontSize: 14 }}>
-                            subject:{" "}
+                            Name:{" "}
                               <label style={{ fontSize: 14, marginRight: 10 }}>
                                 {" "}
-                                {item.sub}{" "}
+                                {item.Name}{" "}
                                
                               </label>
                             
@@ -341,7 +341,7 @@ class ProfileStudent extends Component {
                            
                               <label style={{ fontSize: 14, marginRight: 5 }}>
                               
-                                </label> {item.Phone}</h6>
+                                </label> {item.sub}</h6>
                           </div>
                           <div style={{ float: "left", marginLeft: "40%" }}>
                             <h6 style={{ fontSize: 14, marginRight: 10  }}>

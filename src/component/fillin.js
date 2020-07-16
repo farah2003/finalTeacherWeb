@@ -308,7 +308,7 @@ class Fillin extends Component {
                           Rafah
                         
                           </Radio>
-                        <Radio value={"Khan Younes"} style={radioStyle}>
+                        <Radio value={"North Gaza"} style={radioStyle}>
                           North Gaza
                         </Radio>
                       </Radio.Group>

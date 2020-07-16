@@ -82,7 +82,7 @@ class Login extends Component {
             <Input
               style={{ marginTop: 20, height: 35 }}
               prefix={<Icon type="user" style={{ color: "#4d4dff" }} />}
-              placeholder="Username"
+              placeholder="UserEmail"
               onChange={this.addEmail}
             />
             <Input

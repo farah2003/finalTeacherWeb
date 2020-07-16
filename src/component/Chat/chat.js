@@ -316,25 +316,12 @@ const getText=()=>{
                     <Avatar />
                   </ListItemAvatar>
                   <ListItemText
-                    primary="Farah Shaqoura"
-                    secondary="okay  12 July 2020"
+                    primary="HassanIsamil"
+                   
                   />
                 </ListItem>
                 <Divider />
-                <ListItem
-                  button
-                  selected={selectedIndex === 1}
-                  onClick={(event) => handleListItemClick(event, 1)}
-                >
-                  <ListItemAvatar>
-                    <Avatar />
-                  </ListItemAvatar>
-                  <ListItemText
-                    primary="Karam Hillis"
-                    secondary="okay  12 July 2020"
-                  />
-                </ListItem>
-                <Divider />
+                
 
                 <Divider />
               </List>
@@ -347,7 +334,7 @@ const getText=()=>{
             avatar={
               <Avatar aria-label="recipe" className={classes.avatar}></Avatar>
             }
-            title="Farah Shaqoura"
+            title="HassanIsamil"
           />
           <Divider />
 
