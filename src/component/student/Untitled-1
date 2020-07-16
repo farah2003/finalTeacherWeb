@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import { Button, Card, Icon,Layout,Menu , Avatar } from "antd";
+import { Button, Card, Icon,Layout,Menu  } from "antd";
 
 import { NavLink } from "react-router-dom";
 import * as firebase from "firebase";
 const { Header } = Layout;
-const { Meta } = Card;
 class ProfileTeahcer extends Component {
   state = {
     list: [],
@@ -18,43 +17,9 @@ class ProfileTeahcer extends Component {
   };
 
  
-  async componentWillMount() {
-    const user = firebase.auth().currentUser;
-    let userid = user.uid;
-    await this.setState({
-      userid,
-    });
-    console.log(userid);
 
-    this.getUseInfo();
-  }
-
-  getUseInfo = async () => {
-    const db = firebase.firestore();
-
-    let user = await firebase.auth().currentUser;
-    // const  id= await user.uid
-    db.collection("Users")
-      .doc(user.uid)
-      .get()
-      .then((userdoc) => {
-        console.log(userdoc.data());
-
-        var Phone = userdoc.data().phone;
-        var Name = userdoc.data().Name;
-        var Email = userdoc.data().Email;
-        var card = userdoc.data().savecard;
-        console.log("card", card);
-        this.setState({
-          list: card,
-          Phone: Phone,
-          Name: Name,
-          Email: Email,
-        });
-      });
-  }
   render() {
-   
+    const { list } = this.state;
     return (
       <div style={{ flex: 1 }}>
           <Layout className="layout">
@@ -201,8 +166,8 @@ class ProfileTeahcer extends Component {
                 >
                   <h4 style={{ color: "white" }}>EDIT</h4>
                 </Button>
-              <h2>{this.state.Name}</h2>
-       
+              <h2>Farah Shaqoura</h2>
+              <h3 style={{color:"#3676eb"}}>Student at sadia school</h3>
               <h4 style={{color:"#3676eb"}}>North Gaza</h4>
             </div>
           </div>
@@ -215,7 +180,7 @@ class ProfileTeahcer extends Component {
           <div
             style={{
               float: "left",
-              width: '100%',
+              width: 300,
               marginLeft: 100,
             
             }}
@@ -230,8 +195,6 @@ class ProfileTeahcer extends Component {
               <div style={{borderBottom: "2px solid #3676eb",width:180,marginLeft:20}}></div>
             </div>
 
-          
-           
             <div style={{ display: "flex" }}>
               <div style={{ float: "right", marginRight: 20 }}>
                 <Icon
@@ -239,7 +202,7 @@ class ProfileTeahcer extends Component {
                   style={{ fontSize: "25px", color: "#4d4dff", padding: 20 }}
                 />
               </div>
-              <div style={{ float: "left",marginTop:30 }}>
+              <div style={{ float: "left" }}>
                 <h3>{this.state.Name}</h3>
               </div>
             </div>
@@ -250,37 +213,30 @@ class ProfileTeahcer extends Component {
                   style={{ color: "#4d4dff", fontSize: "25px", padding: 20 }}
                 />
               </div>
-              <div style={{ float: "left" ,marginTop:20 }}>
-                <h3>{this.state.Email}</h3>
+              <div style={{ float: "left" }}>
+                <h3> {this.state.Email}</h3>
               </div>
             </div>
             <div style={{ display: "flex" }}>
               <div style={{ float: "right", marginRight: 20 }}>
                 <Icon
                   type="phone"
-                  style={{ color: "#4d4dff", fontSize: "25px", padding: 10 }}
+                  style={{ color: "#4d4dff", fontSize: "25px", padding: 20 }}
                 />
               </div>
-              <div style={{ float: "left" ,marginTop:20}}>
-                <h3> {this.state.Phone}</h3>
+              <div style={{ float: "left" }}>
+                <h3>{this.state.Phone}</h3>
               
               </div>
             </div>
           </div>
 
           {/*card*/}
-          <div style={{borderLeft:"3px solid white"}} >
-            <h2 style={{ marginLeft: 50, marginBottom: 30, marginTop: 30,width:900 }}>
+          <div style={{ alignItems: "center" }}>
+            <h2 style={{ marginLeft: 50, marginBottom: 30, marginTop: 30 }}>
               {" "}
-             student you will being working with
+              Selected teachers:
             </h2>
-            <Card
-                  bordered={false}
-                    style={{ width: "30%" , marginLeft: 50,boxShadow:'0 1px 2px 0 rgba(0, 0, 0, 0.2)'}}
-                   
-                  >
-                   farah shaqoura
-                  </Card>
        
           </div>
         </div>

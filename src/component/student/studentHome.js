@@ -23,6 +23,11 @@ class SHome extends Component {
     disabled:false
   };
 
+  componentDidUpdate() {
+    console.log('hiii')
+    this.getlist()
+  }
+
   getlist = () => {
     const db = firebase.firestore();
     let user = firebase.auth().currentUser;

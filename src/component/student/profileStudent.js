@@ -15,6 +15,11 @@ class ProfileStudent extends Component {
     Name: "",
     Email: "",
     userid: "",
+    ListPost: [],
+    rating: "",
+    visible: false,
+    id: "",
+    disabled:false
   };
 
   async componentWillMount() {
@@ -26,6 +31,12 @@ class ProfileStudent extends Component {
     console.log(userid);
 
     this.getUseInfo();
+  }
+
+  componentDidUpdate( prevState) {
+    if (prevState.ListPost !== this.state.ListPost) {
+      console.log('pokemons state has changed.')
+    }
   }
 
   getUseInfo = async () => {
@@ -56,6 +67,30 @@ class ProfileStudent extends Component {
     console.log("hello");
     this.props.history.push("./studentHome");
   };
+
+
+  unsave = (id)=>{
+    console.log("iddddddddddd",id)
+      const db = firebase.firestore()
+      let  user = firebase.auth().currentUser;
+      let { ListPost} = this.state;
+     let x =  ListPost.filter((i)=> i.id !== id )
+  console.log('newlist',x)
+      this.setState({
+        ListPost :x
+      })
+      let  washingtonRef = db.collection("Users").doc(user.uid)
+   
+      console.log('washingtonRef',washingtonRef)
+    
+     
+  
+       return washingtonRef.update({
+        savecard :x
+       })
+     
+  
+  }
   render() {
     const { list } = this.state;
     return (
@@ -229,7 +264,7 @@ class ProfileStudent extends Component {
                   style={{ fontSize: "25px", color: "#4d4dff", padding: 20 }}
                 />
               </div>
-              <div style={{ float: "left" }}>
+              <div style={{ float: "left",marginTop:30 }}>
                 <h3>{this.state.Name}</h3>
               </div>
             </div>
@@ -240,19 +275,19 @@ class ProfileStudent extends Component {
                   style={{ color: "#4d4dff", fontSize: "25px", padding: 20 }}
                 />
               </div>
-              <div style={{ float: "left" }}>
-                <h3> {this.state.Email}</h3>
+              <div style={{ float: "left" ,marginTop:20 }}>
+                <h3>{this.state.Email}</h3>
               </div>
             </div>
             <div style={{ display: "flex" }}>
               <div style={{ float: "right", marginRight: 20 }}>
                 <Icon
                   type="phone"
-                  style={{ color: "#4d4dff", fontSize: "25px", padding: 20 }}
+                  style={{ color: "#4d4dff", fontSize: "25px", padding: 10 }}
                 />
               </div>
-              <div style={{ float: "left" }}>
-                <h3>{this.state.Phone}</h3>
+              <div style={{ float: "left" ,marginTop:20}}>
+                <h3> {this.state.Phone}</h3>
               
               </div>
             </div>
@@ -284,18 +319,20 @@ class ProfileStudent extends Component {
                         <div style={{ textAlign: "right", display: "flex" }}>
                           <div style={{ float: "right" }}>
                             <h6 style={{ fontSize: 14 }}>
-                              {" "}
+                            subject:{" "}
                               <label style={{ fontSize: 14, marginRight: 10 }}>
                                 {" "}
-                                subject:{" "}
+                                {item.sub}{" "}
+                               
                               </label>
                             
                             </h6>
                             <h6 style={{ fontSize: 14 }}>
-                              {" "}
+                            Grade:{" "}
                               <label style={{ fontSize: 14, marginRight: 10 }}>
                                 {" "}
-                                Grade:{" "}
+                                {item.grade}{" "}
+                               
                               </label>
                              
                             </h6>
@@ -304,13 +341,13 @@ class ProfileStudent extends Component {
                            
                               <label style={{ fontSize: 14, marginRight: 5 }}>
                               
-                                </label> </h6>
+                                </label> {item.Phone}</h6>
                           </div>
                           <div style={{ float: "left", marginLeft: "40%" }}>
                             <h6 style={{ fontSize: 14, marginRight: 10  }}>
                             City:
                               <label style={{ fontSize: 14 }}>
-                                {" "}
+                              {item.city}{" "}
                             
                               </label>
                              
@@ -319,26 +356,19 @@ class ProfileStudent extends Component {
                             Price:
                               <label style={{ fontSize: 14}}>
                                 {" "}
-
+                                {item.Price}{" "}
                               </label>
                            
                             </h6>
                             <h6 style={{ fontSize: 14 , marginRight: 10 }}>
                             Age:
                               <label style={{ fontSize: 14 }}>
-                                {" "}
+                              {item.Age}
                              
                               </label>
                               
                             </h6>
-                            <h6 style={{ fontSize: 14 }}>
-                              {" "}
-                              <label style={{ fontSize: 14, marginRight: 10 }}>
-                                {" "}
-                                Rate:
-                              </label>
-                             
-                            </h6>
+                            
                           {/*  <button onClick={() => this.unsave(item.id)}>
                               delete from booked
                             </button>
@@ -350,7 +380,7 @@ class ProfileStudent extends Component {
                           </div>
                         </div>
                         <div >
-                        <Button  disabled={this.state.disabled}   type="primary" style={{width:160,height:40,marginLeft:'50%'}}>Delete from booked</Button>
+                        <Button  onClick={()=>this.unsave(item.id)}   type="primary" style={{width:160,height:40,marginLeft:'50%'}}>Delete from booked</Button>
 
                         </div>
                         </div>
