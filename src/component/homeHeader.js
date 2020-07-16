@@ -109,7 +109,7 @@ class Nav extends Component {
                     opacity: "0,5",
                     filter: "alpha(opacity=50)",
                   }}
-                  src={require("./LOGO.png")}
+                  src={require("./LOGO LOG IN.png")}
                   alt="img"
                 />
               </NavLink>

@@ -55,7 +55,7 @@ state={
     </div>
     <div style={{marginTop:50}}>
     <img style={{backgroundColor:'red', width:'50%',height:'50%',opacity:'0,5' ,marginLeft:110
-  ,filter: 'alpha(opacity=50)'}}  src={require("./logo.png")} onClick={this.pri} alt="img"/>
+  ,filter: 'alpha(opacity=50)'}}  src={require("./LOGO LOG IN.png")} onClick={this.pri} alt="img"/>
             
     </div>
           </Card>

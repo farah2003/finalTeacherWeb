@@ -20,7 +20,8 @@ class SHome extends Component {
     rating: "",
     visible: false,
     id: "",
-    disabled:false
+    disabled:false,
+    Name:''
   };
 
   componentDidUpdate() {
@@ -92,11 +93,14 @@ class SHome extends Component {
   saveCard = (i) => {
     const { ListPost } = this.state;
     console.log("iiiiii", i);
+    console.log('docs',i.id)
+    let docs=i.id
     ListPost.push(i);
 
     const db = firebase.firestore();
     let user = firebase.auth().currentUser;
-
+    this.addtoStudent(docs)
+    console.log('funcationnnn')
     console.log("useerrrrr", user.uid);
     let washingtonRef = db.collection("Users").doc(user.uid);
 
@@ -104,14 +108,54 @@ class SHome extends Component {
 
     this.setState({
       ListPost,
-      disabled:true
+    
     });
 
     console.log("LLLLLL", this.state.ListPost);
     return washingtonRef.update({
       savecard: this.state.ListPost,
     });
+    
+
+  
   };
+
+
+addtoStudent= async  (i)=>{
+  const db = firebase.firestore();
+  let user = await firebase.auth().currentUser;
+ 
+  db.collection("Users")
+    .doc(user.uid)
+    .get()
+    .then((userdoc) => {
+      console.log('dataaaaa',userdoc.data());
+
+      
+      var Name = userdoc.data().Name;
+      this.setState({
+       
+        Name: Name,
+     
+      });
+
+      let addtonRef = db.collection("Users").doc(i);
+    console.log('userrrrr',addtonRef)
+    return  addtonRef.update({
+     studentName: Name,
+    });
+    });
+    
+    
+    /*let Name = await (this.state.Name)
+    console.log(' farah',Name)
+    let addtonRef = db.collection("Users").doc(i);
+    console.log('userrrrr',addtonRef)
+    return  addtonRef.update({
+     studentName: Name,
+    });*/
+
+  }
   unsave = (id) => {
     console.log("iddddddddddd", id);
     const db = firebase.firestore();
@@ -331,7 +375,7 @@ class SHome extends Component {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            backgroundColor: "",
+            backgroundColor: "#f4f7f8",
           }}
         >
           <img
@@ -557,7 +601,9 @@ class SHome extends Component {
                           </div>
                         </div>
                         <div >
-                        <Button style={{marginRight:'20%',width:100,height:40,backgroundColor:'#ffd633'}}>massage</Button>
+                        
+                        <NavLink to="/Chat/chat">
+                        <Button style={{marginRight:'20%',width:100,height:40,backgroundColor:'#ffd633'}}>massage</Button>    </NavLink>
                         <Button style={{marginRight:'20%',width:100,height:40,borderColor:' #1890ff',textEmphasisColor:'blue'}}>see profile</Button>
                         <Button  disabled={this.state.disabled}  onClick={() => this.saveCard(item)} onClick={() => this.saveCard(item)} type="primary" style={{width:100,height:40}}>booked</Button>
                         </div>

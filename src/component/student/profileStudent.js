@@ -56,7 +56,7 @@ class ProfileStudent extends Component {
         var card = userdoc.data().savecard;
         console.log("card", card);
         this.setState({
-          list: card,
+          ListPost: card,
           Phone: Phone,
           Name: Name,
           Email: Email,
@@ -76,9 +76,9 @@ class ProfileStudent extends Component {
       let { ListPost} = this.state;
      let x =  ListPost.filter((i)=> i.id !== id )
   console.log('newlist',x)
-      this.setState({
-        ListPost :x
-      })
+  this.setState({
+    ListPost :x
+  })
       let  washingtonRef = db.collection("Users").doc(user.uid)
    
       console.log('washingtonRef',washingtonRef)
@@ -92,7 +92,7 @@ class ProfileStudent extends Component {
   
   }
   render() {
-    const { list } = this.state;
+    const { ListPost} = this.state;
     return (
       <div style={{ flex: 1 }}>
          <Layout className="layout">
@@ -299,7 +299,7 @@ class ProfileStudent extends Component {
               {" "}
               Selected teachers:
             </h2>
-            {list.map((item, index) => {
+            { ListPost.map((item, index) => {
               return(
             <Card
                   bordered={false}

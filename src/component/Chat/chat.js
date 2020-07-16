@@ -14,7 +14,10 @@ import SendIcon from "@material-ui/icons/Send";
 import Input from "@material-ui/core/Input";
 import CardActions from "@material-ui/core/CardActions";
 import moment from 'moment'
+import { NavLink } from "react-router-dom";
+import {Layout,Menu } from "antd";
 import * as firebase from "firebase";
+const { Header } = Layout;
 const useStyles = makeStyles((theme) => ({
   root1: {
     width: "100%",
@@ -33,9 +36,9 @@ const useStyles = makeStyles((theme) => ({
   },
   root3: {
     minWidth: 750,
-    maxHeight:800,
+    maxHeight:900,
   
-    minHeight: 400,
+    minHeight: 480,
     float: "right",
     marginRight: "9%",
   },
@@ -148,12 +151,19 @@ const getText=()=>{
       user2=senderid;
      
     }
+    let date = new Date()
+    let hours = date.getHours()
+    let minutes = date.getMinutes()
+    let seconds = date.getSeconds()
+    let time= hours+':'+ minutes+':'+seconds
+    console.log('ttttt',time)
+    
     const db=firebase.firestore()
     db.collection("Chat").doc(user1+ "_"+user2).collection("massage").doc(timestamp).set({
         senderid:senderid,
         reciverid:reciverid,
         contant:Text,
-        time:timestamp
+        time:time
 
     })
     setText("")
@@ -162,12 +172,13 @@ const getText=()=>{
     
     const getBubbleStyle = (userid) => {
       return {
-          backgroundColor: (userid === "5iVRbFTumggMmQdayk17TeHpj0U2" ? "white" : "blue"),
-          border: "0.5px solid black",
+          backgroundColor: (userid === "5iVRbFTumggMmQdayk17TeHpj0U2" ? "#f4f7f8" : "#54c5eb"),
+         
           borderRadius: "10px",
           margin: "5px",
           padding: "10px",
           display: "inline-block",
+          boxShadow:'0 1px 3px 0 rgba(0, 0, 0, 0.2)'
         
           
          
@@ -194,8 +205,7 @@ const getText=()=>{
         
      
        
-         <Avatar alt='farh' />
-
+       
       <div style={getBubbleStyle(obj.senderid)}>
     
      
@@ -208,21 +218,86 @@ const getText=()=>{
   ));
   return (
     <div style={{ height: 900, backgroundColor: "#f5f5f0" }}>
-      <div style={{ height: 60, backgroundColor: "#001a33" }}>
-        <div style={{ paddingTop: 18, float: "right", marginRight: 70 }}></div>
-        <div>
-          <label
-            className="Label"
+               <Layout className="layout">
+          <Header
             style={{
-              marginLeft: 120,
-              paddingTop: 60,
-              color: "white",
-              fontFamily: "Satisfy",
-              fontSize: 30,
+              background: "white",
+              width: "100%",
+              height: "90px",
+              marginBottom: 3,
             }}
-          ></label>
-        </div>
-      </div>
+          >
+            <div style={{ float: "left" }}>
+              <NavLink to="/">
+                <img
+                  style={{
+                    marginLeft: "50%",
+                    marginTop: 0,
+                    width: 130,
+                    height:90,
+                    opacity: "0,5",
+                    filter: "alpha(opacity=50)",
+                  }}
+                  src={require("./logo.png")}
+                  alt="img"
+                />
+              </NavLink>
+            </div>
+            <div style={{ float: "right" }}>
+              <Menu
+                className="customclass"
+                defaultSelectedKeys={["2"]}
+                mode="horizontal"
+                style={{ lineHeight: "90px", marginRight: 70 }}
+              >
+                <Menu.Item key="1" style={{ width: 80, marginRight: 50 }}>
+                  <NavLink
+                     to="/student/studentHome"
+                    style={{
+                      fontSize: "25",
+                      textAlign: "center",
+                      fontWeight: "bold",
+                      color: "#3676eb",
+                    }}
+                  >
+                    Home
+                  </NavLink>
+                </Menu.Item>
+
+              
+                <Menu.Item key="3" style={{ width: 80, marginRight: 50 }}>
+                  <NavLink
+                    to="./ProfileStudent"
+                 
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "35",
+                      textAlign: "center",
+                      color: "#3676eb",
+                    }}
+                  >
+                    Profile
+                  </NavLink>
+                </Menu.Item>
+                <Menu.Item key="4" style={{ width: 80, marginRight: 50 }}>
+                  <NavLink
+                    to="/Chat/chat"
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "35",
+                      textAlign: "center",
+                      color: "#3676eb",
+                    }}
+                  >
+                    Chat
+                  </NavLink>
+                </Menu.Item>
+                
+              
+              </Menu>
+            </div>
+          </Header>
+        </Layout>
       <div style={{ marginTop: 30 }}>
         <Card className={classes.root} variant="outlined">
           <scroll>

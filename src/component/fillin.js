@@ -78,7 +78,11 @@ class Fillin extends Component {
       city: e.target.value,
     });
   };
-  send = () => {
+  send =  async () => {
+
+
+    let user = await firebase.auth().currentUser;
+    const id = user.uid
     let name = this.state.name;
     let phone = this.state.phone;
     let age = this.state.age;
@@ -90,8 +94,8 @@ class Fillin extends Component {
 
     const db = firebase.firestore();
 
-    db.collection("Cards")
-      .add({
+    db.collection("Cards").doc(user.uid).set({
+    
         Name: name,
         Phone: phone,
         Age: age,
@@ -100,6 +104,7 @@ class Fillin extends Component {
         grade: grade,
         sub: sub,
         city: city,
+        
       })
       .then(function (docRef) {
         console.log("Document written with ID: ", docRef.id);

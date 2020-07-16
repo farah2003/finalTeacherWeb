@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Icon, Input, Button, Card } from "antd";
+import { Icon, Input, Button, Card ,Modal} from "antd";
 
 import * as firebase from "firebase";
 import "./sign";
@@ -8,7 +8,10 @@ class Login extends Component {
   state = {
     email: "",
     password: "",
+    visible: false,
+    erorr:''
   };
+
   addEmail = (e) => {
     this.setState({
       email: e.target.value,
@@ -32,11 +35,17 @@ class Login extends Component {
         // ...
       })
       .catch(function (error) {
+
         console.error("Error adding document: ", error);
+        
         console.log('doneeeee')
       }).then(()=>{
         console.log('log')
         console.log( 'userr',firebase.auth().currentUser.uid)
+        this.setState({
+          visible:true,
+        
+        })
         this.props.history.push( "/student/studentHome")
       })
       
@@ -94,6 +103,15 @@ class Login extends Component {
               Log in
             </Button>
             Or <a href="./signupall">create acount </a>
+            <Modal
+          title="Basic Modal"
+          visible={this.state.visible}
+         
+        >
+          <p>successful log in</p>
+       
+       
+        </Modal>
           </Card>
 
           </div>
@@ -112,7 +130,7 @@ class Login extends Component {
             </div>
                      
  <img style={{backgroundColor:'red', width:'25%',height:'25%',opacity:'0,5' ,marginLeft:200
-  ,filter: 'alpha(opacity=50)'}}  src={require("./LOGO LOG IN.png")} onClick={this.pri} alt="img"/>
+  ,filter: 'alpha(opacity=50)'}}  src={require("./NewLogo.png")} onClick={this.pri} alt="img"/>
             
            </div>
              

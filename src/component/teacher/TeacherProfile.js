@@ -15,6 +15,7 @@ class ProfileTeahcer extends Component {
     Name: "",
     Email: "",
     userid: "",
+    studentName:""
   };
 
  
@@ -43,13 +44,14 @@ class ProfileTeahcer extends Component {
         var Phone = userdoc.data().phone;
         var Name = userdoc.data().Name;
         var Email = userdoc.data().Email;
-        var card = userdoc.data().savecard;
-        console.log("card", card);
+        let studentName =userdoc.data().studentName
+       
         this.setState({
-          list: card,
+         
           Phone: Phone,
           Name: Name,
           Email: Email,
+          studentName:studentName
         });
       });
   }
@@ -274,13 +276,7 @@ class ProfileTeahcer extends Component {
               {" "}
              student you will being working with
             </h2>
-            <Card
-                  bordered={false}
-                    style={{ width: "30%" , marginLeft: 50,boxShadow:'0 1px 2px 0 rgba(0, 0, 0, 0.2)'}}
-                   
-                  >
-                   farah shaqoura
-                  </Card>
+          <h3 style={{color: "#4d4dff" ,marginLeft:40}}> {this.state.studentName}</h3>
        
           </div>
         </div>

@@ -171,7 +171,7 @@ class Signin extends Component{
             </div>
                      
  <img style={{backgroundColor:'red', width:'25%',height:'25%',opacity:'0,5' ,marginLeft:200
-  ,filter: 'alpha(opacity=50)'}}  src={require("./LOGO LOG IN.png")} onClick={this.pri} alt="img"/>
+  ,filter: 'alpha(opacity=50)'}}  src={require("./NewLogo.png")} onClick={this.pri} alt="img"/>
             
            </div>
         </div>
